@@ -1,24 +1,10 @@
 ---
 import HyperDrive from "../components/HyperDrive.astro";
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/ci-newsletter.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body class="bg-black">
-    <div
-      class="flex min-h-screen flex-col overflow-x-hidden max-w-7xl mx-auto p-8"
-    >
-      <HyperDrive class="-z-50" />
-      <Header />
-      <Hero />
-    </div>
-  </body>
-</html>
+<BaseLayout>
+  <HyperDrive class="-z-50" />
+  <Hero />
+</BaseLayout>

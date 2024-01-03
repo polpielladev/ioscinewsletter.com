@@ -1,0 +1,48 @@
+---
+import Header from "../components/Header.astro";
+const { title, description, image } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/assets/profile.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={"RSS Feed for the iOS CI Newsletter"}
+      href="/issues/rss.xml"
+    />
+
+    <meta property="og:url" content="https://polpiella.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@polpielladev" />
+    <meta name="twitter:creator" content="@polpielladev" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <script
+      src="https://cdn.usefathom.com/script.js"
+      data-site={import.meta.env.FATHOM_ENTITY_ID}
+      defer></script>
+  </head>
+  <body class="bg-gray-900">
+    <main>
+      <div
+        class="flex min-h-screen flex-col overflow-x-hidden max-w-7xl mx-auto p-8"
+      >
+        <Header />
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>

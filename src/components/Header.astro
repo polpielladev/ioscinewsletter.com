@@ -1,3 +1,14 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("newsletter");
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+const firstPost = sortedPosts[0]!;
+---
+
 <nav class="flex text-gray-50 justify-between h-20 items-center py-2 mb-16">
   <div class="flex items-center gap-8 text-lg">
     <a href="/">
@@ -6,8 +17,10 @@
         class="w-20 aspect-square hover:scale-110 transition-transform"
       />
     </a>
-    <a class="hover:text-gray-300">Latest Issue</a>
-    <a class="hover:text-gray-300">Archive</a>
+    <a class="hover:text-gray-300" href={`/issues/${firstPost.data.number}`}
+      >Latest Issue</a
+    >
+    <a class="hover:text-gray-300" href="/issues">Archive</a>
     <a class="hover:text-gray-300">Sponsor</a>
   </div>
 
