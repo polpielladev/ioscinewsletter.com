@@ -2,9 +2,15 @@
 import HyperDrive from "../components/HyperDrive.astro";
 import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PreviousSponsors from "../components/PreviousSponsors.astro";
 ---
 
 <BaseLayout>
   <HyperDrive class="-z-50" />
-  <Hero />
+  <Hero
+    title="Stay up to date with the latest iOS CI/CD news"
+    body="Subscribe now and never miss a beat!"
+  >
+    <PreviousSponsors />
+  </Hero>
 </BaseLayout>

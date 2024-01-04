@@ -1,5 +1,5 @@
 ---
-import PreviousSponsors from "./PreviousSponsors.astro";
+const { title, body } = Astro.props;
 ---
 
 <section>
@@ -8,17 +8,16 @@ import PreviousSponsors from "./PreviousSponsors.astro";
       <h1
         class="max-w-[24ch] text-center text-5xl/[1.1] font-semibold md:text-6xl/[1.1]"
       >
-        Stay up to date with the latest iOS CI/CD news
+        {title}
       </h1>
       <p
         class="body body-large text-center text-astro-gray-100 md:px-8 max-w-2xl"
         style="text-wrap: balance;"
       >
-        Astro powers the world's fastest websites, client-side web apps, dynamic
-        API endpoints, and everything in-between.
+        {body}
       </p>
     </div>
 
-    <PreviousSponsors />
+    <slot />
   </div>
 </section>
