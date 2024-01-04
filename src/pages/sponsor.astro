@@ -1,6 +1,10 @@
 ---
 import Hero from "@components/Hero.astro";
+import NewsletterSponsorSlot from "@components/issue/NewsletterSponsorSlot.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Highlight from "@components/sponsor/Highlight.astro";
+import StatsSection from "@components/sponsor/StatsSection.astro";
+import ListItem from "@components/sponsor/ListItem.astro";
 ---
 
 <BaseLayout
@@ -9,7 +13,10 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   activeNav="sponsor"
   image=""
 >
-  <Hero>
+  <Hero
+    title="Want your product to reach thousands of developers?"
+    body="You can sponsor my newsletter and help me with my mission to continue creating content online as well as showcasing your product to iOS developers."
+  >
     <a
       href="mailto:hi@polpiella.dev?subject=I would like to sponsor polpiella.dev"
       class="inline-flex items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-900 transition-colors"
@@ -31,87 +38,58 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       </svg>
     </a>
   </Hero>
-  <section class="scroll-smooth flex flex-col max-w-4xl mx-auto">
-    <div class="max-w-3xl my-8 space-y-5 text-center mx-auto">
-      <h1
-        class="text-4xl font-title tracking-tight leading-none text-gray-900 md:text-5xl lg:text-5xl dark:text-white"
-      >
-        Want to become a sponsor?
-      </h1>
-      <p
-        class="text-lg font-normal text-gray-700 lg:text-xl dark:text-gray-300"
-      >
-        polpiella.dev is a blog about iOS development with a focus on CI/CD,
-        tooling and automation. It's read by over 7,000 developers every month
-        and is updated with a new article every week.
-      </p>
+  <section class="flex flex-col gap-9 mt-16">
+    <StatsSection title="How much does it cost?">
+      <ul class="list-disc list-inside space-y-4">
+        <ListItem>
+          Sponsored slot in 1 issue: <Highlight text="750 €" />.
+        </ListItem>
+        <ListItem>
+          Pack of 4 sponsored slots: <Highlight text="2750 €" />, saving a whole <Highlight
+            text="250 €"
+          />!
+        </ListItem>
+      </ul>
+    </StatsSection>
 
-      <div
-        class="flex gap-3 flex-wrap text-center mx-auto items-center justify-center"
+    <StatsSection title="What's in it for you?">
+      <ul
+        class="text-lg font-normal lg:text-xl text-gray-300 flex flex-col gap-3 list-disc list-inside"
       >
-        <p class="text-md font-normal lg:text-lgtext-gray-300">
-          Trusted by these previous sponsors:
-        </p>
-        <a class="w-24" href="https://runway.team"
-          ><img src="/assets/sponsors/runway-logo.svg" />
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="bg-gray-900 flex flex-col gap-4">
-    <header class="font-title text-2xltext-white">Pricing</header>
-    <ul class="list-disc list-inside">
-      <li class="text-lg mb-4 font-normal lg:text-xl text-gray-300">
-        One week of sponsorship: <strong>£750</strong>.
-      </li>
-      <li class="text-lg mb-4 font-normal lg:text-xl text-gray-300">
-        4 weeks of sponsorship: <strong>£2500</strong>, saving a whole <strong
-          >£500</strong
-        >!
-      </li>
-    </ul>
-  </section>
-  <section class="bg-gray-900 flex flex-col gap-4">
-    <header class="font-title text-2xl text-white">
-      What do sponsored slots look like?
-    </header>
-    <a
-      href="/core-data-migration-app-group"
-      class="text-lg underline mb-4 font-normal lg:text-xl text-violet-300"
-      >You can see it in context in any of the site's articles.</a
-    >
-  </section>
-  <section class="bg-gray-900 flex flex-col gap-4">
-    <header class="font-title text-2xl text-white">Stats</header>
-    <ul
-      class="text-lg mb-4 font-normal lg:text-xl text-gray-300 flex flex-col gap-3 list-disc list-inside"
-    >
-      <li>10k+ monthly views.</li>
-      <li>7k+ unique visitors.</li>
-      <li>100+ blog posts published so far.</li>
-      <li>Over 3k+ followers on social media across Linkedin and Twitter.</li>
-      <li>
-        Over 200k impressions on social media posts across Linkedin and Twitter.
-      </li>
-    </ul>
-  </section>
-  <section class="bg-gray-900 flex flex-col gap-4">
-    <header class="font-title text-2xl text-white">What you will get</header>
-    <ul
-      class="text-lg mb-4 font-normal lg:text-xl text-gray-300 flex flex-col gap-3 list-disc list-inside"
-    >
-      <li>A sponsored slot in 100+ blog posts across the whole site.</li>
-      <li>
-        A <strong>tweet</strong> with a shoutout to your account announcing the sponsorship.
-      </li>
-      <li>
-        A <strong>LinkedIn post</strong> with a shoutout to your account announcing
-        the sponsorship.
-      </li>
-      <li>
-        A permanent place in the <strong>trusted by</strong> section of this page
-        alongside all past sponsors.
-      </li>
-    </ul>
+        <ListItem>
+          A sponsored slot in 100+ blog posts across the whole site.
+        </ListItem>
+        <ListItem>
+          A <strong>tweet</strong> with a shoutout to your account announcing the
+          sponsorship.
+        </ListItem>
+        <ListItem>
+          A <strong>LinkedIn post</strong> with a shoutout to your account announcing
+          the sponsorship.
+        </ListItem>
+        <ListItem>
+          A permanent place in the <strong>trusted by</strong> section of this page
+          alongside all past sponsors.
+        </ListItem>
+      </ul>
+    </StatsSection>
+
+    <StatsSection title="What do sponsored slots look like?">
+      <NewsletterSponsorSlot />
+      <a
+        href="/core-data-migration-app-group"
+        class="text-lg underline font-normal lg:text-xl text-violet-300"
+        >You can see it in context in any of the site's articles.</a
+      >
+    </StatsSection>
+    <StatsSection title="Some stats about the newsletter">
+      <ul
+        class="text-lg font-normal lg:text-xl text-gray-300 flex flex-col gap-3 list-disc list-inside"
+      >
+        <ListItem><Highlight text="1k+" /> email subscribers.</ListItem>
+        <ListItem><Highlight text="30+" /> issues released so far.</ListItem>
+        <ListItem><Highlight text="74%" /> average open rate.</ListItem>
+      </ul>
+    </StatsSection>
   </section>
 </BaseLayout>
