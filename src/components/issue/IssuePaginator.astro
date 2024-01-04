@@ -1,0 +1,29 @@
+---
+const { prevURL, nextURL, number } = Astro.props;
+---
+
+<div class="prose flex gap-3 pt-8">
+  {
+    prevURL && (
+      <a
+        href={prevURL}
+        class="m-0 flex flex-1 grow flex-col rounded-lg border border-gray-400 border-opacity-0 p-4 text-left text-sm no-underline transition-colors hover:border-opacity-100 bg-gray-800/70"
+      >
+        <p class="m-0 mb-1 text-zinc-400">← Previous issue</p>
+        <p class="m-0 font-semibold text-zinc-300">Issue #{number - 1}</p>
+      </a>
+    )
+  }
+
+  {
+    nextURL && (
+      <a
+        href={nextURL}
+        class="m-0 flex flex-1 grow flex-col rounded-lg border border-gray-400 border-opacity-0  p-4 text-right text-sm no-underline transition-colors hover:border-opacity-100 bg-gray-800/70"
+      >
+        <p class="m-0 mb-1 text-zinc-400">Next issue →</p>
+        <p class="m-0 font-semibold text-zinc-300">Issue #{number + 1}</p>
+      </a>
+    )
+  }
+</div>
