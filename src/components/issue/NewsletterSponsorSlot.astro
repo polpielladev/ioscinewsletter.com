@@ -3,7 +3,7 @@ const { image, title, url, description } = Astro.props;
 ---
 
 <div
-  class="not-prose relative flex items-start gap-2 rounded-lg border-2 border-violet-400 p-3 shadow-lg bg-violet-600/20"
+  class="not-prose relative flex items-center gap-2 rounded-lg border-2 border-violet-400 p-3 shadow-lg bg-violet-600/20"
 >
   <p
     class="absolute right-2 mx-auto rounded-md bg-violet-300 px-2 py-0.5 font-title text-xs shadow [top:-10px] text-black"
@@ -12,7 +12,7 @@ const { image, title, url, description } = Astro.props;
   </p>
 
   <img
-    class="relative hidden aspect-square w-24 object-contain px-2 sm:block"
+    class="relative hidden aspect-square w-28 object-contain px-2 sm:block"
     src={image}
     alt="Sponsor logo"
   />
@@ -20,7 +20,7 @@ const { image, title, url, description } = Astro.props;
   <div class="max-w-md">
     <a
       href={url}
-      class={`font-title text-lg no-underline hover:underline text-white`}
+      class={`font-semibold text-lg no-underline hover:underline text-white`}
     >
       {title}
     </a>
