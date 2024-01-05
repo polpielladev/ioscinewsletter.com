@@ -1,6 +1,6 @@
 ---
 import { getEntryBySlug, getCollection } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 const { issue } = Astro.params;
 const entry = await getEntryBySlug("newsletter", issue!);
 const { Content } = await entry!.render();
