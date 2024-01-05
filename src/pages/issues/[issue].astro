@@ -16,6 +16,10 @@ export async function getStaticPaths() {
 }
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={`iOS CI Newsletter - Issue #${issue}`}
+  description={`Issue ${issue} of the iOS CI Newsletter, a fortnightly publication containing the latest iOS CI/CD news from the community.`}
+  image="https://ioscinewsletter.com/og.jpg"
+>
   <Content />
 </BaseLayout>
