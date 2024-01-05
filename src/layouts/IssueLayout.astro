@@ -16,17 +16,13 @@ const nextURL =
   number >= sortedPosts.length ? undefined : `/issues/${number + 1}`;
 ---
 
-<BaseLayout>
-  <div class="flex gap-1 justify-center">
-    <div class="my-0 flex flex-col gap-5">
-      <header class="w-full"></header>
-
-      <section
-        class="prose prose-invert mx-auto h-full hover:prose-h2:underline prose-h2:font-title"
-      >
-        <slot />
-        <IssuePaginator prevURL={prevURL} nextURL={nextURL} number={number} />
-      </section>
-    </div>
+<div class="flex gap-1 justify-center">
+  <div class="my-0 flex flex-col gap-5">
+    <section
+      class="prose prose-invert mx-auto h-full hover:prose-h2:underline prose-h2:font-title"
+    >
+      <slot />
+      <IssuePaginator prevURL={prevURL} nextURL={nextURL} number={number} />
+    </section>
   </div>
-</BaseLayout>
+</div>

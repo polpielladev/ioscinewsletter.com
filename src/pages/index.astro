@@ -3,6 +3,15 @@ import HyperDrive from "../components/HyperDrive.astro";
 import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PreviousSponsors from "../components/PreviousSponsors.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("newsletter");
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+const { Content } = await sortedPosts[0]!.render();
 ---
 
 <BaseLayout>
