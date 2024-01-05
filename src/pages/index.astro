@@ -3,6 +3,7 @@ import HyperDrive from "../components/HyperDrive.astro";
 import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PreviousSponsors from "../components/PreviousSponsors.astro";
+import Subscribe from "../components/Subscribe.astro";
 
 import { getCollection } from "astro:content";
 
@@ -20,6 +21,7 @@ const { Content } = await sortedPosts[0]!.render();
     title="Stay up to date with the latest iOS CI/CD news"
     body="Subscribe now and never miss a beat!"
   >
+    <Subscribe />
     <PreviousSponsors />
   </Hero>
   <Content />
