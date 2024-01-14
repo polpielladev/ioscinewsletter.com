@@ -1,0 +1,57 @@
+---
+number: 33
+date: 2024-01-14
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Introducing Rollbacks by Runway"
+  url={`www.runway.team/rollbacks?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Djan_14_24`}
+  description="Undo a bad native app release with a single click. Cut out all the lead time needed to investigate and implement a fix, get builds compiled and uploaded, and make it through the store review process."
+  image="/runway-alt.png"
+/>
+
+**What a start to the year! 😱🤢**
+
+Can you believe it has already been two weeks since I sent my last email and that we're **halfway through January** already?
+
+Time has certainly flown by on my end and, after an amazing Christmas break where I was able to take time off and get some rest, I went back to work and started getting back into my normal routine.
+
+But... just as was settling back in, a **stomach bug caught me completely off-guard**, knocked me out for a few days and drained all the energy I had after my break.
+
+Thankfully I am **feeling a lot better now** and I am nearly back at full pace, just in time for this week's issue, which comes packed with updates and news!
+
+## [‼️ New requirements for apps with third-party dependencies](https://developer.apple.com/support/third-party-SDK-requirements?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2033%26utm_content%3Djan_14_24)
+
+[In WWDC23, Apple introduced the concept of **Privacy Manifests**](https://developer.apple.com/videos/play/wwdc2023/10060/), which are reports that help apps **identify and define the privacy practices of their dependencies**.
+
+From Spring this year, Apple will require apps that depend on any of the SDKs listed [in their announcement post](http://developer.apple.com/support/third-party-SDK-requirements/) to include their privacy manifests when submitting builds to App Store Connect.
+
+## [🎉 You can now submit visionOS apps to the App Store!](https://developer.apple.com/visionos/submit?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2033%26utm_content%3Djan_14_24)
+
+**Xcode 15.2** was released earlier this week and, for the first time, developers will be able to submit visionOS apps to App Store Connect with it!
+
+It is important to note that Xcode Cloud has also been updated to include **Xcode 15.2** and you can now update your workflows to build and upload visionOS apps. You must note though that, [as stated in the latest Xcode Cloud release notes, test actions are not yet available for visionOS products](https://developer.apple.com/xcode-cloud/release-notes/).
+
+## [📝 Platform-specific release notes with Xcode Cloud](https://www.finnvoorhees.com/words/platform-specific-release-notes-with-xcode-cloud?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2033%26utm_content%3Djan_14_24)
+
+Xcode Cloud added support for setting **release notes directly from a workflow during WWDC23**, rendering having to go and update the test notes in App Store Connect after submitting a new build needless.
+
+In this article, [Finn Voorhees](https://twitter.com/finnvoorhees) goes through how this feature works and how you can also provide different release notes for each platform your app supports.
+
+## [🚀 Scalable iOS CI](https://albertodebortoli.com/2024/01/03/scalable-continuous-integration-for-ios?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2033%26utm_content%3Djan_14_24)
+
+I love reading about **real-world examples** and **stories** of CI/CD solutions used by companies of different sizes and requirements.
+
+This time I came across this article from [Alberto de Bortoli](https://twitter.com/albertodebo) on how [Just Eat Takeaway.com](https://twitter.com/JET_technology) leverages AWS, Packer, Terraform and GitHub Actions to manage a CI stack of macOS runners.
+
+## [🎓 GitHub Actions certifications](https://github.blog/2024-01-08-github-certifications-are-generally-available?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2033%26utm_content%3Djan_14_24)
+
+[GitHub](https://twitter.com/GitHubEng) have recently announced that their Certification program, which was exclusively available to employees and partners up until now, is **accessible to the general public**.
+
+I haven't dived into it yet and there is more information on their announcement post but it certainly looks like a great way to learn more about GitHub Actions and get a certificate you can add to your CV at the end.
