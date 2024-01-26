@@ -11,10 +11,10 @@ const sortedPosts = posts.sort(
 const firstPost = sortedPosts[0]!;
 ---
 
-<section class="bg-violet-300 flex flex-col">
+<section class="bg-violet-600/20 border-violet-700 border-b-2 flex flex-col">
   <nav>
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pt-4 px-4"
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pt-8 px-4"
     >
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img
@@ -52,11 +52,11 @@ const firstPost = sortedPosts[0]!;
   <div
     class="flex flex-col items-center text-center mx-auto gap-8 max-w-3xl py-16"
   >
-    <h1 class="text-5xl font-bold">
+    <h1 class="text-5xl font-medium dark:text-gray-100">
       Stay up to date with the latest iOS CI/CD news
     </h1>
 
-    <p class="max-w-md mx-auto">
+    <p class="max-w-lg mx-auto dark:text-gray-300">
       Every two weeks, directly to your inbox and packed with everything you
       need to know and be aware of so that you're always prepared for the next
       app release!
