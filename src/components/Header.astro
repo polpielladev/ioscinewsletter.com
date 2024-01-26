@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Subscribe from "./Subscribe.astro";
 import PreviousSponsors from "./PreviousSponsors.astro";
 
+const { title, description, ctaType } = Astro.props;
+
 const posts = await getCollection("newsletter");
 const sortedPosts = posts.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
@@ -26,21 +28,21 @@ const firstPost = sortedPosts[0]!;
           >iOS CI Newsletter</span
         >
       </a>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <div class="block w-auto">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          class="font-medium flex border-gray-100 rounded-lg flex-row space-x-8 rtl:space-x-reverse"
         >
           <li>
             <a
               href={`/issues/${firstPost.data.number}`}
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-700 md:p-0 dark:text-white md:dark:hover:text-violet-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-violet-700 p-0 dark:text-white dark:hover:text-violet-500 dark:hover:bg-gray-700 dark:hover:bg-transparent"
               aria-current="page">Latest issue</a
             >
           </li>
           <li>
             <a
               href="/sponsor"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-700 md:p-0 dark:text-white md:dark:hover:text-violet-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-violet-700 p-0 dark:text-white dark:hover:text-violet-500 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >Sponsor</a
             >
           </li>
@@ -53,16 +55,45 @@ const firstPost = sortedPosts[0]!;
     class="flex flex-col items-center text-center mx-auto gap-8 max-w-3xl py-16"
   >
     <h1 class="text-5xl font-medium dark:text-gray-100">
-      Stay up to date with the latest iOS CI/CD news
+      {title}
     </h1>
 
     <p class="max-w-lg mx-auto dark:text-gray-300">
-      Every two weeks, directly to your inbox and packed with everything you
-      need to know and be aware of so that you're always prepared for the next
-      app release!
+      {description}
     </p>
 
-    <Subscribe />
-    <PreviousSponsors />
+    {
+      ctaType === "subscribe" && (
+        <>
+          <Subscribe />
+          <PreviousSponsors />
+        </>
+      )
+    }
+    {
+      ctaType === "sponsor" && (
+        <a
+          href="mailto:hi@polpiella.dev?subject=I would like to sponsor polpiella.dev"
+          class="inline-flex items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-900 transition-colors"
+        >
+          Book a slot for 2024
+          <svg
+            class="w-3.5 h-3.5 ml-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </a>
+      )
+    }
   </div>
 </section>

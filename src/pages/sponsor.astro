@@ -1,5 +1,4 @@
 ---
-import Hero from "../components/Hero.astro";
 import NewsletterSponsorSlot from "../components/issue/NewsletterSponsorSlot.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Highlight from "../components/sponsor/Highlight.astro";
@@ -11,33 +10,11 @@ import ListItem from "../components/sponsor/ListItem.astro";
   title="Sponsor"
   description="Help me continue to create content and open source projects by sponsoring me."
   activeNav="sponsor"
+  heroTitle="Want your product to reach thousands of developers?"
+  heroDescription="You can sponsor my newsletter and help me with my mission to continue creating content online as well as showcasing your product to iOS developers."
+  ctaType="sponsor"
   image=""
 >
-  <Hero
-    title="Want your product to reach thousands of developers?"
-    body="You can sponsor my newsletter and help me with my mission to continue creating content online as well as showcasing your product to iOS developers."
-  >
-    <a
-      href="mailto:hi@polpiella.dev?subject=I would like to sponsor polpiella.dev"
-      class="inline-flex items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-900 transition-colors"
-    >
-      Book a slot for 2024
-      <svg
-        class="w-3.5 h-3.5 ml-2"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 14 10"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-      </svg>
-    </a>
-  </Hero>
   <section class="flex flex-col gap-9 mt-16">
     <StatsSection title="How much does it cost?">
       <ul class="list-disc list-inside space-y-4">
