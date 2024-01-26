@@ -15,13 +15,6 @@ const { Content } = await sortedPosts[0]!.render();
 ---
 
 <BaseLayout>
-  <Hero
-    title="Stay up to date with the latest iOS CI/CD news"
-    body="Subscribe now and never miss a beat!"
-  >
-    <Subscribe />
-    <PreviousSponsors />
-  </Hero>
   <Content />
   <Toast client:only />
 </BaseLayout>
