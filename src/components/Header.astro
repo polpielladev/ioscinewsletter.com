@@ -13,87 +13,91 @@ const sortedPosts = posts.sort(
 const firstPost = sortedPosts[0]!;
 ---
 
-<section class="bg-violet-600/20 border-violet-700 border-b-2 flex flex-col">
-  <nav class="w-full max-w-screen-xl mx-auto">
-    <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pt-8 px-4"
-    >
-      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img
-          src="/ci-newsletter.svg"
-          class="h-8 aspect-square hover:scale-110 transition-transform"
-        />
-        <span
-          class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-          >iOS CI Newsletter</span
-        >
-      </a>
-      <div class="block w-auto">
-        <ul
-          class="font-medium flex border-gray-100 rounded-lg flex-row space-x-8 rtl:space-x-reverse"
-        >
-          <li>
-            <a
-              href={`/issues/${firstPost.data.number}`}
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-violet-700 p-0 dark:text-white dark:hover:text-violet-500 dark:hover:bg-gray-700 dark:hover:bg-transparent"
-              aria-current="page">Latest issue</a
-            >
-          </li>
-          <li>
-            <a
-              href="/sponsor"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-violet-700 p-0 dark:text-white dark:hover:text-violet-500 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-              >Sponsor</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div
-    class="flex flex-col items-center text-center mx-auto gap-8 max-w-3xl py-16"
-  >
-    <h1 class="text-5xl font-medium dark:text-gray-100">
-      {title}
-    </h1>
-
-    <p class="max-w-lg mx-auto dark:text-gray-300">
-      {description}
-    </p>
-
-    {
-      ctaType === "subscribe" && (
-        <>
-          <Subscribe />
-          <PreviousSponsors />
-        </>
-      )
-    }
-    {
-      ctaType === "sponsor" && (
-        <a
-          href="mailto:hi@polpiella.dev?subject=I would like to sponsor polpiella.dev"
-          class="inline-flex items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-900 transition-colors"
-        >
-          Book a slot for 2024
-          <svg
-            class="w-3.5 h-3.5 ml-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
+<section class="bg-violet-600/20 border-violet-700 border-b-2">
+  <div class="flex flex-col">
+    <nav class="w-full max-w-screen-xl mx-auto">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pt-8 px-4"
+      >
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            src="/ci-newsletter.svg"
+            class="h-8 aspect-square hover:scale-110 transition-transform"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >iOS CI Newsletter</span
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
         </a>
-      )
-    }
+        <div class="block w-auto">
+          <ul
+            class="font-medium flex border-gray-100 rounded-lg flex-row space-x-8 rtl:space-x-reverse"
+          >
+            <li>
+              <a
+                href={`/issues/${firstPost.data.number}`}
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-violet-700 p-0 dark:text-white dark:hover:text-violet-500 dark:hover:bg-gray-700 dark:hover:bg-transparent"
+                aria-current="page">Latest issue</a
+              >
+            </li>
+            <li>
+              <a
+                href="/sponsor"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-violet-700 p-0 dark:text-white dark:hover:text-violet-500 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                >Sponsor</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="flex flex-col items-center text-center mx-auto gap-8 max-w-3xl py-16"
+    >
+      <h1
+        class="text-center text-4xl/[1.1] font-semibold sm:text-6xl/[1.1] dark:text-gray-100"
+      >
+        {title}
+      </h1>
+
+      <p class="max-w-lg mx-auto dark:text-gray-300">
+        {description}
+      </p>
+
+      {
+        ctaType === "subscribe" && (
+          <>
+            <Subscribe />
+            <PreviousSponsors />
+          </>
+        )
+      }
+      {
+        ctaType === "sponsor" && (
+          <a
+            href="mailto:hi@polpiella.dev?subject=I would like to sponsor polpiella.dev"
+            class="inline-flex items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-900 transition-colors"
+          >
+            Book a slot for 2024
+            <svg
+              class="w-3.5 h-3.5 ml-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        )
+      }
+    </div>
   </div>
 </section>
