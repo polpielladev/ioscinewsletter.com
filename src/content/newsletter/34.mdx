@@ -1,0 +1,53 @@
+---
+number: 34
+date: 2024-01-28
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Introducing Rollbacks by Runway"
+  url={`https://www.runway.team/rollbacks?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Djan_28_24`}
+  description="Undo a bad native app release with a single click. Cut out all the lead time needed to investigate and implement a fix, get builds compiled and uploaded, and make it through the store review process."
+  image="/runway-alt.png"
+/>
+
+**Apple and the Digital Markets Act in the European Union. 🇪🇺**
+
+Earlier this week, [Apple announced that they are making some changes to the ecosystem for European Union countries to comply with the Digital Markets Act](https://developer.apple.com/news/?id=fsmaf67j), a law that aims at **controlling and reducing the monopoly or dominance of large corporations on the tech industry**.
+
+The most notable changes are that iOS apps will be able to **change the way they process payments**, browser apps (such as the Google Chrome app) will be able to **use different engines**, which is one of the changes I am most excited about, and that developers will be able to **ship their apps to alternative App Stores**.
+
+These changes come with a new **set of business terms** that, among other things, state that developers who accept them, will need to pay a brand new **Core Technology Fee** of 0.50€ per annual app install (as long as you have over 1 million yearly app installs) and their **in-app purchase fee will reduce to 17%** (10% for developers in the Small Business Programme) from the previous 30%.
+
+You must know that these new business terms **are optional** and **only apply to EU countries**. Hence, you can choose whether you would like to accept them or **stick with the current way of doing business with Apple**. So, this raises the following question, what will your decision be?
+
+If you would like to learn more about the topic from people who know a lot more than I do, I would thoroughly recommend reading [this amazing Twitter thread that RevenueCat put together](https://twitter.com/RevenueCat/status/1750927138138599642) and [this awesome article by Jon Porter and David Pierce at The Verge](https://www.theverge.com/2024/1/25/24050200/apple-third-party-app-stores-allowed-iphone-ios-europe-digital-markets-act?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$34%26utm_content%3Djan_28_24).
+
+## [☁️ Xcode Cloud workshop coming soon](https://twitter.com/polpielladev/status/1750582478283133249)
+
+Last week I ran a poll on Twitter to ask you all if you would be interested in me running a workshop on Xcode Cloud and the response I got was amazing: **93% of you were interested!**
+
+For this reason, I have decided to start putting together a session that will show you how to configure and run real-world CI/CD workflows using Xcode Cloud and answer any questions you might have **about Apple's CI/CD service**. More details will follow soon, so keep an eye on the newsletter and my social media for the announcement 👀.
+
+## [⬆️ How to upload dSYMs files to Sentry with Xcode Cloud](https://sowenjub.me/writes/how-to-upload-dsyms-files-to-sentry-with-xcode-cloud?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$34%26utm_content%3Djan_28_24)
+
+One of the questions I get asked the most is whether Xcode Cloud can integrate with **third-party tools and services** easily. A lot of companies use such tools for tasks like **dependency management** or **crash reporting** and they need to make sure they can continue using them before making the switch to Xcode Cloud.
+
+As [Arnaud Joubay](https://twitter.com/sowenjub) describes in this article, where they **upload an app's dSYMs files to Sentry** from an Xcode Cloud workflow, you can make use of ci scripts to extend Xcode Cloud's functionalities as much as you want and perform any actions **your third-party tool requires**.
+
+## [💯 Understanding Swift Package Index's package scores](https://swiftpackageindex.com/blog/revealing-and-explaining-package-scores?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$34%26utm_content%3Djan_28_24)
+
+When searching the [Swift Package Index](https://twitter.com/SwiftPackages) for a Swift Package, the search engine determines the order in which it shows results using two primary factors: the **relevance of the search query in the package name** **and description** and **an internal package score based on various metrics**.
+
+In this article, the creator of the package score feature [Cyndi Chin](https://cyndichin.github.io?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$34%26utm_content%3Djan_28_24), goes through **how the score is calculated in great detail**. I would thoroughly recommend reading this article as the score calculation algorithm and the metrics it takes into consideration can give you numerous tips about becoming **a better Swift Package author and maintainer**.
+
+## [📈 Bitrise's Git insights](https://blog-proxy.bitrise.io/post/git-insights-you-can-ditch-spreadsheet-tracking-and-custom-dashboards-to-track-git-collaboration?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$34%26utm_content%3Djan_28_24)
+
+[Bitrise](https://twitter.com/bitrise) announced a new feature last week called 'Git Insights' that shows metrics such as **pull request cycle time** and **merge frequency** in a project's dashboard.
+
+I have done similar things in the past for my own projects to **monitor the impact that changes and decisions have on my productivity**, so I am super happy to see it built into a CI/CD service 👏. If you'd like to learn more about the feature and how to start using it, make sure you read this great article by [Madré Roothman](https://twitter.com/MadreRoothman).
