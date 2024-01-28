@@ -6,9 +6,7 @@ export const prerender = false;
 
 export async function GET({ url }) {
   const { searchParams } = url;
-  //   const issue = searchParams.get("issue");
-
-  const issue = 200;
+  const issue = searchParams.get("issue");
 
   if (!issue) {
     return new Response("Missing issue", { status: 400 });
