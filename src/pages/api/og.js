@@ -6,14 +6,16 @@ export const prerender = false;
 
 export async function GET({ url }) {
   const { searchParams } = url;
-  const issue = searchParams.get("issue");
+  //   const issue = searchParams.get("issue");
+
+  const issue = 200;
 
   if (!issue) {
     return new Response("Missing issue", { status: 400 });
   }
 
-  const inter = await fetch("http://localhost:4321/inter.ttf").then((res) =>
-    res.arrayBuffer()
+  const satoshi = await fetch("https://ioscinewsletter.com/satoshi.ttf").then(
+    (res) => res.arrayBuffer()
   );
 
   const opts = {
@@ -30,14 +32,19 @@ export async function GET({ url }) {
         style="display: flex; align-items: center; justify-content: center; height: 100vh; width: 100vw; overflow: hidden; position: relative;"
       >
         <div
-          style="display: flex; left: 0; right: 0; top: 0; bottom: 0; position: absolute; background-image: url(http://localhost:4321/og-background.png); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+          style="display: flex; left: 0; right: 0; top: 0; bottom: 0; position: absolute; background-image: url(https://ioscinewsletter.com/og-background.png); background-size: 100%; background-repeat: no-repeat; background-position: center;"
         ></div>
         <img
-          src="http://localhost:4321/rocket.png"
-          style="position: absolute; width: 721.54px; height: 733.25px; right: -50px; top: 90px;"
+          src="https://ioscinewsletter.com/rocket.png"
+          style="position: absolute; width: 721.54px; height: 733.25px; right: -100px; top: 90px;"
         />
-        <div style="display: flex;">
-          <p style="font-size: 106px">Issue</p>
+        <div
+          style="position: absolute; left: 10px; bottom: 20px; display: flex; flex-direction: column; gap: 0; color: #FAC81F; line-height: 70%;"
+        >
+          <p style="font-size: 106px;">Issue</p>
+          <p style="font-size: ${issue < 100 ? "300px" : "230px"};">
+            #${issue}
+          </p>
         </div>
       </div>
     </body>
@@ -48,8 +55,8 @@ export async function GET({ url }) {
     height: 630,
     fonts: [
       {
-        name: "Inter",
-        data: inter,
+        name: "Satoshi",
+        data: satoshi,
         weight: 700,
         style: "normal",
       },
