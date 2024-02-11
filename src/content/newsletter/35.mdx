@@ -1,0 +1,62 @@
+---
+number: 35
+date: 2024-02-11
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Dfeb_11_24`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic."
+  image="/codemagic-star.png"
+/>
+
+**🚀 Automating an app's release.**
+
+This week I have completed a task for NowPlaying that I have been wanting to do for a while: **automating the release process**.
+
+We release fairly often and we wanted a quick way to upload builds directly to TestFlight that wouldn't cost us any money and was effortless to set up.
+
+For us, the obvious choice for this was **Xcode Cloud**. Apple's developer membership includes a 25 compute hours per month plan **at no extra cost** and its **integration** and **ease of use** are just brilliant.
+
+Once we settled on a CI/CD solution, we built a workflow that would run when a commit is tagged and perform the following actions:
+
+1.  **Update the project's marketing version number** based on the tag and commit the changes to the repo.
+2.  **Archive** the app.
+3.  **Upload** the archive to TestFlight.
+4.  Add to **all test groups**.
+
+I will soon write an article with more detailed information but thought I would share the solution in case you're looking at doing something similar for your app.
+
+## [🧰 Compile and distribute your iOS SDK as a pre-compiled xcframework](https://krausefx.com/blog/how-to-automaticallycompile-and-distribute-your-ios-sdk-as-a-pre-compiled-xcframework?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2035%26utm_content%3Dfeb_11_24)
+
+I really enjoyed reading this article by [Felix Krause](https://twitter.com/KrauseFx), the founder of [Fastlane](https://twitter.com/FastlaneTools), about how the [ContextSDK](https://twitter.com/context_sdk) library is compiled and distributed as a binary using [CocoaPods](https://twitter.com/CocoaPods).
+
+## [🧐 Finding SwiftUI accessibility issues automatically](https://holyswift.app/xcode-15-new-feature-streamlined-accessibility-audits?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2035%26utm_content%3Dfeb_11_24)
+
+Xcode 15 introduced a new XCTest feature that allows developers to **detect accessibility issues automatically** during UI test execution.
+
+If you'd like to learn how to use this new feature to **audit SwiftUI views**, I would recommend reading this great article by [Leonardo Pugliese](https://twitter.com/Leo_Pugliese) 🎉.
+
+## [🚨 Changes to App Store Connect upload requirements](https://developer.apple.com/news/?id=fxu2qp7b&utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2035%26utm_content%3Dfeb_11_24)
+
+Apple announced earlier this week that, starting on the **29th of April**, any apps uploaded to App Store Connect for iOS 17, iPadOS 17, tvOS 17, or watchOS 10 **must be built with Xcode 15**.
+
+Make sure you make your app build on Xcode 15 if you haven't yet and **update your CI's runners** to build with the same version of Xcode as soon as possible.
+
+## [🆕 GitHub-hosted macOS Sonoma runners are now available!](https://github.blog/changelog/2024-01-30-github-actions-macos-14-sonoma-is-now-available?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2035%26utm_content%3Dfeb_11_24)
+
+[GitHub](https://twitter.com/GitHubEng) announced towards the end of January that **M1 macOS machines running on Sonoma (macOS 14)** are now publically available to be selected as runners for GitHub Actions workflows.
+
+Note that the **latest** runner is still on **macOS 12** and, for now, you must explicitly select the **M1-based Sonoma** runners with one of the following keys: **macos-14**, **macos-14-large**, **macos-14-xlarge**.
+
+## [🔐 More keys added to GitHub's secret scanning](https://github.blog/changelog/2024-02-06-secret-scanning-adds-validity-checks-for-stripe-telegram-sendgrid-and-more?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2035%26utm_content%3Dfeb_11_24)
+
+[GitHub](https://twitter.com/GitHubEng)'s Secret Scanning, a tool which warns developers of the **existence of secrets in their codebases**, got an update this week with new supported keys.
+
+The update includes common keys for secrets from popular services such as **Stripe**, **Notion** or **OpenAI**.
