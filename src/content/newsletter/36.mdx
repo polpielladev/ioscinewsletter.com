@@ -1,0 +1,61 @@
+---
+number: 36
+date: 2024-02-25
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Dfeb_25_24`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic."
+  image="/codemagic-star.png"
+/>
+
+**⛴️ Working on a new app!**
+
+After joining forces on [NowPlaying](https://nowplaying.page), [Hidde](https://twitter.com/hiddevdploeg) and I are collaborating on a brand new app called [Helm](https://helm-app.com/). [Helm](https://helm-app.com/) is a **native app** for App Store Connect to make shipping and updating apps **faster and simpler**.
+
+I am very excited to be working on another project with [Hidde](https://twitter.com/hiddevdploeg) and it is an app that aligns very well with **my tooling expertise and knowledge of the App Store Connect API** which, while incredibly powerful, can be very hard to work with.
+
+We've already built **many exciting features**, including a [keywords editor that will give you ASO advice and tips](https://twitter.com/hiddevdploeg/status/1761052706691494266), and we've got numerous others planned, so keep an eye on our social media profiles to be the first to know when the app is available!
+
+## [👀 The Swift 6 release process](https://forums.swift.org/t/swift-6-0-release-process/70220?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2036%26utm_content%3Dfeb_25_24)
+
+Apple has recently unveiled what the **release process** for the next major version of Swift (**6**) will look like.
+
+All details are covered in the official announcement by [Mishal Sha](https://twitter.com/mishaldshah) but two important things you need to know are that **the release branch will be created on the 15th of March** and that we now know **that Swift 5.10 will be the last minor release of Swift 5**.
+
+## [🤩 An unofficial App Store Connect status page](https://www.runway.team/is-app-store-connect-down?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2036%26utm_content%3Dfeb_25_24)
+
+If you've been an app developer for Apple platforms for long enough, chances are **you will have encountered one of App Store Connect's famous outages**.
+
+Even if everyone you knew was encountering the same issue as you and you were certain it was an issue with Apple's service, [sometimes their official status page wouldn't report any incidents](https://developer.apple.com/system-status/). That's why **[Runway](https://twitter.com/RunwayTeam) has decided to build its own unofficial ASC status page**, reporting issues encountered while making real requests to the App Store Connect API.
+
+## [🚀 Automatic multiplatform app releases with Xcode Cloud](https://www.polpiella.dev/cross-platform-app-releases-with-xcode-cloud?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2036%26utm_content%3Dfeb_25_24)
+
+In the [last issue of this newsletter](https://www.ioscinewsletter.com/issues/35), I shared that I had automated the way we deploy builds to App Store Connect for our app [NowPlaying](https://nowplaying.page/) using Xcode Cloud.
+
+Well, after we did our first release, I decided to write **an article guiding you step by step** on what we did in case you are looking at doing a similar thing for your apps.
+
+## [⚙️ How to deploy apps with Codemagic and GitHub Actions](https://blog.codemagic.io/deploy-your-app-to-app-store-with-codemagic-cli-tools-and-github-actions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2036%26utm_content%3Dfeb_25_24)
+
+After reading this article from [Arnold Veltmann](https://www.linkedin.com/in/vearnold/) on the [Codemagic](https://twitter.com/codemagicio) blog, I discovered that they provide a set of **free Open-Source CLI tools** that they use as part of workflows in their CI/CD service.
+
+In this article, [Arnold](http://www.linkedin.com/in/vearnold/) shows you how you can use them in a GitHub Actions workflow to **publish an app to App Store Connect**.
+
+## [🧪 Analyising test output, optimizing UI tests and CI runs of Tuist projects](https://ronanociosoig.medium.com/tuist-your-circle-putting-it-to-the-test-part-2-e18db9fa28d5?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2036%26utm_content%3Dfeb_25_24)
+
+Back in the [24th edition of this newsletter](https://www.ioscinewsletter.com/issues/24), I shared an article by [Ronan O Ciosoig](https://twitter.com/ronanoc) on how to optimise the CI build times for a [Tuist](https://twitter.com/tuistio) project.
+
+This time I am sharing a follow-up article from him that dives deep into how to **analyse the output from a test suite**, and how to optimise **UI testing** and **CI pipelines**.
+
+## [🛑 Deprecation of widely used GitHub Actions actions](https://github.blog/changelog/2024-02-13-deprecation-notice-v1-and-v2-of-the-artifact-actions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2036%26utm_content%3Dfeb_25_24)
+
+GitHub has recently announced that, as they shipped the fourth major version to the [upload](https://github.com/actions/upload-artifact) and [download artifacts](https://github.com/actions/download-artifact) built-in actions, they are going to be **deprecating** versions 1 and 2 of the actions on **the 30th of June**.
+
+If you use these actions extensively across projects and workflows, I would suggest you check out [this awesome article](https://blog.eidinger.info/why-and-how-to-adopt-actionscheckoutv3-in-your-github-action-workflow#heading-how) by [Marco Eidinger](https://twitter.com/MarcoEidinger) that contains a **Regular Expression** you can modify to **bulk update all references to the actions**.
