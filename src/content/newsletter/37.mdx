@@ -1,0 +1,59 @@
+---
+number: 37
+date: 2024-03-10
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Dmar_10_24`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic."
+  image="/codemagic-star.png"
+/>
+
+**🆕 Swift, Xcode and App Store Connect API updates!**
+
+This week, Apple announced the official release of updates to three of their apps and services: **Xcode 15.3**, **Swift 5.10** and **App Store Connect API 3.4**.
+
+What's significant about the releases above is that we now know that Swift 5.10, which ships with Xcode 15.3, will be the **last minor update of the Swift 5 language version** before the long-awaited Swift 6.0 release.
+
+As announced by [Holly Borla](https://twitter.com/hollyborla) on [the Swift.org blog](https://www.swift.org/blog/swift-5.10-released/), the new version of the language reaches a big milestone for the concurrency model as it accomplishes full data isolation at compile time.
+
+If you're unsure what that means and you'd like to learn more about what's new, check out the [_Everything you need to know about Swift 5.10_](https://www.donnywals.com/everything-you-need-to-know-about-swift-5-10/) article by [Donny Wals](https://twitter.com/DonnyWals), which helped me get a better feel for what these changes meant in practice.
+
+I will leave the update that I am most excited about (the new App Store Connect API version) for later on in the issue, so make sure you keep reading to find out what's new 👀.
+
+## [👀 Does your CI/CD service support Xcode 15.3?](https://twitter.com/polpielladev/status/1765739336807641242?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2037%26utm_content%3Dmar_10_24)
+
+As I mentioned in the introduction, Xcode 15.3 has officially been released this week and if you want to start using it on CI, you need to check if your provider's images support it.
+
+Luckily for you, I spent some time this week **checking support for the most popular CI/CD services** so that you don't have to do it! If there is one I have missed, do let me know and I will add it to the thread.
+
+## [📈 New App Store Connect API analytics available](https://developer.apple.com/documentation/appstoreconnectapi/analytics)
+
+Another significant update that was announced this week is [version 3.4 of the App Store Connect API](https://developer.apple.com/documentation/appstoreconnectapi/app_store_connect_api_release_notes/app_store_connect_api_3_4_release_notes). This is a particularly special update as Apple has added a new [Analytics](https://developer.apple.com/documentation/appstoreconnectapi/analytics) [reports API](http://developer.apple.com/documentation/appstoreconnectapi/analytics) that offers data to help developers analyse their app’s usage and performance.
+
+These changes are **not yet available on App Store Connect**, so if you want to access them, you will need to query the API directly. If you want to build a tool to access those reports using Swift, I would thoroughly recommend using [Antoine Van Der Lee](https://twitter.com/twannl)'s [appstoreconnect-swift-sdk](http://github.com/AvdLee/appstoreconnect-swift-sdk) Swift Package, which [I updated this week to include all new changes](https://github.com/AvdLee/appstoreconnect-swift-sdk/pull/262).
+
+## [💨 Building DocC automatically using GitHub Actions](https://danielsaidi.com/blog/2024/03/10/automating-docc-for-a-swift-package-with-github-actions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2037%26utm_content%3Dmar_10_24)
+
+I love reading articles like this one where code authors and maintainers use CI/CD workflows to **automate tedious tasks** to save time and effort and **reduce the chances of making mistakes**.
+
+In this case, [Daniel Saidi](https://twitter.com/danielsaidi) goes through how they **automate building the DocC of a Swift Package** and **deploying the resulting artefact** to GitHub Pages using GitHub Actions. 
+
+## [⚙️ Configuration as code using Pkl](https://appforce1.net/blog/configuration-as-code?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2037%26utm_content%3Dmar_10_24)
+
+[Pkl (pronounced Pickle)](https://github.com/apple/pkl) is a new programming language from Apple designed specifically for configuration. It allows developers to design data models **safely and expressively** through the use of types and built-in validation. This article by [Jeroen Leenarts](https://twitter.com/AppForce1) is the best resource I have found to understand **what the language excels at** and **how to start using it**.
+
+If you want to go further and learn how you can generate Swift Interfaces from Pkl config files and how you can do so using Swift Package Manager plugins, [feel free to check out the latest article on my blog](https://www.polpiella.dev/how-to-generate-swift-interfaces-from-pkl-files-with-spm-plugins).
+
+## [🚨 Errors while archiving an app with Firebase and Xcode 15.3](https://github.com/firebase/firebase-ios-sdk/issues/12441?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2037%26utm_content%3Dmar_10_24)
+
+If your app is using Firebase and you have recently updated to **Xcode 15.3**, you might face issues when you archive the app. This might halt or delay your releases.
+
+Thankfully, and as stated in the GitHub issue opened by [Cameron Cooke](https://www.linkedin.com/in/cameroncooke1/?originalSubdomain=uk), the issue has now been fixed in the **latest version of the Firebase SDK**, so make sure you update it as soon as possible!
