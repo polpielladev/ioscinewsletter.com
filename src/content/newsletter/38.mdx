@@ -1,0 +1,57 @@
+---
+number: 38
+date: 2024-03-24
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Dmar_24_24`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic."
+  image="/codemagic-star.png"
+/>
+
+**👋 Goodbye AppCenter, it's been a pleasure!**
+
+Microsoft has recently announced that their popular mobile app [distribution service is scheduled for retirement on the 31st of March of 2025](https://learn.microsoft.com/en-gb/appcenter/retirement). From now until then, the service will still be available but the team will **no longer work on new features** and will only **fix critical bugs**.
+
+If you're new to iOS development or if you work on your own apps, the chances that you have used Microsoft's service are slim. Despite this, you must know that it **still is a popular choice for many companies to distribute their pre-release and test builds**, in fact, two of my previous companies used it.
+
+But **why did companies not use a native solution like TestFlight** in the first place? While it has improved massively over the past few years, TestFlight has been historically **slow to process builds** and **hard to sign devices** to run internal pre-release builds of a specific app.
+
+So if you had to constantly deliver builds to your stakeholders or testers, TestFlight would slow you down a bit, while other services such as AppCenter would excel at this, making it an obvious choice for companies.
+
+So... if your team uses AppCenter, what should you do now? **Where** should you distribute your internal builds to now? Read on because I have the right resource for you 👇
+
+## [🚨 AppCenter is getting retired... now what?](https://learn.microsoft.com/en-gb/appcenter/retirement?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$38%26utm_content%3Dmar_24_24)
+
+Microsoft recently announced that the popular mobile app distribution service **AppCenter is scheduled for retirement on the 31st of March of 2025**.
+
+If you're currently using AppCenter as your build distribution solution, I would encourage you to **start looking for alternatives as soon as possible**. A great resource to do so is this article from [Gabriel Savit](https://twitter.com/GabrielSavit) where he compares [the top pre-production and beta app distribution tools](https://www.runway.team/blog/comparing-the-top-pre-production-and-beta-app-distribution-tools?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$38%26utm_content%3Dmar_24_24) on the [Runway](https://twitter.com/RunwayTeam?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$38%26utm_content%3Dmar_24_24) blog. 
+
+## [📈 Automated code performance benchmarks](https://swiftpackageindex.com/ordo-one/package-benchmark/1.22.4/documentation/benchmark/comparingbenchmarksci#Example-GitHub-CI-workflow-comparing-against-a-baseline?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$38%26utm_content%3Dmar_24_24)
+
+Benchmark tests are a great way to make sure **a piece of code runs efficiently** and that subsequent iterations of such method do not cause **performance regressions**.
+
+With the [new Benchmarks Swift Package](https://github.com/ordo-one/package-benchmark) by [Joakim Hassila](https://twitter.com/jhassila), you can now make **these checks part of your unit tests** and set **baselines** you can check code performance against automatically on your CI workflows!
+
+## [🌟 Tuist's CI migration to Codemagic](https://blog.codemagic.io/how-tuist-migrated-from-github-actions-to-codemagic-for-faster-and-more-reliable-ci?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$38%26utm_content%3Dmar_24_24)
+
+I really enjoyed reading this article by [Pedro Piñera](https://twitter.com/pepicrft) on the [Codemagic](https://twitter.com/codemagicio) blog about how they migrated [Tuist](https://twitter.com/tuistio)'s CI workflows over to Codemagic and **made their builds faster and more reliable in the process**!
+
+## [✂️ Making your apps smaller with dynamic frameworks](https://www.emergetools.com/blog/posts/make-your-ios-app-smaller-with-dynamic-frameworks?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$38%26utm_content%3Dmar_24_24)
+
+The [Emerge Tools](https://twitter.com/emergetools) blog is the **gift that keeps on giving**! I particularly like their deep-dive analysis of live apps and I always learn something new when I read their articles.
+
+This time [Jacob Bartlett](https://twitter.com/jacobs_handle) goes through how you can use **dynamic libraries when sharing code across different targets** to avoid asset and code duplication and, as a consequence, keep your **final binary size as small as possible**.
+
+## [🚨 How to access the new ASC analytic reports](https://www.polpiella.dev/analytics-reports-api-app-store-connect?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$38%26utm_content%3Dmar_24_24)
+
+Apple has [recently introduced over 50 new analytics reports](https://developer.apple.com/news/?id=en9v7jtv) with hundreds of new data points and metrics to help developers **understand how their apps are performing**.
+
+This new data is only available through the **App Store Connect API** and the way to query it is **fairly complex**. For this reason, I have written a step-by-step guide to help you start generating and reading these reports for your apps!
