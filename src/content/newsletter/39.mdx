@@ -1,0 +1,54 @@
+---
+number: 39
+date: 2024-04-07
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+**🍏 WWDC is just around the corner!**
+
+This week Apple revealed the dates for [this year's WWDC](https://developer.apple.com/wwdc24?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$39%26utm_content%3Dapr_07_24) and opened requests for tickets. This year's event will take place from the **10th to the 14th of June** at Apple Park in Cupertino.
+
+As the time approaches, we all begin to wonder what **Apple will announce** this year and begin to **draft our wishlist** for this year's events.
+
+To commemorate the announcement, I decided to put together a list of features I would love Apple to bring into Xcode Cloud this year:
+
+- **Standalone support for Swift Packages:** This is now only possible through a workaround that requires creating an Xcode project with an app target that has an associated App Store Connect app. 
+- **Fastlane deliver-like support for screenshots and metadata:** Similar to the way we can automate uploading release notes with Xcode Cloud by writing to a file in the repository, I would love to see support for also uploading screenshots, promotion text and other similar metadata. 
+- **Custom action steps:** The actions you can perform during a workflow are limited and there are some times when you want to perform a custom one. For example, you might want to have a workflow that creates a branch and triggers a separate workflow without building the project or running any tests, which isn't currently possible in Xcode Cloud.
+
+I would love to see your wishlists for this year's event, so please reply to this email or message me on social media with what you'd like Apple to announce!
+
+## [🤩 AppCircle: The ultimate replacement for AppCenter (Sponsored)](https://appcircle.io/blog/navigating-the-retirement-of-app-center-embracing-appcircle-as-the-ultimate-alternative?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$39%26utm_content%3Dapr_07_24)
+
+Microsoft recently announced that the popular mobile app distribution service **AppCenter is scheduled for retirement on the 31st of March of 2025**.
+
+If you currently use AppCenter as your build distribution platform and need an alternative, look no further. AppCircle is an **enterprise-grade fully automated mobile DevOps platform** that focuses primarily, but not exclusively, on **app distribution**. On top of providing an excellent app distribution service, they also offer amazing features such as **built-in unit and UI test automation on real devices**, seamless **integration with common testing frameworks** and ready-to-use **CI/CD widgets**.
+
+## [🚀 Automatic Swift Package releases with GitHub Actions](https://www.polpiella.dev/multi-platform-swift-package-releases-with-github-actions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$39%26utm_content%3Dapr_07_24)
+
+I have recently been working on a new Swift Package library that supports iOS, macOS and Linux. As I wanted the development lifecycle to be **fast and iterative**, I decided to make the library’s **release process as automated and as error-proof as possible with a CI/CD workflow**.
+
+If you'd like to learn how to automatically **build and test your library on all your supported platforms**, check your source code to **detect non-inclusive language** and only **create a new release** if all checks succeed, make sure you read this article on my blog. 
+
+## [💻 How to package and distribute Mac apps](https://developer.apple.com/documentation/xcode/packaging-mac-software-for-distribution?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$39%26utm_content%3Dapr_07_24)
+
+Apple has updated and released several **developer resources** this week. Amongst these updates, is a new comprehensive guide on how to **package and distribute macOS software** with numerous code examples.
+
+The article will guide you through the steps and options you have to **package, sign and distribute your app** outside the App Store.
+
+## [🔐 Secret scanning now detects secrets in GitHub wikis](https://github.blog/changelog/2024-04-03-secret-scanning-now-detects-secrets-in-github-wikis?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$39%26utm_content%3Dapr_07_24)
+
+**GitHub's secret scanning** is a feature that checks for secrets in your repository's files and warns you when one is detected. It's a feature I use extensively and that helps me tackle vulnerabilities.
+
+This week, GitHub announced that **secret scanning also works in wikis**.
+
+## [🆕 Roundup of all updates to GitHub-hosted runners](https://github.blog/changelog/2024-04-02-whats-new-for-github-actions-hosted-runners?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$39%26utm_content%3Dapr_07_24)
+
+GitHub has made numerous updates to its suite of cloud-based virtual machines available for GitHub Actions.
+
+The most important news for us Apple Developers is that **M1 macOS runners are no longer on public beta and are now generally available**.
