@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import "./issue.css";
 import IssuePaginator from "../components/issue/IssuePaginator.astro";
-import Providers from "../components/issue/ProviderSupport/Providers.astro";
 
 const posts = await getCollection("newsletter");
 const sortedPosts = posts.sort(
