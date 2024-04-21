@@ -1,0 +1,26 @@
+---
+const { name, url, logo, xcodeVersion, macOSVersion } = Astro.props;
+---
+
+<a
+    href={url}
+    class="flex flex-col gap-5 align-center text-center no-underline"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <img
+        class="sm:w-16 w-12 m-0 aspect-square object-contain"
+        src={logo}
+        alt={name}
+    />
+    <div class="flex flex-col gap-2">
+        <div class="flex items-center text-center gap-1">
+            <img class="m-0 w-6" src="/providers/xcode-logo.webp" />
+            <p class="no-underline m-0 font-normal text-sm">{xcodeVersion}</p>
+        </div>
+        <div class="flex items-center text-center gap-1">
+            <img class="m-0 w-6" src="/providers/macos-logo.webp" />
+            <p class="no-underline m-0 font-normal text-sm">{macOSVersion}</p>
+        </div>
+    </div>
+</a>

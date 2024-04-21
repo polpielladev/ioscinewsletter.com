@@ -1,0 +1,64 @@
+---
+import Provider from "./Provider.astro";
+
+const PROVIDERS = [
+    {
+        name: "Xcode Cloud",
+        url: "https://developer.apple.com/xcode-cloud/release-notes/",
+        logo: "/providers/xcode-cloud.webp",
+        xcodeVersion: "15.4 Beta (15F5021i)",
+        macOSVersion: "14.5 Beta",
+    },
+    {
+        name: "Codemagic",
+        url: "https://docs.codemagic.io/specs/versions-macos/",
+        logo: "/providers/codemagic.webp",
+        xcodeVersion: "15.4 Beta (15F5021i)",
+        macOSVersion: "14.3.1",
+    },
+    {
+        name: "Bitrise",
+        url: "https://stacks.bitrise.io/stack_reports/osx-xcode-15.4.x-edge/",
+        logo: "/providers/bitrise.webp",
+        xcodeVersion: "15.4 Beta (15F5021i)",
+        macOSVersion: "14.1.2",
+    },
+    {
+        name: "GitHub Actions",
+        url: "https://github.com/actions/runner-images/blob/main/images/macos/macos-14-arm64-Readme.md",
+        logo: "/providers/github.webp",
+        xcodeVersion: "15.3.0 (15E204a)",
+        macOSVersion: "14.4.1",
+    },
+    {
+        name: "AppCircle",
+        url: "https://docs.appcircle.io/infrastructure/ios-build-infrastructure#ios-build-agent-stacks",
+        logo: "/providers/appcircle.webp",
+        xcodeVersion: "15.3.0 (15E204a)",
+        macOSVersion: "14.1",
+    },
+    {
+        name: "CircleCI",
+        url: "https://circle-macos-docs.s3.amazonaws.com/image-manifest/v14490/manifest.txt",
+        logo: "/providers/circleci.webp",
+        xcodeVersion: "15.3.0 (15E204a)",
+        macOSVersion: "14.3.1",
+    },
+];
+---
+
+<div class="space-y-8">
+    <div class="space-y-2">
+        <h2 class="m-0">CI/CD providers latest available versions</h2>
+        <p class="m-0">
+            Latest available Xcode and macOS versions on popular mobile CI/CD
+            providers.
+        </p>
+    </div>
+
+    <section
+        class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-11 items-center"
+    >
+        {PROVIDERS.map((provider) => <Provider {...provider} />)}
+    </section>
+</div>
