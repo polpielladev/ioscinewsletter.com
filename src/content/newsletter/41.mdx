@@ -1,0 +1,55 @@
+---
+number: 41
+date: 2024-05-05
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+
+**😱 Did your app get rejected this week?**
+
+As you will know by now, earlier this week on the 1st of May, Apple started enforcing that all **apps that use certain system APIs had to provide a privacy manifest file declaring a reason for their usage**.
+
+Since the announcement of this [new requirement](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api) and up until this week, whenever you uploaded a new app to App Store Connect that used one of the [required usage APIs](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api) without describing the reason in its privacy manifest file, Apple would **send you a reminder email** to add the reason to the app’s privacy manifest.
+
+As of this week though, if you have tried to upload a new version of your app and failed to comply with this requirement, you will have faced an App Store rejection for the following reason: **ITMS-91053: Missing API declaration 🛑**.
+
+Worry not though, as it is straightforward to fix and this issue contains all the information you need to **make your app compliant again**! 🌟
+
+<Providers />
+
+## [🔍 Comparing Appcircle and Bitrise: Which DevOps Tool Builds Faster? (Sponsored)](https://appcircle.io/blog/comparing-appcircle-and-bitrise-which-devops-tool-builds-faster?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2041%26utm_content%3Dmay_05_24)
+
+In the fast-paced world of mobile app development, build time is a game changer. Lengthy build times **disrupt workflows** and **slow down progress**.
+
+[AppCircle](https://twitter.com/appcircleio) has put a lot of effort into improving its build caching performance by introducing **new caching implementation methods** that provide a more **reliable** and **efficient** compilation environment. In this article, they compare their new implementation's performance with Bitrise caching.
+
+## [🔨 Generate privacy manifests automatically with this website](https://www.privacymanifest.dev?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2041%26utm_content%3Dmay_05_24)
+
+As of earlier this week (specifically the 1st of May), Apple requires all apps that **use certain system APIs to provide a privacy manifest file declaring the reason for their usage**.
+
+Creating these files can be a somewhat arduous and tedious task that [Donny](https://twitter.com/DonnyWals) has made a lot easier with a new site called [privacymanifest.dev](https://www.privacymanifest.dev?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2041%26utm_content%3Dmay_05_24). On this new website, you can select which APIs you use and get a **ready-to-use privacy manifest file**. If you are interested in learning more about why you need these privacy manifests and how to create them manually, [Donny](https://twitter.com/DonnyWals) has also written [an article on the topic](https://www.donnywals.com/how-to-add-a-privacy-manifest-file-to-your-app-for-required-reason-api-usage?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2041%26utm_content%3Dmay_05_24). 
+
+## [✂️ Finding and deleting dead code using ReaperAI](https://www.emergetools.com/reaperai?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2041%26utm_content%3Dmay_05_24)
+
+The team at [Emerge Tools](https://twitter.com/emergetools) have announced a tool to help you find and delete dead code from your codebase called **ReaperAI**. It uses **dynamic runtime analysis** to detect unused code in production and can automatically **create Pull Requests with code removal for you**!
+
+I have not yet been able to try it out but I have very high hopes as most tools that I have tried in the past such as [Periphery](https://github.com/peripheryapp/periphery) always lacked a lot of context that **ReaperAI** might have and resulted in showing a lot of false positives and requiring a lot of manual work and validation.
+
+## [📹 Challenges of Using Xcode at Scale](https://www.youtube.com/watch?v=rh7gDpvXH2I)
+
+[Pedro Piñera](https://twitter.com/pepicrft), the creator and one of the core maintainers of [Tuist](https://twitter.com/tuistio), gave an amazing talk at the [Seoul iOS Meetup](https://www.meetup.com/seoul-ios-meetup/) about **the challenges of using Xcode at scale**.
+
+During the talk, [Pedro](https://twitter.com/pepicrft) goes through numerous examples of challenges you will encounter while using Xcode at scale such as **implicit dependency resolution** and **slow compilation of Swift macros** and shows you how to overcome them.
+
+## [👀 Is SPM the right tool to manage your modular project?](https://medium.com/bumble-tech/scaling-ios-at-bumble-239e0fa009f2?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2041%26utm_content%3Dmay_05_24)
+
+Earlier this year, [Jonathan Crooke](https://www.linkedin.com/in/jonathancrooke) at [Bumble](https://twitter.com/Bumble_Tech) did a series of articles on the work that they did to tackle the challenges of scaling their iOS apps, where they primarily focused on managing a big modular codebase and overcoming Xcode's pitfalls and bottlenecks.
+
+While the series has three awesome articles, this second one is particularly interesting to me as it explains why [Bumble](https://twitter.com/Bumble_Tech) did **NOT choose SPM to manage its modular codebase**.
