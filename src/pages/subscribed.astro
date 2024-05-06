@@ -1,0 +1,40 @@
+---
+import NewsletterSponsorSlot from "../components/issue/NewsletterSponsorSlot.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Highlight from "../components/sponsor/Highlight.astro";
+import StatsSection from "../components/sponsor/StatsSection.astro";
+import ListItem from "../components/sponsor/ListItem.astro";
+---
+
+<BaseLayout
+    title="Subscribed"
+    description="Thanks for subscribing to the iOS CI Newsletter."
+    heroTitle="Thanks for subscribing!"
+    heroDescription="Thanks you so much for joining my newsletter. I will send you an email every to weeks to make sure you've got all the tools you need for your app's CI/CD pipelines."
+    ctaType="subscribed"
+>
+    <section class="flex flex-col gap-9 justify-start max-w-2xl">
+        <StatsSection title="Other newsletters you might like">
+            <p class="dark:text-white mb-8">
+                If you enjoy the iOS CI Newsletter, you might also be interested
+                in subscribing to these wonderful community-sourced newsletters
+            </p>
+            <ul class="list-disc space-y-4 list-outside">
+                <ListItem>
+                    <a
+                        href="https://www.avanderlee.com/swiftlee-weekly-subscribe?utm_source=newsletter_partner&utm_medium=subscribed_confirm&utm_campaign=ios_ci_newsletter"
+                        class="underline"
+                        target="_blank"
+                        rel="noopener noreferrer">SwiftLee Weekly</a
+                    >
+                    <p class="text-sm mt-1">
+                        A weekly newsletter full of Swift curated content, sent
+                        out on every single Tuesday. Subscribe to make sure you
+                        stay up to date on the latest Swift, SwiftUI and app
+                        development evolution.
+                    </p>
+                </ListItem>
+            </ul>
+        </StatsSection>
+    </section>
+</BaseLayout>
