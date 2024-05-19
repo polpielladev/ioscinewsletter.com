@@ -1,0 +1,61 @@
+---
+number: 42
+date: 2024-05-19
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+
+**🤔 Swift 6 compiler vs Swift 6 language mode!**
+
+I have recently learned that some of the **breaking changes** that will come with **Swift 6** (like full data isolation and data race safety checks) [will be part of the Swift 6 language mode, which will be an opt-in feature in the Swift 6 compiler](https://twitter.com/hollyborla/status/1758298036667916370).
+
+This means that, when you update your version of Xcode or use a Swift toolchain that uses the Swift 6 compiler, **unless you explicitly enable the Swift 6 language mode**, your code will be compiled using the **Swift 5 language mode**.
+
+I personally did not know about this difference until recently and it certainly takes some time pressure off me and it means that I will be able to rejig some priorities accordingly.
+
+The Engineering manager of the Swift language team at Apple [Holly Borla](https://x.com/hollyborla) has recently been on [Dave Verwer](https://x.com/daveverwer) and Sven A. Schmidt's podcast [Swift Package Indexing](https://podcasts.apple.com/us/podcast/43-now-im-worried-our-metrics-arent-correct-with/id1654567329?i=1000653584114) providing a lot of context about the Swift 6 release and certainly answering a lot of questions and putting a lot of worries about Swift's next major release at ease that I'm sure a lot of iOS developers like me had about the new language mode!
+
+<Providers />
+
+## [🔍 Comparing Appcircle and Bitrise: Which DevOps Tool Builds Faster? (Sponsored)](https://appcircle.io/blog/comparing-appcircle-and-bitrise-which-devops-tool-builds-faster?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2042%26utm_content%3Dmay_19_24)
+
+In the fast-paced world of mobile app development, build time is a game changer. Lengthy build times **disrupt workflows** and **slow down progress**.
+
+[AppCircle](https://twitter.com/appcircleio) has put a lot of effort into improving its build caching performance by introducing **new caching implementation methods** that provide a more **reliable** and **efficient** compilation environment. In this article, they compare their new implementation's performance with Bitrise caching.
+
+## [📦 Build a Swift Package with the Swift 6 language mode](https://www.polpiella.dev/swift-6-language-mode?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2042%26utm_content%3Dmay_19_24)
+
+On the [15th of March, the Swift language team created the release branch for Swift 6](https://forums.swift.org/t/swift-6-0-release-process/70220). As part of the release process and to allow users to test their apps and packages on Swift 6, they are also [making snapshots from this branch regularly available for download](https://www.swift.org/download/#swift-60-development).
+
+As I said in this issue's introduction, building with the **Swift 6 compiler does not necessarily mean building with the Swift 6 Language Mode**. Learn about installing the toolchain and enabling the language mode in this article on my blog.
+
+[🛸 Win a FREE lifetime Indie subscription to Emerge Tools](https://x.com/emergetools/status/1791517366918221939)
+
+If you have been a subscriber of the newsletter for a while, you will know that I am a big fan of [Emerge Tools](https://x.com/emergetools) and the amazing stuff that they ship for mobile app developers.
+
+They have recently announced a **new subscription plan for Indie developers** that I will definitely be buying and, to celebrate the announcement, they are giving away **5 lifetime subscriptions** to this plan for **FREE**! Make sure you check out their post and **comment with the App Store link for your app** to enter the giveaway!
+
+## [🔨 Xcode 15.4 is out!](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-15_4-release-notes)
+
+A **new public stable version of Xcode** is out with a lot of bug fixes and improvements from the previous version. As always, when a new release is out, I take some time to update the CI/CD service support at the top of this newsletter. 
+
+🎉 The new version is **widely supported across the board already**!
+
+## [👀 How to monitor Xcode Build times with RocketSim](https://www.avanderlee.com/xcode/xcode-build-insights-keep-track-of-project-compilation-times?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2042%26utm_content%3Dmay_19_24)
+
+[RocketSim](http://x.com/rocketsim_app) is a must-have companion for your simulator that simplifies tasks such as **comparing designs with your implementation**, changing the simulator's **location**, sending **deep links** and even creating **recordings** with touches & audio.
+
+If these features weren't convincing enough, [Antoine](https://x.com/twannl) has now added support for caching builds and **monitoring your build and compilation times over time**, even comparing between different Xcode versions! 💪
+
+## [🐌 Why does fetching SPM packages take so long?](https://ahmdyasser.medium.com/why-fetching-packages-using-swift-package-manger-takes-too-much-time-138982a0fba5?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2042%26utm_content%3Dmay_19_24)
+
+I thoroughly enjoyed reading this article by [Ahmad Yasser](https://x.com/ahmadyas_ser) on why adding a Swift Package Manager dependency is slow. It turns out that Apple does a full clone of the package's repository instead of a shallow clone, **which is a more expensive request on GitHub's side** and can result in **rate limiting of requests**.
+
+To tackle this issue and make the load more bearable on clients, some companies with big repositories are applying a workaround that [Ahmad Yasser](https://x.com/ahmadyas_ser) goes through in this article 👏.
