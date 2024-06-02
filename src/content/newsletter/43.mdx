@@ -1,0 +1,50 @@
+---
+number: 43
+date: 2024-06-02
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Djun_02_24`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic."
+  image="/codemagic-star.png"
+/>
+
+<Providers />
+
+## [🚨 Has Xcode Cloud got slower?](https://developer.apple.com/forums/thread/756153)
+
+There have been recent reports in Apple's Developer Forums from Xcode Cloud users that their builds have slowed down dramatically, with a user observing an overnight increase of **nearly 30 minutes** 🤯.
+
+As per one of the replies in the thread, the issue seems to be **caused by the runner waiting between build phases**. Unfortunately, there are no known workarounds or solutions in the thread. If you are experiencing the same issue, make sure to get involved and watch the thread for updates.
+
+## [💨 Save CI resources by running tests before committing](https://antran.app/2024/ios_selective_testing?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2043%26utm_content%3Djun_02_24)
+
+[XcodeSelectiveTesting](https://github.com/mikeger/XcodeSelectiveTesting) is a tool for **modular Swift projects** that only runs the tests from modules and targets affected by a set of changes. Using this tool on your CI/CD pipelines can help you save time and resources.
+
+[An Tran](https://x.com/antranapp) took it one step further and, as the article explains in great detail, used [XcodeSelectiveTesting](http://github.com/mikeger/XcodeSelectiveTesting) from a pre-commit hook to make sure all tests pass before pushing and running on CI/CD, saving resources.
+
+## [✂️ Find and remove unused code with Periphery](https://samwize.com/2024/05/30/remove-unused-code-with-periphery?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2043%26utm_content%3Djun_02_24)
+
+In the last issue, [I wrote about Emerge Tools' new Reaper AI tool that leverages runtime information to find and remove unused code in your mobile apps](https://www.ioscinewsletter.com/issues/41). This week I want to share another tool that statically finds unused code pre-production called [Periphery](https://github.com/peripheryapp/periphery) and that Emerge Tools also happens to be involved with as a sponsor.
+
+If you'd like to learn about how to run [Periphery](https://github.com/peripheryapp/periphery) on your codebase, make sure you check out this article by [Junda Ong](https://x.com/samwize).
+
+## [📹 Block's macOS runner migration from in-house to AWS](https://www.youtube.com/watch?v=i-pQwwCZyxs)
+
+I recently came across this amazing talk from last year's edition of [MacDevOpsYVR](https://x.com/MacDevOpsYVR) by [Tim Sutton](https://x.com/tvsutton), a Senior Software Engineer at [Block](https://x.com/blocks) (prev. Square).
+
+Tim does an amazing job of sharing lessons learnt from maintaining **macOS CI environments at scale** and why they decided to go from a suite of in-house macOS machines to **AWS EC2 instances**. 
+
+## [🚀 Automatically generating code when new Open API specs are available](https://x.com/mortengregersen/status/1790311719060791540)
+
+I recently found this tweet from [Morten Bjerg Gregersen](https://x.com/mortengregersen) sharing a cool automation that he's built for the open-source Swift App Store Connect API client [Bagbutik](https://github.com/MortenGregersen/Bagbutik).
+
+The repository has a [scheduled GitHub actions workflow that checks if a new version of the App Store Connect API's Open API spec is available](https://github.com/MortenGregersen/Bagbutik/blob/10.3.0/.github/workflows/check-for-new-spec.yml) and, if so, generates the code for such spec and ships it as a new version!
