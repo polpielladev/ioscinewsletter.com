@@ -1,0 +1,54 @@
+---
+number: 44
+date: 2024-16-02
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="The whys and hows of setting up a release manager rotation"
+  url={`https://www.runway.team/blog/the-whys-and-hows-of-setting-up-a-release-manager-rotation?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Djun_16_24`}
+  description="Mobile releases don’t have to be shouldered by a single person or small group of SMEs using hidden know-how to make the whole thing run. With adequate preparation and support, any mobile engineer (or even a PM or QA) should be able to tackle a release with the right resources in hand. Learn how and why to set up a release rotation for your own team."
+  image="/runway-alt.png"
+/>
+
+<Providers />
+
+## [💪 Become an Xcode Cloud expert!](https://developer.apple.com/forums/thread/756153)
+
+One week until my Xcode Cloud workshop takes place. I have been using Xcode Cloud in production and at scale since it came out and I have given talks and written articles on its lesser-known and more advanced features, so I decided to **condense everything I have learnt so far into a three-hour workshop**.
+
+Whether you're already using Apple's service and want to become an expert or you're looking at making the change from another CI/CD service, you must join me on the 26th of June 📆.
+
+## [🧐 How GitHub reduced testing time for iOS apps with new runner features](https://github.blog/2024-06-03-how-github-reduced-testing-time-for-ios-apps-with-new-runner-features?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2044%26utm_content%3Djun_16_24)
+
+Putting some time and effort into optimizing your app's CI/CD pipelines **will positively impact your team's velocity**. Fast unit tests will give you **quicker feedback** on PRs and faster archives and beta app uploads will help you **ship your features much quicker**!
+
+In this article, [Eli Perkins](https://twitter.com/_eliperkins) and [Stephen Glass](https://www.linkedin.com/in/sglass1/) go through how the GitHub iOS team reduced their app's testing time by **60%**, from 38 minutes to 15 minutes, and improved their productivity and efficiency by **modularizing the codebase** and switching their **CI/CD runners to Apple Silicon**.
+
+## [🚨 CircleCI is deprecating their Intel macOS runners](https://discuss.circleci.com/t/macos-intel-support-deprecation-in-january-2024/48718?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2044%26utm_content%3Djun_16_24)
+
+If you're a [CircleCI](https://twitter.com/CircleCI) user, you must know that they will be **deprecating** all of their macOS Intel images in favour of their counterpart Apple Silicon runners.
+
+As explained in the announcement, the Gen 2 images will be deprecated on the **28th of June** and the Gen 1 and dedicated host images will be deprecated on the **2nd of October**.
+
+## [☁️ Extend your Xcode Cloud workflows](https://developer.apple.com/wwdc24/10200)
+
+I thoroughly enjoyed this year's only WWDC session on Xcode Cloud. Apart from surfacing some features I was not aware of such as a **new manual workflow start condition**, they cover more advanced topics such as using the App Store Connect API and webhooks to trigger workflows programmatically. A **must-watch** if you use Xcode Cloud!
+
+## [🔗 What's new in App Store Connect](https://developer.apple.com/wwdc24/10063)
+
+Hidde and I have been building a macOS client for the App Store Connect that makes shipping new versions of your app as easy and fun as possible. The app relies heavily on the App Store Connect API, so the session I was most excited about this year was '**What's new in App Store Connect**'.
+
+There are some great new additions that will help you test your apps in TestFlight and **attract more users** and a brand new way to let Apple know of new features in your app that will help you **get featured**!  
+
+## [💨 Automating manual tasks when creating a version on App Store Connect](https://www.runway.team/blog/apply-promotional-text-and-whats-new-notes-to-new-versions-in-swift-using-the-app-store-connect-api?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2044%26utm_content%3Djun_16_24)
+
+I am slowly but surely becoming an **App Store Connect API expert** and I love finding new ways of **automating tasks** that I do over and over again when I create new versions of my app.
+
+One of these repetitive tasks is **copying information across different versions of my apps**, such as promotional text or generic release notes_._ I decided to automate this process recently and write all about how I did it on [Runway](https://twitter.com/RunwayTeam)'s blog! 
