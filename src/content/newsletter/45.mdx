@@ -1,0 +1,56 @@
+---
+number: 45
+date: 2024-07-01
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="You didn't become an engineer to herd cats"
+  url={`https://get.runway.team/collab-herding-cats-made-easier?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Djul_01_24`}
+  description="You became a mobile engineer to build cool apps that make people’s lives easier or more fun or to make a lot of money (insert your own reason here). Not to spend half your week herding cats. Get out of the cat herding business. Use Runway."
+  image="/runway-paws.gif"
+/>
+
+Issue #45 of the iOS CI Newsletter covers the following topics:
+
+*   Does your CI/CD provider support the **new Xcode 16 Beta**?
+*   Reducing your **app's build size** with a simple trick.
+*   How Xcode's new setting can help you **speed up** your builds.
+*   New Xcode version defaults for **GitHub-hosted** runners.
+
+Happy reading!
+
+<Providers />
+
+## [✂️ Reduce your app's binary size with a simple trick](https://docs.emergetools.com/docs/optimize-icons)
+
+I came across this piece of advice from [Emerge Tools](https://x.com/emergetools)' documentation that I had never considered before. As alternative app icons are only ever used at a **180x180 resolution**, you can create them at that resolution and then **upscale them to 1024x1024 pixels** for submission and reduce your binary's size 🤯.
+
+With Apple's announcement of [tinted icon variants](https://developer.apple.com/documentation/xcode/configuring-your-app-icon#Add-dark-and-tinted-icon-variants-to-iOS-and-iPadOS), this optimization becomes even more important!
+
+## [🚀 Speed up your builds by using Xcode's explicitly built modules setting](https://bitrise.io/blog/post/demystifying-explicitly-built-modules-for-xcode)
+
+Xcode 16 comes with a new setting called **'explicitly built modules'** that can help you make your app's builds faster and compiler errors more informative.
+
+If you'd like to learn more about how to enable this new setting and the effect it can have on your builds, check out this article by [Oliver Falvai](https://www.linkedin.com/in/oliv%C3%A9r-f-62aab7141/) on [Bitrise](https://x.com/bitrise)'s blog.
+
+## [⚠️ GitHub-hosted macOS runners are changing their selected Xcode version](https://github.com/actions/runner-images/blob/main/images/macos/macos-14-arm64-Readme.md)
+
+[GitHub](https://x.com/GitHubEng) have recently announced some upcoming changes to the Xcode versions selected by default on their macOS runners, starting on the **22nd of July**:
+
+*   macOS 13 runners will have **Xcode 15.2** selected by default.
+*   macOS 14 runners will have **Xcode 15.4** selected by default.
+
+If you use GitHub-hosted runners as your CI/CD machines, I would recommend **you explicitly set the version of Xcode to one of the above** depending on which runners you use to avoid surprises later on.
+
+## [📖 A guide to the App Store Connect API](https://www.runway.team/blog/a-hitchhikers-guide-to-the-app-store-connect-api)
+
+I have been using the App Store Connect API extensively to build automations and new features for my app [Helm](https://helm-app.com/), so I decided to share all my tips and learnings when working with the API in an article that I shared on [Runway](https://x.com/RunwayTeam)'s blog.
+
+If you want to start using the API to streamline your workflow, **this guide is for you**!
