@@ -1,0 +1,64 @@
+---
+number: 46
+date: 2024-07-14
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Djul_14_24`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic."
+  image="/codemagic-star.png"
+/>
+
+**🚀 Starting a new adventure 🚀**
+
+This Friday was the last day in my role at Glovo. It has been a short but intense ride and I have had the chance to work on some very cool projects with talented and fun people on an app that I use a lot.
+
+I leave the job feeling proud of the work I have done and with a bunch of friends that I really hope I can work again with in the future. 
+
+Now it is time for the next challenge, which is something that I have been wanting to do for a very long time: **going indie** and **freelance part-time**. I will be working half of my week on my indie apps and the other half for [Runway](https://x.com/RunwayTeam), a company that has supported this newsletter since the very beginning and that I couldn't be happier to be collaborating with!
+
+While I know it's the right step to take and I now feel like it is the right time, I will admit that the decision to leave my full-time job was not easy. Leaving the financial security of a permanent job was hard, but with all the projects I had going on and for my mental health, **I felt like I needed to gain some time**. I felt pretty stretched, I was running on fumes and I was always wishing that I had more time to devote to my own projects.
+
+I am super excited about the time I will now have to work on more features for my apps, create more content and, of course, **grow this newsletter further**!
+
+Enough about me though, let's talk CI/CD, shall we? 
+
+_P.S.: Did you notice that we have more providers on the list?_
+
+<Providers />
+
+## [🧪 Detecting flaky tests using Tuist](https://tuist.io/blog/2024/07/10/detecting-flaky-tests?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2046%26utm_content%3Djul_14_24)
+
+As a developer, one of the most frustrating experiences is opening a Pull Request only to find that the tests are failing, even though they passed when you ran them locally. It is even more frustrating when the failing tests are **entirely unrelated to your changes** and **were not failing when they were introduced**.
+
+These unreliable tests that yield inconsistent results across test runs are called **flaky tests**. While these test failures can be mitigated through retries, it is still important to monitor them and this is why I was super happy to see this blog post by [Pedro Piñera](https://x.com/pepicrft) announcing a new [Tuist](https://x.com/tuistio) feature that detects flaky tests 🚀. 
+
+## [😱 Vulnerabilities found in CocoaPods](https://www.evasec.io/blog/eva-discovered-supply-chain-vulnerabities-in-cocoapods?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20$46%26utm_content%3Djul_14_24)
+
+E.V.A Information Security researchers recently found several vulnerabilities in the CocoaPods dependency manager that allow any malicious actor to **claim ownership over thousands of unclaimed pods** and **insert malicious code into many of the most popular iOS and MacOS applications**.
+
+The [CocoaPods](https://x.com/CocoaPods) team have been super quick to patch all vulnerabilities and, if you're not a pod author you don't need to take any action to adopt these changes. If you are an author though, there are some manual actions you need to take, so I would thoroughly recommend reading [Orta's blog post explaining the patches](http://blog.cocoapods.org/CocoaPods-Trunk-RCEs-2023).
+
+## [📈 Swift 6 language mode community adoption rate](https://swiftpackageindex.com/ready-for-swift-6?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2046%26utm_content%3Djul_14_24)
+
+The [Swift Package Index](https://x.com/SwiftPackages) team have been hard at work with an awesome new feature that tracks the progress of Swift 6 language mode adoption in the Swift package ecosystem by running **regular package compatibility checks across all packages in the index**.
+
+To better cope with this feature's intensive work, which has run **over 250,000 builds**, the Swift Package Index team have recently migrated from [**manually configured macOS runners to ephemeral runners too and shared their experience and findings**](https://swiftpackageindex.com/blog/switching-to-ephemeral-macos-build-runners)!
+
+## [💰 Free CI/CD for your side projects](https://jacobbartlett.substack.com/p/0-to-deploy-free-ci-with-fastlane?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2046%26utm_content%3Djul_14_24)
+
+If you have been following the newsletter for a while, you will know that I truly believe that setting up **CI/CD pipelines for your side projects** can have a positive impact on the **project's growth** and **development speed**.
+
+Despite this, setting up and maintaining a CI/CD service for your project can be overwhelming and sometimes costly, but it doesn't have to be. In this article, [Jacob Bartlett](https://x.com/jacobs_handle) goes through how you can set up a fully featured CI/CD workflow **at no cost**! 
+
+## [😥 Release tooling and knowledge is way too distributed](https://www.runway.team/blog/your-mobile-teams-knowledge-and-release-tooling-is-way-too-distributed?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2046%26utm_content%3Djul_14_24)
+
+So excited to share that my latest article on [Runway](https://x.com/RunwayTeam)'s blog is now live! In this article, I go through the struggles and pain caused by the **distribution of knowledge and tooling** during a release process and give you some tips on how to overcome these.
