@@ -1,0 +1,69 @@
+---
+number: 47
+date: 2024-07-28
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Relax, you can roll back your mobile release"
+  url={`https://get.runway.team/fix-rollbacks-for-mobile?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Djul_28_24`}
+  description="No one is immune from shipping critical bugs to production, but Runway helps you limit the amount of havoc that can cause."
+  image="/runway-rollbacks.gif"
+/>
+
+**🤖 The era of automation 🤖**
+
+With the rise of **AI** over the past few years and the introduction of **incredibly powerful LLMs** specifically trained to analyze and write code, many Software Developers started to **fear for their job safety** and believed that AI would eventually take their jobs.
+
+While I can't really speak to what will happen in the very distant future, I don't see **AI replacing any developers** in the near (or even pretty far) future. Instead, I believe that AI will make us even better at our jobs by making us **more effective**, reducing the amount of **boilerplate** and **tedious manual repetitive tasks** that we have to write and perform and will help us **identify and fix problems a lot quicker** than we would have in the past.  
+
+An example of a situation where AI can prove incredibly powerful is when doing **big refactors**. At my old job, we used [Quick and Nimble](https://github.com/Quick/Nimble) extensively in our test suites. We all agreed that we wanted to move away from these frameworks in favour of vanilla XCTest, but due to the sheer amount of tests using the framework, we knew it **wasn't going to be an easy task**.
+
+For this reason, we decided to use a tool like **GitHub Copilot Chat** and prompt it to help migrate full suites within a matter of seconds. While this approach still required manual input, it significantly reduced the migration's effort. For you to see the size of the impact, I was able to migrate a **3000+ line test case** that would normally have taken me hours or even days in a **matter of minutes**! 🤯  
+I would thoroughly encourage you if you haven't yet done so to **embrace AI** rather than fear it and **use it to automate processes** and **improve your developer experience**!  
+
+_P.S.: One of the articles that I share in this article is another example of how AI can be used to improve developer experience and productivity, so make sure you continue reading to find out more about it!_
+
+<Providers />
+
+## [🪄 Automatically fix your failing CI/CD builds](https://flyci.net/docs#what-is-flyci-wingman?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2047%26utm_content%3Djul_28_24)
+
+[**FlyCI**](https://x.com/flyciapp), a company that provides **cheaper and faster runners for GitHub Actions** with the same software installed as the official images, has just launched a new product: **FlyCI Wingman**.
+
+This new product comes in the form of an action that **analyzes failures** in a workflow run and **automatically suggests code changes** to fix them so that you don't have to spend time trying to figure out what the issue is. I think this is a great idea and I'm looking forward to **trying it out**. 
+
+## [🤯 Automatically migrate suites from XCTest to Swift Testing](https://github.com/giginet/swift-testing-revolutionary?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2047%26utm_content%3Djul_28_24)
+
+[swift-testing](https://github.com/apple/swift-testing) is a new Open-Source library by Apple that leverages the power of Swift macros to provide a modern and Swifty way to write tests on Apple platform apps. It ships bundled in **the Swift 6 toolchain** and **Xcode 16**.
+
+The **swift-testing-revolutionary** Open-Source project from [giginet](https://x.com/giginet), a software engineer at [Line](https://line.me/en/) and core contributor of [Fastlane](https://x.com/FastlaneTools), **automates** the process of **migrating your XCTest suites over to Swift Testing** so that you can convert your whole codebase in a matter of **seconds** instead of months.
+
+## [🏃 Why you need CI/CD as an Indie Dev](https://www.rudrank.com/exploring-indie-life-reducing-friction-by-ci-cd?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2047%26utm_content%3Djul_28_24)
+
+As an indie dev, you usually have to wear **many hats when working on an app**: from marketing and App Store Optimisation to designing and building new features for the application itself. That's why it's super important that you **rely on automation** as much as possible to avoid spending time **in manual** and **time-consuming processes** such as releasing your application.
+
+[Rudrank](https://x.com/rudrankriyam) has recently gone indie and, in this post, he talks about **the steps he follows every time he creates a new project** and the role CI/CD and automation play in the project's velocity and success.
+
+## [🔐 How to get the checksum of a file using Swift](https://www.polpiella.dev/get-checksum?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2047%26utm_content%3Djul_28_24)
+
+A checksum is the result of applying an algorithm to a file’s contents that is used to **verify the file's integrity**. It is a common practice to use checksums to ensure that files have not been tampered with or corrupted during transfers such as downloads or uploads.
+
+There are plenty of **command-line tools** that take care of this task for you but, when I was looking for a way to get the checksum of a file in Swift, I found a mixed bag of solutions that were either not cross-platform or dated. In this article, I show you the necessary code to compute a **file's checksum** so that you can use it in your **Swift apps and tools**.
+
+## [🧰 How to compile your Swift executables for different platforms](https://swifttoolkit.dev/posts/building-swift-executables?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2047%26utm_content%3Djul_28_24)
+
+Swift has features like **a low memory footprint** and **type safety** that make it a great language choice for building command-line tools. When building such tools, it is very important to be familiar with **the process of compiling the code into executables** that can run on all different supported platforms. 
+
+In this article, [Natan](https://x.com/natanrolnik) guides you excellently through the process of compiling your **Swift executable code** into **binaries for multiple platforms**.
+
+## [🧪 How to build and run tests for an iOS app using GitHub Actions](https://brightinventions.pl/blog/ios-build-run-tests-github-actions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2047%26utm_content%3Djul_28_24)
+
+Being knowledgeable in CI/CD and knowing how to automatically build and test your application is **a key skill to have as an iOS developer**. However, when you're in the early stages of your career, the world of CI/CD can be **daunting** and **overwhelming**, or at least it was to me in the beginning 😅.
+
+That's why I love seeing introductory content like this series of posts by [Artur Suliński](https://www.linkedin.com/in/artur-suli%C5%84ski-b0301b15a/) on the [Bright Inventions](https://x.com/BrightDevs) blog. If you want a great introduction to the world of iOS CI/CD, definitely check these articles out!
