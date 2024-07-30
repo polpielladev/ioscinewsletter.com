@@ -1,0 +1,40 @@
+---
+const READERS = [
+    {
+        image: "/readers/meta.svg",
+    },
+    {
+        image: "/readers/github.webp",
+    },
+    {
+        image: "/readers/apple.webp",
+    },
+    {
+        image: "/readers/amazon.webp",
+    },
+    {
+        image: "/readers/jet.webp",
+    },
+    {
+        image: "/readers/bbc.svg",
+    },
+    {
+        image: "/readers/instabug.svg",
+    },
+];
+---
+
+<div class="flex flex-col gap-x-6 gap-y-4 px-4 md:px-6 items-center">
+    <p class="body px-8 dark:text-gray-200 text-gray-800">
+        Read and trusted by engineers from:
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-y-6 gap-x-12">
+        {
+            READERS.map((reader) => (
+                <a>
+                    <img class="dark:invert h-5" src={reader.image} />
+                </a>
+            ))
+        }
+    </div>
+</div>
