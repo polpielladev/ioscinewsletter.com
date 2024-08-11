@@ -1,0 +1,81 @@
+---
+number: 48
+date: 2024-08-11
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start/?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic"
+  image="/codemagic-star.png"
+/>
+
+**🚀 How to ship your indie app 🚀**
+
+Revenuecat's Ship-A-Ton competition has now officially kicked off and, with over **25,000$ worth of prices**, you might want to ship that indie app you have been building for a while.
+
+To celebrate the occasion and help everyone participating in the Ship-A-Ton, I decided to put a step-by-step guide on how I currently ship my own apps and how automation and using the right tools can **save you a bunch of time** and **increase your chances of success**.
+
+**#1 Uploading a build to App Store Connect**Once you have your app ready to be shipped to your users or ready to send to your beta testers to collect early feedback, you need to archive and upload a build to App Store Connect.  
+While you can do this process manually, automating it with a CI/CD service will save you much time and effort. As you need to have an Apple Developer Membership to release an app on the App Store, [I would suggest you use the 25 free hours of Xcode Cloud you get with the subscription to automate uploading and distributing your apps for external testing](https://www.polpiella.dev/how-to-deploy-beta-versions-of-your-app-to-testflight-and-appcenter-with-xcode-cloud?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella).
+
+⚠️ Before you trigger a build, and to avoid errors in App Store Connect, if your app does not use non-exempt encryption, set the **ITSAppUsesNonExemptEncryption** in your **Info.plist** file to **NO**.
+
+**#2 Create a version and write its content**Again, there are multiple ways you can do this step, but I would suggest you use our app [Helm](https://helm-app.com/) as we have added features such as a **Launch Checklist** to show which fields are required to be able to submit your app for review, **automatic translations** and **AI to help you write and translate all the content you need**.
+
+At this point, you will also need to provide screenshots for every platform and locale that you support. You can take the screenshots from a simulator manually or automate the process using [a tool like fastlane](https://docs.fastlane.tools/getting-started/ios/screenshots/). Once you have taken all the screenshots you need, you can use an app like [Picasso](https://www.picassoapp.ca?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella) to easily make the screenshots look more **store-like** and **to add localized text to them**.
+
+You can upload the screenshots directly from [Picasso](http://www.picassoapp.ca?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella) itself, or export them and upload them manually to the App Store Connect or, if you want to be an early adopter of a new feature in [Helm](https://helm-app.com/), you can now [sign up for a beta that allows you to upload screenshots in bulk](https://hiddevdploeg91.gumroad.com/l/helm?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella).
+
+**#3 Add your app's information**You will also need to fill in some App Information fields before submitting your app for review: **description, privacy policy** and **support URL**. Again, [Helm](https://helm-app.com/) can help you optimise the contents of the first one and provide localisations for all your markets.
+
+You will need to host the latter two somewhere online and then paste their respective URLs into each of the fields. I would suggest you look at apps that are already live in the store to check what content they provide in those two URLs and do something similar.
+
+**#4 Fill in your ASO content**Last but not least, you will need a **Name**, **Subtitle** and a set of **Keywords** to make sure that your app is **easily discoverable** by users in the App Store.
+
+**App Store Optimization (ASO)** is a hard craft to master and can be overwhelming and hard to understand for most developers (including myself 😅). Thankfully, there are several resources out there you can use to make sure you get things right:
+
+*   **Generating Keywords:** A good place to start if you have no idea about what keywords to use is to use AI to generate the keywords. This is a built-in feature in **Helm**, but you can always use an LLM like [ChatGPT](https://chat.openai.com/) or [Claude](https://claude.ai/) to generate them, [as Rudrank shows in this article](https://www.rudrank.com/exploring-indie-life-learning-aso-app-store-optimization-for-keywords?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella).
+*   **Checking Keywords' rankings:** Once you have come up with a set of keywords that you want to use, make sure you validate that they perform well in the store and how high you would rank for searches with that specific keyword. Use a tool like [ASO Suite](https://www.asosuite.com?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella) or [Astro](https://tryastro.app?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella) to track keywords.
+*    **Writing a Name and a Subtitle:** While this part is mostly up to you, you should make sure that you don't repeat words across these fields and keywords to maximise your reach. [Helm](https://helm-app.com/)'s built-in editor will give you instant feedback on what you can change and improve
+
+Once you have done all these steps, you will be ready to submit your application for review and start shipping updates at incredible speed! 🚀
+
+<Providers />
+
+## [🪠 Automatically detect memory leaks on CI/CD](https://www.polpiella.dev/automatically-detect-memory-leaks-using-ui-tests?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella)
+
+Back in WWDC21 and with the launch of Xcode 13, Apple introduced a new `xcodebuild` option that generates a memory graph whenever a UI test measuring `XCTMemoryMetrics` fails.
+
+While this feature went seemingly unnoticed by many developers, when used correctly, it can be a powerful tool to **automatically detect memory leaks in your Apple apps** on CI/CD environments.
+
+## [🧰 Releasing Swift Binaries with GitHub Actions](https://swifttoolkit.dev/posts/releasing-with-gh-actions?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella)
+
+In this article, [Natan](https://x.com/natanrolnik) shows you how to use **GitHub Actions** to automatically build Swift binaries for **macOS and Linux**, and then publish them directly to a GitHub release.
+
+If you're building a Swift executable and you are interested in streamlining your build process and automating releases, this guide is a must-read.
+
+## [💻 Codemagic adds M2 Mac minis as their default runners](https://x.com/martinjeret/status/1818953851879227594)
+
+I recently came across a tweet from [Codemagic'](https://x.com/codemagicio)s own [Martin Jeret](https://x.com/martinjeret) sharing that the CI/CD service will run on **M2 Mac minis** from the **1st of September**!
+
+The migration will take place automatically and will not increase prices for any users of the service. The only thing you need to know is that, if your repository is behind a firewall, **you will need to update the list of IP addresses allowed to access the repository**.
+
+## [🖼️ Automatically create PRs to optimize images](https://www.emergetools.com/newsletter/july-2024?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella)
+
+Assets are one of the biggest offenders when it comes to increases in app size. [Emerge Tools](https://x.com/emergetools) quickly noticed this and built a service that looks out for such assets and allows you to download their **optimized versions**.
+
+In the latest issue of their newsletter, they announced that [Emerge Tools](https://x.com/emergetools) can now **automatically open Pull Requests** to **optimize and replace the images** for you!  
+
+## [📝 Support for EditorConfig in the latest Xcode 16 beta](https://x.com/MatejkoBak/status/1807311031372263508)
+
+Xcode 16 Beta 5 recently dropped and, amongst the number of features and bug fixes, it added support for .editorconfig files. You can now use these files to change settings such as **tab width** or **indent size** on a per-project basis. This means that you no longer need to go into the editor settings to change indentation levels when you work on different projects!
+
+I would have completely missed this new feature if it wasn't for [Mateusz Bąk](https://x.com/MatejkoBak), who spotted it in the changelog and tweeted about it 👏. 
