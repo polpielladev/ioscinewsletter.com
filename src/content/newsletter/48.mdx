@@ -23,22 +23,30 @@ Revenuecat's Ship-A-Ton competition has now officially kicked off and, with over
 
 To celebrate the occasion and help everyone participating in the Ship-A-Ton, I decided to put a step-by-step guide on how I currently ship my own apps and how automation and using the right tools can **save you a bunch of time** and **increase your chances of success**.
 
-**#1 Uploading a build to App Store Connect**Once you have your app ready to be shipped to your users or ready to send to your beta testers to collect early feedback, you need to archive and upload a build to App Store Connect.  
+### #1 Uploading a build to App Store Connect
+
+Once you have your app ready to be shipped to your users or ready to send to your beta testers to collect early feedback, you need to archive and upload a build to App Store Connect.  
 While you can do this process manually, automating it with a CI/CD service will save you much time and effort. As you need to have an Apple Developer Membership to release an app on the App Store, [I would suggest you use the 25 free hours of Xcode Cloud you get with the subscription to automate uploading and distributing your apps for external testing](https://www.polpiella.dev/how-to-deploy-beta-versions-of-your-app-to-testflight-and-appcenter-with-xcode-cloud?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella).
 
 ⚠️ Before you trigger a build, and to avoid errors in App Store Connect, if your app does not use non-exempt encryption, set the **ITSAppUsesNonExemptEncryption** in your **Info.plist** file to **NO**.
 
-**#2 Create a version and write its content**Again, there are multiple ways you can do this step, but I would suggest you use our app [Helm](https://helm-app.com/) as we have added features such as a **Launch Checklist** to show which fields are required to be able to submit your app for review, **automatic translations** and **AI to help you write and translate all the content you need**.
+### #2 Create a version and write its content
+
+Again, there are multiple ways you can do this step, but I would suggest you use our app [Helm](https://helm-app.com/) as we have added features such as a **Launch Checklist** to show which fields are required to be able to submit your app for review, **automatic translations** and **AI to help you write and translate all the content you need**.
 
 At this point, you will also need to provide screenshots for every platform and locale that you support. You can take the screenshots from a simulator manually or automate the process using [a tool like fastlane](https://docs.fastlane.tools/getting-started/ios/screenshots/). Once you have taken all the screenshots you need, you can use an app like [Picasso](https://www.picassoapp.ca?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella) to easily make the screenshots look more **store-like** and **to add localized text to them**.
 
 You can upload the screenshots directly from [Picasso](http://www.picassoapp.ca?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella) itself, or export them and upload them manually to the App Store Connect or, if you want to be an early adopter of a new feature in [Helm](https://helm-app.com/), you can now [sign up for a beta that allows you to upload screenshots in bulk](https://hiddevdploeg91.gumroad.com/l/helm?utm_source=pol_piella&utm_medium=newsletter&utm_campaign=pol_piella).
 
-**#3 Add your app's information**You will also need to fill in some App Information fields before submitting your app for review: **description, privacy policy** and **support URL**. Again, [Helm](https://helm-app.com/) can help you optimise the contents of the first one and provide localisations for all your markets.
+### #3 Add your app's information
+
+You will also need to fill in some App Information fields before submitting your app for review: **description, privacy policy** and **support URL**. Again, [Helm](https://helm-app.com/) can help you optimise the contents of the first one and provide localisations for all your markets.
 
 You will need to host the latter two somewhere online and then paste their respective URLs into each of the fields. I would suggest you look at apps that are already live in the store to check what content they provide in those two URLs and do something similar.
 
-**#4 Fill in your ASO content**Last but not least, you will need a **Name**, **Subtitle** and a set of **Keywords** to make sure that your app is **easily discoverable** by users in the App Store.
+### #4 Fill in your ASO content
+
+Last but not least, you will need a **Name**, **Subtitle** and a set of **Keywords** to make sure that your app is **easily discoverable** by users in the App Store.
 
 **App Store Optimization (ASO)** is a hard craft to master and can be overwhelming and hard to understand for most developers (including myself 😅). Thankfully, there are several resources out there you can use to make sure you get things right:
 
