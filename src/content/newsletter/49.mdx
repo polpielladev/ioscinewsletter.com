@@ -1,0 +1,70 @@
+---
+number: 49
+date: 2024-08-25
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Relax, you can roll back your mobile release"
+  url={`https://get.runway.team/fix-rollbacks-for-mobile?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Daug_25_24`}
+  description="No one is immune from shipping critical bugs to production, but Runway helps you limit the amount of havoc that can cause."
+  image="/runway-rollbacks.gif"
+/>
+
+**❓ Do you ship your app too often? ❓**
+
+I have recently been looking into what the ideal frequency for shipping updates of your app is and whether changing this frequency can affect your app's success.
+
+As is usually the case with this kind of question, the answer is that **_it depends_**. But obviously, I don't want to be as vague as that, so I am going to share the data and papers I have found and what the key takeaways from them are.
+
+A [2019 study by Canadian researchers revealed a disconnect between developer strategies and user preferences](https://www.researchgate.net/publication/336715856_Release_Practices_for_Mobile_Apps--What_do_Users_and_Developers_Think?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24). Developers often follow a time-based release schedule, such as bi-weekly updates, while **users generally prefer recently updated apps that are not updated too often**. The latter is especially true if they have experienced faulty updates in the past which introduced issues like **crashes**, **increased memory usage**, or **loss of functionality**. Such negative experiences can erode trust and even lead to app uninstalls.
+
+[Further research from Peking University in 2018 explored the correlation between update frequency and app ratings in the Google Play Store](https://arxiv.org/pdf/1707.06022?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24). The study found that **high-ranked apps benefited from frequent updates**, receiving positive feedback that could boost their ratings further. In contrast, **low-ranked apps tended to receive negative feedback from frequent updates**.
+
+The key takeaway from these studies is that the impact of frequent updates hinges on the quality of those updates. In a market where users are unforgiving of crashes and poor experiences, it’s crucial **to prioritize quality over quantity**. Unlike web environments where users cannot control version updates, mobile users **can opt out of automatic updates**, making it even more important to ensure **each release is well-tested and adds value to the user**.
+
+To answer the question to the best of my abilities, I would suggest that you **focus on building a great product** and **shipping fully-tested updates** that not only provide added value to your users but they don't disrupt their existing user experience and let those two factors determine the speed at which you can ship.
+
+<Providers />
+
+## [🧵 Automatically translate your string catalogues](https://github.com/hidden-spectrum/swift-translate?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24)
+
+If your app is available in several different markets, your content **must be localized** to ensure that you reach the maximum number of users and that your app provides a **seamless user experience** that aligns with **language preferences**, **regulations**, and **market expectations**.
+
+However, if you're building an app on your own, you **might not have the resources** to hire someone to translate to all the different languages you support. What you can do instead is use **Swift Translate**, a CLI tool and Swift Package Plugin built by [Andrew Theis](https://github.com/andrewtheis) that uses OpenAI's GPT-3.5-Turbo model to **translate your String Catalogues**.
+
+## [🚨 FlyCI Runners to be discontinued on September 30th](https://flyci.net/blog/flyci-discontinue-macos-runners?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24)
+
+[FlyCI](https://x.com/flyciapp) has recently announced that they are going to fully focus on their [CI Wingman feature](https://flyci.net/docs) and that, as a result, they will no longer be offering macOS runners for GitHub Actions **from September 30th this year**.
+
+In the article, they go into detail about why they made the decision and how you can **migrate away from their runners** very easily. I have also removed them from the providers section for this and upcoming issues.
+
+## [📦 Define ownership of Swift Package Manager dependencies](https://alejandromp.com/blog/swift-package-manager-dependency-owners?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24)
+
+Making sure that your dependencies are up-to-date is crucial to ensure that you stay on top of the **latest security patches**, **performance improvements**, and **feature enhancements**, helping to maintain the **stability** and **security** of your app.
+
+Despite its importance, it is a task that is often not automated and overlooked by teams. In this article, [Alejandro Martinez](https://x.com/alexito4) shares the approach their team has taken to **automate this process** and **assign owners to each Swift Package dependency**. 
+
+## [🚀 How to write and deploy Swift AWS Lambdas](https://www.polpiella.dev/developer-guide-to-swift-aws-lambdas?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24)
+
+Swift is a mature and powerful language that can be used **way beyond development for Apple platforms**. Due to its **low memory footprint**, **performance** and **safety features**, it has become a popular choice for server-side development.
+
+One particular use case where Swift shines is in the **development of Serverless applications using AWS Lambdas** and, since I have been building and deploying them for many use cases for a while now, I thought I would share my experience and some tips in **this comprehensive guide**.
+
+## [☁️ How to set up Xcode Cloud on your project](https://darrylbayliss.net/getting-setup-with-xcode-cloud?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24)
+
+Xcode Cloud is **Apple's CI/CD service** and one of its unique selling points is that you get **25 FREE hours** of cloud computation with your Apple Developer Membership. This point, along with its seamless integration with Xcode and App Store Connect, makes it the **perfect choice for shipping your indie apps** and side-projects.
+
+If you're interested in trying it for one of your apps but don't know where to start, [Darryl Bayliss](https://x.com/darryl_bayliss) has put together an excellent guide!
+
+## [🔐 GitHub secret scanning now scans non-code sources](https://github.blog/changelog/2024-08-16-secret-scanning-for-non-code-github-surfaces-is-now-generally-available?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2049%26utm_content%3Daug_25_24)
+
+GitHub secret scanning is a great resource that, up until now, looked through your code and alerted you when it found a secret such as an API key.
+
+GitHub has made it even better now, as it can now find secrets in non-code resources such as **issues**, **wikis**, **discussions**, and **pull requests**. Make sure you [turn this feature on and get alerts when you accidentally leak secrets in your repo](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/about-secret-scanning)!
