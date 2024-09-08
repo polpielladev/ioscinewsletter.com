@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StatsSection from "../components/sponsor/StatsSection.astro";
+import ListItem from "../components/sponsor/ListItem.astro";
+import Subscribe from "../components/Subscribe.astro";
+---
+
+<BaseLayout
+    title="Subscribed"
+    description="Unsubscribed"
+    heroTitle="Sorry to see you go!"
+    heroDescription="You have been unsubscribed from the iOS CI Newsletter and won't receive any emails from us in the future. We're very sorry to see you go but if you ever want to re-subscribe, we'll be super happy to welcome you back!"
+    ctaType="subscribed"
+>
+    <section class="flex flex-col gap-9 justify-start max-w-2xl">
+        <StatsSection title="You've successfully unsubscribed">
+            <p class="dark:text-white">
+                If this was a mistake or you have changed your mind, you can
+                resubscribe below:
+            </p>
+            <Subscribe />
+        </StatsSection>
+    </section>
+</BaseLayout>
