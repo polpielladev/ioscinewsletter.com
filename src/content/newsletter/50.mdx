@@ -1,0 +1,62 @@
+---
+number: 50
+date: 2024-09-08
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Dsept_08_24`}
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic"
+  image="/codemagic-star.png"
+/>
+
+**🚀 How I used automation to prepare a workshop 🚀**
+
+I have just come back from attending [iOS Dev UK](https://x.com/IOSDEVUK) in Wales and I want to take this opportunity to thank [Chris Price](https://x.com/chrisinaber), [Neil Taylor](https://x.com/digidol) and everyone else in the organising team who made yet another wonderful edition of the conference possible.
+
+Ever since I attended the conference for the first time **3 years ago**, making my way to Aberystwyth for the conference has become a yearly tradition that I really look forward to. Not only do I get to spend a few days in a great location in Wales, but I also get to see some of my former colleagues and great friends, meet a ton of new people and learn from the vast amount of talented speakers that make the conference amazing every year.
+
+This year I ran a workshop on the first day where I taught attendees about the ins and outs of **Xcode Cloud** and **built real-world workflows** that I use daily for some of my apps with them. While I was preparing for the occasion, and to ensure that everyone could follow along and have a step-by-step guide they could take away after the workshop and use on their projects, I decided to put together a **DocC tutorial**.
+
+What I did not realise at the time though was how much work this would be. On top of preparing all the **sample code**, I also had to prepare **numerous assets** with light and dark variants to accompany the content and, once I had all the content ready, I had to find a way to **build the DocC bundle**, **generate static assets** and **deploy** them to a hosting service like GitHub Pages.
+
+As I was pressed for time and was planning on making multiple changes before and after the workshop, I decided to spend some time **automating the whole process of building the DocC bundle** and **deploying it** to a hosting service. I followed [this great tutorial](https://www.kodeco.com/40047657-docc-tutorial-for-swift-automating-publishing-with-github-actions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2050%26utm_content%3Dsept_08_24) written by [Natan Rolnik](https://x.com/natanrolnik) on [Kodeco](https://x.com/kodecodev) and used a GitHub Actions workflow to build and deploy **the DocC bundle to a GitHub Pages site** every time I pushed any code to the main branch.
+
+While it might have seemed like a task I could have deprioritized given the limited time I had, spending time building the right tooling **saved me a lot of time** and allowed me to **iterate on the workshop's content** at great speed!
+
+_P.S.: [I have Open-Sourced the code for the demo project I used during the workshop](https://github.com/polpielladev/zip-finder), which includes the full DocC tutorial code and the workflow that automates its build and deployment._
+
+## [💨 How a single Xcode setting can speed up your builds](https://pfandrade.me/blog/swift-build-times-and-module-verification?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2050%26utm_content%3Dsept_08_24)
+
+In this insightful article, [Paulo Andrade](https://x.com/pfandrade_) goes through the process they followed to find the cause of **slow build time issues** using Xcode’s **build timing summaries** and how they discovered that **module verification** was responsible for the sluggish performance.
+
+By disabling module verification for debug builds, they achieved an incredible reduction in build time—**from 3.5 minutes to just 52 seconds!**
+
+## [🔨 Create multiple variants of your apps using XCConfig files](https://blog.egesucu.com.tr/xcconfig-how-to-create-app-variants-e98ede9dd5f7?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2050%26utm_content%3Dsept_08_24)
+
+There are times when you need to configure your app differently for separate environments such as **production** or **staging**. This configuration might involve calling **different endpoints**, using **different API keys** or even providing **different app icons** for each build type.
+
+This article by [Ege Sucu](https://x.com/_egesucu) shows you how you can use **XCConfig files** to achieve this and more!
+
+## [📦 How to test your Swift executables](https://swifttoolkit.dev/posts/testing-commands-mockable?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2050%26utm_content%3Dsept_08_24)
+
+[Natan](http://x.com/natanrolnik) has been hard at work providing awesome resources showing why and how Swift can be used to build command line tools on their site [swifttoolkit.dev](https://swifttoolkit.dev). At this point, everyone who reads this newsletter or follows the frequent updates on [swifttoolkit.dev](https://swifttoolkit.dev) will know that Swift is a great language for building executables. 
+
+But did you know that you can also **write unit tests** to make sure your executable works as expected? Read this article where [Natan](https://x.com/natanrolnik) will tell you all about it!
+
+## [✅ The benefits of automating code style checks](https://otavio.cc/swiftlint?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2050%26utm_content%3Dsept_08_24)
+
+While I was reading this great article by [Otávio](https://social.lol/@otaviocc), I came across a sentence that caught my attention and resonated with me: _"__Team opinion should be automated whenever possible, reducing the time wasted in code reviews and leaving the practice for what really matters: logic, performance, code design, and architecture"._
+
+I completely agree with [Otávio](https://social.lol/@otaviocc)'s reflection and I encourage you to read their article to read more about how to **automate code style checks and reviews using SwiftLint**.
+
+## [🚀 GitHub-hosted Linux and Windows ARM64 runners are now available](https://github.blog/changelog/2024-09-03-github-actions-arm64-linux-and-windows-runners-are-now-generally-available?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2050%26utm_content%3Dsept_08_24)
+
+GitHub have just announced that their hosted **Linux** and **Windows** runners have now gained support for **ARM64 architecture**, making workflows running on those platforms **faster and more efficient**!
