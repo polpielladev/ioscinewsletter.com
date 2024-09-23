@@ -1,0 +1,57 @@
+---
+number: 51
+date: 2024-09-23
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Releases so easy your work will never pile up"
+  url={`https://get.runway.team/build-or-ship?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Dsep_23_24`}
+  description="Runway handles the release coordination and busywork so you can focus on building great apps. You do the building, we'll do the shipping."
+  image="/build-or-ship.png"
+/>
+
+This week's issue of the iOS CI Newsletter covers the following topics:
+
+- Detecting memory leaks.
+- Installing iOS simulator runtimes on CI/CD 
+- Categorising tests using attributes.
+- Styling the output of Swift executables.
+
+Thanks so much again for subscribing, enjoy the issue!
+
+## [👨‍🔧 Detecting a memory leak in Xcode](https://www.emergetools.com/blog/posts/the-memory-leak-an-xcode-detective-story?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2051%26utm_content%3Dsep_23_24)
+
+At my previous job, I led an initiative to audit the app I worked on to **find all memory leaks** and **fix them**. While the diagnosis is simple in most cases, debugging the root cause of a memory leak can be a **very complex task** that can sometimes take multiple days.
+
+In this article in the [Emerge Tools](https://x.com/emergetools) blog, [Jacob Bartlett](https://x.com/jacobtechtavern) outlines the process he followed to fix a memory leak recently and shows a bunch of tips and tricks you can use in your own apps!
+
+## [🔨 Xcode 16 support and major stack updates on Bitrise runners](https://bitrise.io/blog/post/xcode-16-is-now-available-on-bitrise-with-major-stack-updates?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2051%26utm_content%3Dsep_23_24)
+
+[Bitrise](https://x.com/bitrise) has recently announced that a **new Xcode 16 stack** is available on their infrastructure. Along with this new stack come numerous improvements, defaults and updates to the technologies within the stack.
+
+Before you update your pipelines, you must know that **this stack contains breaking changes** and your pipelines will most likely not work out of the box when you migrate.
+
+## [🎨 Styling terminal output in Swift executables](https://swifttoolkit.dev/posts/terminal-colors?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2051%26utm_content%3Dsep_23_24)
+
+I was so happy to see this article from [Natan Rolnik](https://x.com/natanrolnik) on [swifttoolkit.dev](https://swifttoolkit.dev) about styling terminal output in Swift executables. It is a topic that really interests me and that [I have spoken about in the past](https://www.youtube.com/watch?v=LBYFHS8jFKk) and seeing more articles about this in the community makes me super happy!
+
+If you'd like to build **delightful Swift CLIs** and style the terminal output to provide the best customer experience possible, make sure you check out [Natan](https://x.com/natanrolnik)'s article! 
+
+## [🧪 Using Traits to annotate and customize test behaviour](https://www.avanderlee.com/swift-testing/using-traits-to-annotate-and-customize-test-behavior?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2051%26utm_content%3Dsep_23_24)
+
+Traits are a feature in Swift Testing that allows you to **categorise and customise** your unit tests. If you'd like to learn all about this feature, make sure you check out [Antoine van der Lee](https://x.com/twannl)'s wonderful article on the topic! 
+
+If you use Xcode Cloud as your CI/CD service, traits such as tags have a repercussion on how your **test reports display** on the dashboard. Make sure you use tags to your advantage to better organise your tests and save time going forward when you inspect failing CI/CD runs!
+
+## [📱 Install older simulator runtimes on CI/CD](https://testableapple.com/install-ios-simulator-runtimes?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2051%26utm_content%3Dsep_23_24)
+
+Using a CI/CD service's infrastructure is a good solution to not have to maintain your own runner infrastructure but it comes with its limitations. For example, you don't have **full control over the software installed in the runners** and are limited to what the service installs on the machines.
+
+There are usually ways to work around these limitations by **installing the software you need as part of the workflow's execution**. In this article, [Alexey Alter-Pesotskiy](https://x.com/testableapple) shows you how you can install simulator runtimes as part of a workflow's execution in several different ways.
