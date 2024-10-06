@@ -1,0 +1,66 @@
+---
+number: 52
+date: 2024-10-06
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic makes Apple M2 machines available, even on the free tier!"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Doct_06_24`}
+  description="Codemagic is the first CI/CD to make Apple M2 machines available to everyone (including the free tier!). This is a free upgrade from M1 machines with no price change."
+  image="/codemagic-star.png"
+/>
+
+🚀 **How to ship an app** 🚀
+
+Last week I decided that I wanted to run a **FREE** **2-hour webinar** to give a high-level introduction to **what CI/CD is** and what role it can play in an **Apple development ecosystem**.
+
+I put together a small form to gauge interest and shared it on my social media and wow... the response was incredible! Within 24 hours, **more than 300 people had signed up**!
+
+For the past few days, I have been working on a fastlane-driven release pipeline using GitHub actions, that I will re-build live during the workshop for all attendees. The pipeline **archives the app**, **automatically sets the version of the Xcode project**, **bumps the build number** and **uploads the build to App Store Connect**.
+
+If you haven't done so yet and are interested in learning more about CI/CD, make sure you [sign up for the webinar here](https://forms.gle/z45JKnC5YaSKrzPJA)! 
+
+<Providers />
+
+## [🚀 A new version of the App Store Connect API is live!](https://github.com/AvdLee/appstoreconnect-swift-sdk/releases/tag/3.5.0)
+
+**Version 3.6 of the App Store Connect AP**I has recently been released and, among other changes, it includes **numerous improvements around In-App Purchases and subscriptions**. If you use the API from a Swift application, make sure you check out [Antoine van der Lee](https://x.com/twannl)'s **appstoreconnect-swift-sdk library**, which has already been updated to support the latest App Store Connect API version.
+
+This update could not come at a better time as [Hidde](https://x.com/hiddevdploeg) and I are working on a feature that uses that specific part of the API for [Helm](https://x.com/helm_app)! 🚀
+
+## [Removing 58000 lines of code using XcodeGen](https://mokacoding.com/blog/how-xcodegen-reducet-the-tdd-in-swift-codebase-by-58-000-lines?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2052%26utm_content%3Doct_06_24)
+
+If you have been an Apple platforms developer for a while and worked as part of a team, you will most likely have **encountered numerous merge conflicts caused by Xcode project files**. And let me tell you, they can sometimes be incredibly hard to fix! 😱
+
+That's why I love reading stories like this one from [Gio](https://x.com/mokagio) on [mokacoding.com](https://mokacoding.com?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2052%26utm_content%3Doct_06_24) where they removed all **Xcode project files from source control** in favour of generating the Xcode projects with [XcodeGen](https://github.com/yonaskolb/XcodeGen) instead, removing **58,000 lines of code** in the process ✂️.  
+
+## [🕵️‍♂️ Find out when a bug was introduced using git](https://artandscienceofcoding.com/devrecipes/git/bisect?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2052%26utm_content%3Doct_06_24)
+
+The first point of call when you find a bug in your app is to try and work out **which code changes caused it** so that you can **either revert them** or **fix them**.
+
+Before you start going back and checking out commit by commit in your git history, make sure you read this article by [Derek Lee](https://x.com/thexpprogrammer) on [artandscienceofcoding.com](https://artandscienceofcoding.com?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2052%26utm_content%3Doct_06_24) and start leveraging the power of **git's bisect command**.
+
+## [🧪 Converting Fastlane lanes to shell scripts](https://danielsaidi.com/blog/2024/10/03/replacing-fastlane-with-shell-scripts?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2052%26utm_content%3Doct_06_24)
+
+[Fastlane](https://x.com/FastlaneTools) is an incredible **Open-Source tool** that has been helping Apple app developers automate processes such as **building**, **testing** and **distributing** their apps.
+
+While it is incredibly powerful, it is not always the right solution for all automations. As [Daniel Saidi](https://x.com/danielsaidi) shares in this article, sometimes **all you need is a shell script**!
+
+## [🪪 How adding badges to PRs can increase your team's productivity](https://medium.com/@SaezChristopher/add-badges-in-your-pull-requests-in-2024-and-increase-your-team-productivity-27669ad302b2?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2052%26utm_content%3Doct_06_24)
+
+Markdown badges are a great way to convey important information such as **CI/CD build** or **test status** in a **very visual and concise format** on README files and Pull Requests.
+
+While I have always thought **badges are a great idea** and make a **very interesting feature**, I have rarely used them on my personal projects. In this article, [Christopher Saez](https://x.com/SaezChristopher) shares a few examples of how adding badges to Pull Requests can **help increase your team's productivity**. 
+
+## [📦 How to edit Swift Packages from the command line](https://www.andrea-scuderi.com/blog/edit-swift-package-from-command-line?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2052%26utm_content%3Doct_06_24)
+
+Swift Package Manager has been around for quite some time and by now everyone is familiar with the Package.swift syntax and how to modify it to perform actions such as **creating targets** or **adding dependencies**.
+
+But did you know you can perform a lot of these actions **directly from the command line**? [Andrea Scuderi](https://x.com/AndreaScuderiSE) tells you all about it in his latest article!
