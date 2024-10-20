@@ -1,0 +1,70 @@
+---
+number: 53
+date: 2024-10-20
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Releases so easy your work will never pile up"
+  url={`https://get.runway.team/build-or-ship?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Doct_20_24`}
+  description="Runway handles the release coordination and busywork so you can focus on building great apps. You do the building, we'll do the shipping."
+  image="https://d2thv89fb05cma.cloudfront.net/polpiella.dev/images/sponsors/build-or-ship.png"
+/>
+
+**🎉 We're over 2,000 subscribers! 🎉**
+
+This is an incredibly special issue of the newsletter as earlier this week we hit another great milestone: **2,000 subscribers**! I want to take this opportunity to thank you so much for all the support you have shown and to reiterate my commitment to providing quality CI/CD content and resources.
+
+And with no further ado, let's dive right into this week's issue!
+
+<Providers />
+
+## [🚀 The best way to install Ruby + Fastlane on CI/CD](https://www.polpiella.dev/install-ruby-and-gems-on-ci-cd?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2053%26utm_content%3Doct_20_24)
+
+I recently ran a 2-hour introductory webinar into iOS CI/CD where I built a real-world release pipeline for an iOS app using **fastlane** and **GitHub Actions**.
+
+As part of building this pipeline, I showed how to install **Ruby** and **fastlane** in a way that ensures that **you and your team's machines** and your **CI/CD runners** use the same version of all dependencies.
+
+I have made it available in blog format this week so that anyone who couldn't join the workshop could still get access to **the code** and **set up instructions**.
+
+## [👀 How to significantly improve incremental build time with xcodebuild](https://github.com/wojciech-kulik/xcodebuild.nvim/issues/201#issuecomment-2423828065?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2053%26utm_content%3Doct_20_24)
+
+Just today, [Rudrank Riyam](https://x.com/rudrankriyam) shared a very interesting tweet with me that immediately sparked my interest. It turns out that incremental builds are **significantly slower in xcodebuild than in Xcode** and [Wojciech Kulik](https://x.com/kulik_wojciech) has found out exactly why.
+
+The reason will surprise you and, while we will need to wait for Apple to ship a proper solution, there are a few **workarounds** that [Wojciech](https://x.com/kulik_wojciech) has come up with and might help you out! 
+
+## [📦 Are Android apps smaller than iOS apps?](https://www.emergetools.com/blog/posts/are-android-apps-really-that-much-smaller-than-ios?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2053%26utm_content%3Doct_20_24)
+
+I am a huge fan of [Emerge Tools](https://x.com/emergetools)' app deep-dives on social media, where they inspect **an app's IPA and its contents** and look for changes in their sizes across versions and ways to **optimise the app's final size**.
+
+In almost all of their deep-dive threads, someone points out that the size of the app's Android counterpart **is much smaller than the iOS one**. But is this really the case? [Ryan Brooks](https://x.com/rbro112) and [Trevor Elkins](https://x.com/rovert_snikle) tell you all about it in this article!
+
+## [🕵️‍♂️ Meet with Apple engineers to improve your app's performance](https://developer.apple.com/events/view/2D8N2SA3LT/dashboard?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2053%26utm_content%3Doct_20_24)
+
+Apple shared in the October issue of their Hello Developer newsletter that they will be hosting some **in-person sessions** where app developers will be able to ask Apple engineers questions about performance and optimisation.
+
+These in-person sessions will be held in **Cupertino**, **Bengaluru** and **Shanghai**, so if you are based in one of those locations, don't miss your chance and book a slot now!
+
+## [⚠️ Requirements for shipping apps in the EU are now enforced](https://developer.apple.com/news/?id=yfacfeal&utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2053%26utm_content%3Doct_20_24)
+
+As of **October 17, 2024**, new requirements for submitting app updates to the App Store in the European Union have come into effect. Developers who are Account Holders or Admins in the Apple Developer Program and want to make their apps available in the EU must **now declare their trader status in App Store Connect before submitting updates**. This change aligns with the ongoing compliance efforts related to the **Digital Services Act (DSA)**.
+
+Starting **February 17, 2025**, apps without verified trader status **will be removed from the EU App Store**.
+
+## [🤐 Create Zip files using Swift and no 3rd-party dependencies](https://medium.com/parable-engineering/how-to-easily-create-zip-files-in-swift-without-third-party-dependencies-a1c36a451ea1?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2053%26utm_content%3Doct_20_24)
+
+Whether it's **uploading a binary file to a GitHub Release** or **a test result bundle after a test run failure**, most CI/CD workflows need to upload artefacts during their execution. To reduce their size as much as possible, these artefacts are usually **zipped** before they are uploaded.
+
+If you use Swift scripts in your CI/CD workflows, you might like to know that you can very easily zip files without using any third-party dependencies. Find out all about it in this article by [Oleg Dreyman](https://x.com/olegdreyman).
+
+## [🔌 Beware of this argument when using xcodebuild and plugins](https://elegantchaos.com/2024/10/11/xcodebuild-platforms-and-plugins.html?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2053%26utm_content%3Doct_20_24)
+
+Build tool plugins allow you to perform operations during your project's build process. They are essentially macOS executable targets that run on the host machine (the machine that builds the application) and never on the target machine (the device where the app runs).
+
+For this reason, **xcodebuild** usually needs to build plugins for an architecture different to the app's architecture. For example, for an iOS app, **xcodebuild** needs to build plugins for macOS and the app for iOS. If your **xcodebuild** command fails because it's building the plugins for the target architecture, you might want to read this article by [Elegant Chaos](https://mastodon.scot/@elegantchaos). 
