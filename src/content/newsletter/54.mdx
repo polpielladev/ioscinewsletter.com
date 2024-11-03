@@ -1,0 +1,70 @@
+---
+number: 54
+date: 2024-11-03
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic makes Apple M2 machines available, even on the free tier!"
+  url={`https://codemagic.io/start?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3Dnov_03_24`}
+  description="Codemagic is the first CI/CD to make Apple M2 machines available to everyone (including the free tier!). This is a free upgrade from M1 machines with no price change."
+  image="/codemagic-star.png"
+/>
+
+**🐙 GitHub Universe Week 🐙**
+
+GitHub Universe, the San Francisco-based company's yearly conference, occurred this week. The two-day conference was packed with announcements, mostly about **GitHub's AI features** and **GitHub Copilot**.
+
+You can read [the full event recap with a list of all announced features on GitHub's website](https://github.blog/news-insights/product-news/universe-2024-previews-releases/), but as I have been a Copilot user for a while and have been longing for **an official Xcode extension** ever since it came out, I can't miss this opportunity to share and celebrate that [GitHub has announced official support for GitHub Copilot in Xcode](https://github.com/github/CopilotForXcode). This support comes in the form of an Open Source extension that is publicly available now!
+
+I installed the extension right away and I was immediately impressed. The editing experience is **very similar to VSCode's counterpart extension**, which I have been using extensively.
+
+The code suggestions are a lot better than Apple's assistive code completion features built into Xcode, which I have found irrelevant and unhelpful in most cases.
+
+As it is an early version, it goes without saying that the experience is not perfect. I have noticed a few **(very)** minor issues with disregarding suggestions that I will report this week. Don't let these put you off though, the overall experience is great and I would thoroughly recommend you check out the extension now, it's worth it!
+
+Another announcement that I am particularly excited about is the new **GitHub Copilot code review feature**, which can provide you with fast, AI-powered feedback on a Pull Request's code. This is particularly exciting to me, as I work on a lot of solo projects, so I can finally have a reviewer on my Pull Requests 😅.
+
+<Providers />
+
+## [⏭️ Set build and version number automatically on CI/CD](https://www.polpiella.dev/bump-numbers-ci-cd?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2054%26utm_content%3Dnov_03_24)
+
+One of the most annoying issues when uploading a build to App Store Connect is realising that you have **not updated the version or build numbers** and you have to **re-archive and re-upload your build again**.
+
+This week, I wrote an article on my blog about how you can automate this process altogether using fastlane from your release CI/CD workflow.  
+
+## [🐢 Why is xcodebuild so slow?](https://dimillian.medium.com/why-is-xcodebuild-slower-than-the-xcode-gui-38f3d7b0c0bc?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2054%26utm_content%3Dnov_03_24)
+
+Given Cursor's AI features and its rise in popularity, some people have been moving away from Xcode as their main editor and have instead been building and running their apps from the command line using **xcodebuild**.
+
+As I shared in the last issue, there seems to be a bug that makes building an app with **xcodebuild much slower than using Xcode's GUI**. [Thomas Ricouard](https://x.com/Dimillian) has faced this issue recently and has written a wonderful article on **how to work around it**.
+
+## [📈 GitHub Actions metrics now available](https://github.blog/changelog/2024-10-31-actions-performance-metrics-in-public-preview?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2054%26utm_content%3Dnov_03_24)
+
+GitHub have just announced their new **Actions Performance Metrics** feature. **Actions Performance Metrics** is a new dashboard that gives you access to metrics about your GitHub Actions workflows such as **how long it takes for your workflows to complete** or **how long they are stuck waiting for a runner to pick them up**.
+
+You can access the new feature from **your organization's home page**.
+
+## [🚨 Important update to Bitrise's App Secrets API](https://bitrise.io/blog/post/important-updates-changes-to-app-secrets-api?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2054%26utm_content%3Dnov_03_24)
+
+If you are a [Bitrise](https://x.com/bitrise) user and use their App Secrets API, then you must read their latest post. [Bitrise](https://x.com/bitrise) have made a few updates to their API endpoints that, while they make managing secrets easier, they introduce **breaking changes**.
+
+Their article goes through all the updates and gives you a nice migration guide that you can follow to ensure a smooth transition.
+
+## [📦 Emerge Tools' own build distribution service](https://www.emergetools.com/#build-distribution?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2054%26utm_content%3Dnov_03_24)
+
+This month, the team at [Emerge Tools](https://x.com/emergetools) has announced the latest addition to their great suite of tools for iOS developers: their own **Build Distribution** service.
+
+Given Microsoft's announcement that AppCenter will be shutting down at the end of March 2025, it's great to have another alternative in the market!
+
+## [🚝 How to build the perfect release train](https://www.runway.team/blog/how-to-build-the-perfect-mobile-release-train?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2054%26utm_content%3Dnov_03_24)
+
+Release trains are a type of time-based release strategy that consists of **shipping new mobile app versions on a regular schedule**. Contrary to feature-based releases, where you ship a new version of your app when a set of features are ready, release trains **go out of the door at a fixed cadence**, regardless of the features that are ready to ship at that time.
+
+There are a few things you need to know to get this release strategy for your team right, and I tell you all about it in my latest article on the [Runway blog](https://x.com/RunwayTeam)!
