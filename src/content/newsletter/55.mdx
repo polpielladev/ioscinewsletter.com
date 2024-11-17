@@ -1,0 +1,82 @@
+---
+number: 55
+date: 2024-11-17
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Product for Engineers: Flex your product muscles"
+  url={`https://dub.link/ios-nov17?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3D2024-11-17`}
+  description="Product for Engineers is PostHog's newsletter dedicated to helping engineers improve their product skills.\nRead how to talk to users, build new features users love, and find product market fit. Subscribe for free to get curated advice on building great products, lessons (and mistakes) from building PostHog, and deep dives on top startups."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/posthog-product-for-engineers.webp"
+/>
+
+**🎉 2 Years of public speaking 🎉**
+
+This week I had the chance to give the closing talk at the [Do iOS Conference](https://x.com/iOSConf) in Amsterdam and I wanted to take this opportunity to thank the organisers for putting on yet another wonderful edition of the conference.
+
+[Do iOS](https://x.com/iOSConf) will always hold a very special place in my heart as it was at this same conference two years ago that I gave **my first ever public talk** and discovered **my passion for public speaking**.
+
+Since then, I have given more than 10 talks at conferences all over the world, I have grown a lot as a speaker and I have met a lot of wonderful people in the process. In fact, it was at that same edition of Do iOS two years ago that I met my good friend and business partner [Hidde](https://x.com/hiddevdploeg), who I build the [NowPlaying](https://x.com/NowPlayingGold) and [Helm](https://x.com/helm_app) apps with.
+
+Stepping out of my comfort zone and applying to speak at conferences has had an **incredible impact on my career**, has helped me build a network of **like-minded developers that I now collaborate with** and has allowed me to meet **people that I have always looked up to during my career**.
+
+If you're thinking of applying to a conference but you are not quite sure wheter to do so, let me take take this opportunity and **encourage you to do so**!
+
+Before I applied for my first conference, I **doubted myself a lot**, I always told myself *'I don't have enough experience'*, *'I am not as good as the other speakrs'* and *'No one will find my topics interesting'*. I **couldn't have been more wrong**, everyone in the community has **their own story to tell** or **their own spin on a topic to share**, regardless of their experience or background.
+
+So if you want to apply to speak at a conference, leave all those doubts behind and just apply. I would also love to volunteer myself to help anyone **who is seeking feedback on their topics or call for papers**.
+
+[P.S.: The slides for my talk at this year's Do iOS are now available!](https://speakerdeck.com/polpielladev/do-ios-24-ship-your-app-on-a-friday-dot-dot-dot-and-enjoy-your-weekend?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2055%26utm_content%3D2024-11-17)
+
+<Providers />
+
+## [🐙 Automating repository tasks with the GitHub CLI from GitHub Actions Workflows](https://www.polpiella.dev/how-to-use-the-github-cli-from-github-actions-workflows?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2055%26utm_content%3D2024-11-17)
+
+This week I built an automation for [Antoine van der Lee](https://x.com/twannl)'s [appstoreconnect-swift-sdk](https://github.com/AvdLee/appstoreconnect-swift-sdk) library to periodically check for new versions of the **App Store Connect OpenAPI spec** and update the SDK's code when a newer spec is available.
+
+The automation leverages the power of the **GitHub CLI** to make tasks such as **creating a Pull Request** with all the new code as simple as possible. If you'd like to learn how to automate GitHub tasks using **GitHub Actions** and the **GitHub CLI**, check out my latest article.  
+
+## [⏭️ Bumping a Swift Package's version using Fastlane](https://nowham.dev/posts/fastlane-version-bump?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2055%26utm_content%3D2024-11-17)
+
+This is a very special article for me to feature in the newsletter, not only because the topic is interesting and it is written very well, but because the author is my good friend [Noam Efergan](https://x.com/No_Wham).
+
+[Noam](https://x.com/No_Wham) announced a couple of days ago that he was starting a blog and, as soon as he shared the first articles, I knew I wanted to feature one of them in this issue. The blog's content will revolve mainly around **CI/CD and mobile automation**, so make sure you follow him on social media and never miss an article!
+
+In this article, [Noam](http://x.com/No_Wham) talks about how you can build a **small automation using fastlane** to easily bump the version of a Swift Package from the command-line.  
+
+## [✍️ Step-by-step guide to automating app code signing using fastlane match](https://www.polpiella.dev/automate-code-signing-with-fastlane-match?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2055%26utm_content%3D2024-11-17)
+
+Keeping your **provisioning profiles** and **signing certificates** in sync across your team is one of those processes that truly benefits from **automation**.
+
+In this article, I show you how you can use [fastlane match](https://docs.fastlane.tools/actions/match/) to build an automation that **generates** and **syncs** a **single signing identity** for your whole team.
+
+## [⎈ Nominate your app for App Store featuring!](https://x.com/helm_app/status/1856722621326405804?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2055%26utm_content%3D2024-11-17)
+
+On the 12th of November, Apple announced a new App Store Connect feature that allows developers to **share their app to be considered for featuring in the App Store** called nominations.
+
+When we heard about this annoucement, and despite the fact that the App Store Connect API has no endpoint for nominations yet, we quickly started working on a new Helm feature **that simplifies the process of nominating your apps**. We are very happy to announce that the new feature **is available from version 1.4 of Helm**, so make sure you download the app and start sharing your nominations with the App Store team in **the easiest way possible**.  
+
+## [🚨 GitHub Actions list of upcoming breaking changes](https://github.blog/changelog/2024-11-05-notice-of-breaking-changes-for-github-actions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2055%26utm_content%3D2024-11-17)
+
+Earlier this month, **GitHub** announced a number of **breaking changes** coming to **GitHub Actions**.
+
+Among these breaking changes, there are a few that are **particularly important** to any Apple app developers using GitHub's CI/CD service:
+
+*   Version 3 of the artifcats action will **stop working soon**.
+*   Changes to **workflow validation for pull requests** from forked repositories.
+*   New **webhook rate limits**.
+
+If any of these changes look particularly important to you, make sure you read the announcement to get thefull context.
+
+## [📦 Bitrise Release Management is now CI agnostic!](https://bitrise.io/blog/post/bitrise-release-management-introduces-ci-agnostic-distribution-tool-for-testing-and-releasing-to-stores?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2055%26utm_content%3D2024-11-17)
+
+[Bitrise](https://x.com/bitrise) built their own **Release Management platform** back in 2022 and, since its introduction, it was tightly coupled to [Bitrise](http://x.com/bitrise)'s CI/CD service as no other alternatives were available.
+
+That all changed earlier this month, when [Bitrise](http://x.com/bitrise) announced that their **Release Management** feature is now **CI agnostic** and can work with **any CI tool**.
