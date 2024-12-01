@@ -1,0 +1,70 @@
+---
+number: 56
+date: 2024-12-02
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic makes Apple M2 machines available, even on the free tier!"
+  url={`codemagic.io/start/?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3D2024-12-02`}
+  description="Codemagic is the first CI/CD to make Apple M2 machines available to everyone (including the free tier!). This is a free upgrade from M1 machines with no price change."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+**🚀 The perfect developer tools bundle 🚀**
+
+If you have been following my content for a while, you will know that I am passionate about helping mobile developers and teams **improve their developer experience**.
+
+In fact, that is one of the main reasons why I took an interest in the **tooling** and **automation** side of mobile development very early on in my career and a big part of why I started this newsletter.
+
+During my career, I have seen first hand the impact that investing in either developing or purchasing developer tools can have on the **pace** and **quality** of the software you deliver to your users.
+
+For this reason, I have always wanted to make an app that helps developers in the same way other developer tools help me in my day to day.
+
+And so I did! Earlier this year, [Hidde](https://bsky.app/profile/hiddevdploeg.bsky.social) and I decided to join forces and embark on a mission to craft the best possible developer experiences in one of the hardest yet most important parts of the app development process: **shipping your apps**. We created a native **macOS client for App Store Connect** called [Helm](https://bsky.app/profile/helm-app.bsky.social) that has since helped over 5,000 developers ship their apps faster and better!
+
+Today, I am thrilled to announce that we have partnered with [Antoine van der Lee](https://x.com/twannl) to offer you **contingent pricing** for [Helm](https://bsky.app/profile/helm-app.bsky.social) and [RocketSim](https://x.com/rocketsim_app). If you would like to learn more about how contingent pricing works and find out more about how **you can subscribe to both apps in the cheapest way possible**, check out [this article on Antoine's blog](https://www.avanderlee.com/optimization/contingent-pricing-for-in-app-subscriptions/).
+
+<Providers />
+
+## [📦 Ready-to-run Swift Package to bump your version and build number on CI/CD](https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/code/CIHelper.zip)
+
+Kicking off a brand new kind of **email-only** content for the newsletter this week. Along with great content in every issue, I am going to also share **ready-to-use code** that you bring directly into your **CI/CD workflows**.
+
+To kick things off, download the code for a tool I built last week that:
+
+- Sets the version number of all your app targets based on the name of the current branch.
+- Bumps the build number for all your app targets to be higher than the latest build number on TestFlight.
+- Commits and pushes the changes to the release branch.
+
+Best thing? It's built entirely in Swift! 🎉
+
+## [✂️ A practical example on how to cut your app's size in half](https://ericsspace.com/articles/how-to-reduce-tpbank-appsize-by-half/)
+
+Have you ever wondered **why an app takes so much space on your phone**? Or are you working an app and want to find a way to optimize its final bundle size?
+
+That's exactly what Tuan Hoang has done. He has taken an app he uses every day and, through some research, has **found a way of cutting its size by half**! Thankfully for us, he has documented the process in this must-read article.
+
+## [🚀 How to generate authentication tokens for the App Store Connect API using Swift](https://bootstragram.com/blog/jwt-tokens-app-store-connect-api-swift/)
+
+The App Store Connect API requires authentication for its endpoints. Unlike other APIs, where you can simply generate and copy-paste an API key, authenticating with this API involves a more complex process. In this article, [Mickaël Floc'hlay](https://www.linkedin.com/in/mickaelflochlay/) provides an excellent guide to generating authentication tokens using Swift.
+
+Alternatively, if you don't want to roll your own solution to communicate with the App Store Connect API, I would recommend you check out [Antoine van der Lee](https://x.com/twannl)'s [appstoreconnect-swift-sdk](https://github.com/AvdLee/appstoreconnect-swift-sdk) Swift Package, which provides an **authenticated networking client** and **type-safe endpoints generated from the API's OpenAPI spec**. It powers all of Helm's communication with the App Store Connect API and we love it so much that we now help maintain it too!
+
+## [🕵️‍♂️ Automate memory leak discovery using GitHub Actions](https://www.amanjeet.me/discovering-ios-memory-leaks-part-three/)
+
+Memory leaks are the cause of many mobile app issues in production such as crashes and diagnosing and fixing them can be incredibly hard.
+
+Making sure that those memory leaks that you have put a lot of effort into fixing don't re-appear is incredibly important and, in this article, [Amanjeet Singh Gurtatta](https://x.com/droid_singh) shows you how you can **automatically audit your app for memory leaks using CI/CD**.
+
+## [🚀 Use Bitrise on Amazon Web Services](https://bitrise.io/blog/post/bitrise-on-aws-benefits-of-using-a-cloud-native-mobile-ci-cd-solution)
+
+[Bitrise](https://x.com/bitrise) have recently announced that they have now added support to use your own **Amazon Web Services** nodes such as **EC2** instances as the underlying infrastructure for [Bitrise](http://x.com/bitrise)'s CI/CD service and use [Bitrise](http://x.com/bitrise) to manage them.
+
+[Balázs Ilsinszki](https://x.com/ilsinszkibal) tells you all about it in this post on [Bitrise](http://x.com/bitrise)'s blog.
