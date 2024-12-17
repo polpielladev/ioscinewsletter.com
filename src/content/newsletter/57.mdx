@@ -1,0 +1,68 @@
+---
+number: 57
+date: 2024-12-17
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Build High-Performance Chat Experiences Without the Hassle 🛠️"
+  url={`https://getstream.io/tutorials/ios-chat?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3D2024-12-17`}
+  description="Now with integrated support for your favorite LLM APIs! Start building for free today. 🚀"
+  image="https://d2thv89fb05cma.cloudfront.net/polpiella.dev/images/stream-logo.webp"
+/>
+
+**😅 Better late than never 😅**
+
+If you have been a subscriber of this newsletter for some time, you will know that I always (_at least try to_) send new issues on a Sunday evening as I wrap up my week.
+
+Unfortunately, last weekend I was feeling under the weather and I did not have the energy to put the issue together. I am feeling better now though and _they say that it's better late than never_, so I decided to write it and send it this evening instead.
+
+I'll keep it short and sweet for the introduction this time, let's dive right into the content!
+
+<Providers />
+
+## [💾 How using Tuist cache helped reduce build times by 65%](https://tuist.dev/blog/2024/12/16/trendyol?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2057%26utm_content%3D2024-12-17)
+
+As your app and your team grow over time, it is highly likely that your local and CI/CD **build times will grow too**. For this reason, it is very important to invest time in tooling that supports your needs in the best possible way.
+
+I loved reading this case study article by [Atakan Karslı](https://x.com/AtakanKarsli_) on how [Tuist](https://x.com/tuistdev) cache helped reduce [Trendyol](https://x.com/trendyoltech)'s build times by **65%!**
+
+## [🎅 Slower app store reviews during the holidays](https://developer.apple.com/news/?id=iwvebnw2&utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2057%26utm_content%3D2024-12-17)
+
+Nothing says Christmas more than Apple sending their yearly _Get your apps and games ready for the holidays_ post. As always, the App Store will continue to **accept submissions throughout the holiday season**.
+
+One thing you must know in these dates is that Apple advise that, if you have **an important update to ship during this time**, you allow ample time for the review process to complete as it **may take longer for the App Store Review team to check your app between the 20th and the 26th of December**.
+
+## [🚀 How to make the fastlane developer experience nicer](https://nowham.dev/posts/nicer-fastlane?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2057%26utm_content%3D2024-12-17)
+
+[fastlane](https://x.com/FastlaneTools) is an open source platform that helps mobile developers **simplify and automate their release processes**. Over the years, [fastlane](https://x.com/FastlaneTools) has become **a standard in the community** and it somewhat comes as an expectation these days to use [fastlane](https://x.com/FastlaneTools) to set up CI/CD pipelines for mobile apps.
+
+If you use [fastlane](https://x.com/FastlaneTools) on a regular basis and want to make the development experience a lot better, make sure you check out this article by my good friend [Noam Efergan](https://x.com/No_Wham)!
+
+## [💬 GitHub incidents will now have associated dicussions](https://github.blog/changelog/2024-12-11-incidents-will-now-post-in-community-discussions?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2057%26utm_content%3D2024-12-17)
+
+GitHub have just announced that, when an incident occurs on their platform and is shown in the official status page, **a discussion will be created to declare the incident to the community**.
+
+This change aims to make help **as accessible as possible** by providing a centralised place **for discussion and updates**. Furthermore, as with any other discussions, you can **subscribe to it for real-time updates**! 🎉
+
+## [✂️ Find and remove unused code with Periphery](https://adamwulf.me/2024/12/finding-unused-code-with-periphery?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2057%26utm_content%3D2024-12-17)
+
+Continuing on the topic of app build times, one thing that will definitely help you build your apps faster is **deleting code**. The less you have to compile the better right?
+
+If your app has been around for a while, you will be surprised at how much code you are building and shipping to your users that is entirely unused. You should read this article by [Adam Wulf](https://bsky.app/profile/adamwulf.bsky.social) and start using **Periphery** to **detect and remove all unused code from your app**.
+
+## [📬 How to build a serverless email delivery system with Swift](https://swifttoolkit.dev/posts/serverless-email-deploy?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2057%26utm_content%3D2024-12-17)
+
+When I came across this post, I immediately knew that I wanted to feature it in this week's newsletter. [Natan Rolnik](https://x.com/natanrolnik) has recently added a new feature to **swifttoolkit.dev** that allows users to receive **email updates when new blog posts are published on the site**.
+
+He's teamed up with [Andrew Barba](https://x.com/andrew_barba), the maker of **SwiftCloud**, to build the service behind this feature **completely in Swift** and they have both **released a video showing you how you can build it yourself!**
+
+## [📸 An insight into OpenAI's snapshot testing](https://www.emergetools.com/blog/posts/openai-on-mobile-development-previews-and-snapshot-testing?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2057%26utm_content%3D2024-12-17)
+
+Gaining insight into the processes and coding practices of a major app is a rare opportunity, and this interview conducted by [Emerge Tools](https://x.com/emergetools)’ own [Josh Cohenzadeh](https://x.com/jshchnz) with [Eric Horacek](https://x.com/EricHoracek) and [Anton Tananaev](https://x.com/AntonTananaev) from OpenAI offers a valuable glimpse into the **development workflows**, **coding strategies**, and **testing philosophies** behind the ChatGPT apps.
