@@ -1,0 +1,70 @@
+---
+number: 58
+date: 2024-12-29
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Build High-Performance Chat Experiences Without the Hassle 🛠️"
+  url={`https://getstream.io/tutorials/ios-chat?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%20${frontmatter.number}%26utm_content%3D2024-12-29`}
+  description="Now with integrated support for your favorite LLM APIs! Start building for free today. 🚀"
+  image="https://d2thv89fb05cma.cloudfront.net/polpiella.dev/images/stream-logo.webp"
+/>
+
+# Introduction
+
+**🥂 2024 Wrapped 🥂**
+
+I can’t believe we’re already reaching the end of the year! As 2024 comes to a close and I send out the final issue of the year, I want to take a moment to **reflect on what I’ve been up to** and **highlight some of the things I’m most proud of**.
+
+First of all, I’m thrilled to share that we’ve grown **by over 1,000 subscribers** this year, bringing us to a total of **over 2,000 subscribers**!
+
+When I first started the newsletter, I had two major worries: not being able to find **enough iOS CI content to fill an issue every two weeks** and not having **enough people interested in subscribing**.
+
+Thanks to all of you, those worries are long gone. All I can say is… thank you, to everyone who subscribed and to everyone who wrote amazing articles!
+
+This is also the first time that the newsletter has been booked up by sponsors for the **whole year**, without missing a **single issue** and I want to take this opportunity to thank all sponsors for **their amazing support**!
+
+On a professional level, this year has been full of changes. I made a big decision in July and decided to **quit my full-time job** and instead transition to **freelancing** and **working on my own indie apps**.
+
+That decision led to the biggest highlight of my year: shipping [**Helm**](https://helm-app.com/), a native **macOS replacement for App Store Connect**, together with my good friend [Hidde](https://x.com/hiddevdploeg). Less than a year after launch, the reception has been incredible, and [Helm](http://helm-app.com/) remains my favorite project to work on!
+
+As the year drew to a close, something even more exciting happened. Thanks to [Helm](http://helm-app.com/)_’s_ success and the fact that we all **shared a passion for improving developer experiences**, RevenueCat approached [Hidde](https://x.com/hiddevdploeg) and I to see if we were interested in collaborating.
+
+And, after working on a small project for them in December and thoroughly enjoying it, I am super happy to share that [Hidde](https://x.com/hiddevdploeg) and I will officially join RevenueCat as part of a new **Developer Experience** team. [If you're interested in learning a bit more about what this means for Helm, make sure you check out the full blog post.](https://helm-app.com/changelog/helm-2024-past-present-future)
+
+Last but certainly not least, whether you’ve been here since the beginning or joined recently, I want to thank you for being part of this incredible journey and for helping the iOS CI Newsletter grow ❤️. I have so many exciting plans for 2024, so stay tuned!
+
+There are probably a few things I’ve forgotten to mention, but I think I’ve talked about myself enough. So, without further ado, let’s kick off the final issue of 2024 by **revisiting the articles you enjoyed most this year!**
+
+## [🥇 How a single Xcode setting can speed up your builds](https://pfandrade.me/blog/swift-build-times-and-module-verification?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2058%26utm_content%3D2024-12-29)
+
+This brilliant article by [Paulo Andrade](https://x.com/pfandrade_) was the newsletter's most read article in 2024!
+
+The articles goes through the process [Paulo Andrade](https://x.com/pfandrade_) followed to find the cause of **slow build time issues** using Xcode’s **build timing summaries** and how they discovered that **module verification** was responsible for the sluggish performance.
+
+A must-read for anyone looking to optimize their app's build times.
+
+As seen in [Issue #50](https://www.ioscinewsletter.com/issues/50) of the iOS CI Newsletter.
+
+## [🥈 Is SPM the right tool to manage your modular project?](https://medium.com/bumble-tech/scaling-ios-at-bumble-239e0fa009f2?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2058%26utm_content%3D2024-12-29)
+
+These kind of articles where teams share their architectural decisions publically are my favourites to read and, by the looks of things, readers of the newsletter enjoy them too!
+
+We tend to assume that the best way to manage local packages in a modular app is by using SPM. But is that really the case for your app? [Jonathan Crooke](https://www.linkedin.com/in/jonathancrooke) shares in this article why SPM was not the right choice for [Bumble](https://twitter.com/Bumble_Tech).
+
+As seen in [Issue #41](https://www.ioscinewsletter.com/issues/41) of the iOS CI Newsletter.
+
+## [🥉 How to significantly improve incremental build time with xcodebuild](https://github.com/wojciech-kulik/xcodebuild.nvim/issues/201#issuecomment-2423828065?utm_campaign%3DiOS%20CI%20Newsletter%26utm_medium%3Dweb%26utm_source%3DiOS%20CI%20Newsletter%20Issue%2058%26utm_content%3D2024-12-29)
+
+Last but not least, in third place we have my personal favourite from the year. Did you know that incremental builds are **significantly slower in xcodebuild than in Xcode**?
+
+I had no idea, but [Wojciech Kulik](https://x.com/kulik_wojciech) noticed it and found the exact reason why!
+
+As seen in [Issue #53](https://www.ioscinewsletter.com/issues/53) of the iOS CI Newsletter.
