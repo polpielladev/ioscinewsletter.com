@@ -5,7 +5,7 @@ export const prerender = false;
 
 const serviceAccountAuth = new JWT({
   email: import.meta.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-  key: import.meta.env.GOOGLE_PRIVATE_KEY,
+  key: import.meta.env.GOOGLE_PRIVATE_KEY.split(String.raw`\n`).join("\n"),
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
