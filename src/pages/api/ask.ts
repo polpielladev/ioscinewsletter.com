@@ -40,7 +40,7 @@ export async function POST({
     }
   } catch (e) {
     console.error(e);
-    return new Response(null, { status: 500 });
+    return new Response(`${e}`, { status: 500 });
   }
 
   return new Response(null, { status: 200 });
