@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { AskAQuestionForm } from "../components/ask-a-question/form";
+---
+
+<BaseLayout
+  title="Ask me a question"
+  description="Help me continue to create content and open source projects by sponsoring me."
+  heroTitle="Do you have any questions about CI/CD?"
+  heroDescription="Write them down in the form bellow and I'll do my best to answer them in upcoming issues of the newsletter."
+  ctaType=""
+>
+  <AskAQuestionForm client:only />
+</BaseLayout>
