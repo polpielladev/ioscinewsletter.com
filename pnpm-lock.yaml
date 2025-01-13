@@ -38,9 +38,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.18
         version: 18.3.5(@types/react@18.3.18)
-      astro:
-        specifier: ^4.0.9
-        version: 4.16.18(rollup@4.29.1)(typescript@5.7.2)
       google-auth-library:
         specifier: ^9.15.0
         version: 9.15.0
@@ -72,6 +69,9 @@ importers:
         specifier: ^5.3.3
         version: 5.7.2
     devDependencies:
+      astro:
+        specifier: ^4.0.9
+        version: 4.16.18(rollup@4.29.1)(typescript@5.7.2)
       markdown-it:
         specifier: ^14.0.0
         version: 14.1.0
