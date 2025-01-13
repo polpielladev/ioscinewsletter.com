@@ -1,0 +1,62 @@
+---
+number: 59
+date: 2024-01-13
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Screenshotbot: Scale up your snapshot tests, without the friction"
+  url={`https://screenshotbot.io?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29`}
+  description="Spending too much time maintaining snapshot tests? Screenshotbot works with your existing snapshot tests and stores your images. Say goodbye to Git LFS. Screenshotbot notifies you on pull-requests when snapshots change."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/screenshotbot.png"
+/>
+
+**🐱 A new chapter 🐱**
+
+Hey everyone and welcome to the first issue of 2025! Hope you have all had a great end to 2024 and an eve better start to the new year!
+
+I took some time off at the end of the year during the festive period to recharge batteries and make sure that I got some well-deserved rest. I spent time with family, friends and even took a short trip to Scotland to start the year with my fiancé and her family.
+
+Now that 2025 has kicked off, I am back to work and this week, as I announced [in the last edition of the newsletter](https://www.ioscinewsletter.com/issues/58?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29), I officially joined the Developer Experience team at RevenueCat. I am so excited about this opportunity to work alongside such amazing and talented people and on a product that I am passionate about! ❤️
+
+In these two weeks I also launched a brand new section on my website that you can use to ask me any burning iOS CI/CD questions you might have called: [Ask Me A Question](https://www.ioscinewsletter.com/ask-a-question?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29). As soon as I have a few answers recorded I will start sharing them on upcoming issues of the newsletter.
+
+Let's now get into this week's issue!
+
+## [⛓️‍💥 Automatically check if a new version of your Swift Package introduces breaking changes](https://www.adyen.com/knowledge-hub/swift-api-diff?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29)
+
+As a library mantainer, it is very important that you try to keep new versions **backwards compatible as much as possible** and only ship breaking changes to your users as a last resort.
+
+No matter how hard you try, there is always the possibility that you accidentally break backwards compatibility whenever you ship a new version. If you want to mitigate this risk with a neat automation you can run on CI/CD, check out this article by [Alex Guretzki](https://x.com/goergisn) on the [Adyen](https://x.com/adyen) blog.
+
+## [🧪 Advanced tips to use fastlane like a pro](https://nowham.dev/posts/intermediate_fastlane?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29)
+
+I love reading and sharing these articles from my good friend [Noam Efergan](https://x.com/No_Wham). You can tell that he's really passionate about **tooling and automation** and he's been creating some amazing content on the topic.
+
+This time, he shares some advanced tips you might not have come across before and that will help you to make the most of fastlane.
+
+## [🔐 How to work with JSON Web Tokens in Swift](https://swiftonserver.com/2025/jwt-kit?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29)
+
+**JWTs or JSON Web Tokens** are a way to securely transmit information between two parties. They are widely used for **authentication** and **information exchange** during client and server communication.
+
+If you build **CLI tools** that need to access resources such as the **App Store Connect API**, chances are that you are going to have to create or validate JWTs at some point. Worry not because, as [Paul Toffoloni](https://x.com/paultoffy) explains in this article, you can do it **entirely in Swift**.
+
+## [💪 Struggling to get back into a routine after the break? Check out this article](https://david-smith.org/blog/2025/01/10/accomplish-one-thing?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29)
+
+This article has nothing to do with iOS CI/CD but I enjoyed reading it so much and it resonates with me on so many levels that I had to share it. After every break, I struggle to get back into the flow of things and immediately feel guilty about not achieving much in a given day.
+
+[David Smith](https://x.com/_DavidSmith) talks exactly about this in this amazing article and how he copes with it with his **_Accomplish One Thing_** rule.
+
+P.S.: This is by far my favourite quote from the article 💯🤩
+
+_Speed is useful, but inertia is powerful._
+
+## BEFORE YOU GO...
+
+If you're worried about how the AI wave and how AI-assited coding might impact your job as a Software Engineer, [make sure you read this article!](https://newsletter.pragmaticengineer.com/p/how-ai-will-change-software-engineering?utm_campaign=ios-ci-newsletter&utm_medium=web&utm_source=ios-ci-newsletter&utm_content=2024-12-29)
