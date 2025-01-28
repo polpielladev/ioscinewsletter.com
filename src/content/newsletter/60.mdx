@@ -1,0 +1,62 @@
+---
+number: 60
+date: 2025-01-28
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Supercharge your GitHub Actions with M4 Pro runners from the creators of Tart"
+  url={`https://cirrus-runners.app/?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci`}
+  description="Enjoy the fastest Apple Silicon chips at a fixed monthly price — fully managed so you can focus on shipping great code. Get an additional 50% off your first month with code IOSCI50OFF — exclusively for subscribers. Start your free 10-day trial now."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/cirrus.jpg"
+/>
+
+**💸 The new Advanced Commerce API 💸**
+
+Before we dive in, I want to take a brief moment to celebrate a new milestone: **this is** **the 60th issue of the iOS CI Newsletter**! Thank you so much for your continued support and for helping me reach this achievement. Here's to many more! ❤️
+
+Now, let's get into this issue's content. As you may know, Apple launched the **Advanced Commerce API** this week —a brand-new framework that enables developers to **offer** and **manage** large collections of in-app purchases and subscriptions for their users.
+
+You might be wondering, what's new here? Didn't we already have ways to manage in-app purchases and subscriptions through StoreKit and App Store Connect?
+
+At first, the changes weren't immediately clear to me either. It wasn't until I read the What you need to know about _Apple's Advanced Commerce API_ article by [David Barnard](https://x.com/drbarnard) on the [RevenueCat](https://x.com/RevenueCat) blog that I truly grasped how powerful this new API can be for specific use cases. But what are these use cases? Can your app make use of this new API?
+
+In my view, and as the article highlights, this new framework shines in **content-based apps**, where authors or creators can set up their unlockables and price them as they see fit. This type of business model requires managing an **extremely large number of purchases and subscriptions** that are editable by users, which was not easily achievable until now.
+
+This new API also opens the door to more complex business models that were impossible out of the box with traditional Apple subscription models.
+
+Make sure you check out the official documentation as it might inspire you to find new monetisation strategies for your app.
+
+## [😱 Your app might be removed from the EU App Store](https://developer.apple.com/news/?id=einwn76m)
+
+In [Issue #53 of the newsletter](https://www.ioscinewsletter.com/issues/53), I mentioned that Apple was implementing changes to apps available in the European Union to comply with the **Digital Services Act**. One of these changes requires developers to declare their trader status to keep their apps available in the European Union's App Stores.
+
+This requirement will take full effect on **February 17th**. Starting on this date, any app without a declared and verified trader status will be **removed** from the App Store in the European Union until the status is provided and approved. If you haven't addressed this yet, act **NOW!**
+
+## [📦 The Tuist Swift Package Manager Registry](https://tuist.dev/blog/2025/01/22/announcing-tuist-registry)
+
+Since I started using Swift Package Manager as my dependency manager of choice for Apple platform apps, I've been hoping for a **registry-based solution** that allows developers to download source archives of dependencies instead of cloning entire repositories. Not only does this approach **improve performance**, but it also **mitigates some potential security risks**.
+
+Although [Package Registry](https://github.com/swiftlang/swift-package-manager/blob/main/Documentation/PackageRegistry/PackageRegistryUsage.md) standard has been around for some time, this registry built by [Tuist](https://x.com/tuistdev) is the first fully-fledged solution I've seen that's ready to use right away.
+
+## [🌳 How to use Git Flow as your branching strategy](https://medium.com/@jpmtech/what-is-git-flow-a-branching-strategy-you-didnt-know-you-needed-ad14ef015662)
+
+Do you work in a team and often struggle with **merge conflicts** or determining if your development branch is **production-ready**? Do you not have a clear **branching strategy** for your repository?
+
+If these challenges sound familiar, you should check out this article by [Chase](https://medium.com/@jpmtech)!
+
+## [👨‍✈️ Give Copilot context about your repository](https://github.blog/changelog/2025-01-21-custom-repository-instructions-are-now-available-for-copilot-on-github-com-public-preview/)
+
+GitHub has just improved the Copilot chat experience by allowing developers to provide **specific context about a repository**, making the chat in **Visual Studio Code** or **Github.com** more useful and tailored to the repository's needs.
+
+To set this up, simply follow the instructions in the announcement post and create a configuration file where you define the context for Copilot. This file helps Copilot better understand your project, **enabling more relevant suggestions and guidance while coding**.
+
+## BEFORE YOU GO...
+
+Did you know that if [you don't use an App Group to set up Swift Data, your database file might end up in a folder that's shared with other apps, which can have unexpected consequences?](https://x.com/polpielladev/status/1880283941715996920) 😱
