@@ -1,0 +1,50 @@
+---
+number: 61
+date: 2025-02-09
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Supercharge your GitHub Actions with M4 Pro runners from the creators of Tart"
+  url={`https://cirrus-runners.app/?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci`}
+  description="Enjoy the fastest Apple Silicon chips at a fixed monthly price — fully managed so you can focus on shipping great code. Get an additional 50% off your first month with code IOSCI50OFF — exclusively for subscribers. Start your free 10-day trial now."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/cirrus.jpg"
+/>
+
+<Providers />
+
+## [💰 FREE alternative to App Center build distribution service](https://x.com/emergetools/status/1879597860678951133?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci)
+
+In [March last year](https://www.ioscinewsletter.com/issues/38?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci), I shared the news that Microsoft decided to put App Center into maintenance mode to later retire it on the **31st of March 2025**.
+
+While the date sounded distant at the time, it is only about a month away now. If you are still using Microsoft's build distribution service and are looking for an alternative, this announcement by [Emerge Tools](https://x.com/emergetools) might be interesting to you!
+
+## [🔧 Ready to use UI components for Swift CLIs](https://swifttoolkit.dev/posts/noora-package?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci)
+
+New open-source projects like the one discussed in this article make me so happy. I have been an advocate for using [Swift beyond Apple app development for some time now](http://youtube.com/watch?v=LBYFHS8jFKk), and I have been a long-time admirer of the work that [Pedro](https://x.com/pepicrft) and the team over at [Tuist](https://x.com/tuistdev) do in this regard.
+
+Their latest Open Source project Noora is a **ready-to-use design system** and set of **UI components** for Swift CLI applications. This article by [Natan Rolnik](https://x.com/natanrolnik) on [swifttoolkit.dev](https://swifttoolkit.dev/) goes into great detail about what the library offers and how you can incorporate it into your latest Swift CLI.
+
+## [🍎 Running Xcode in unsupported macOS versions](https://marcelvoss.com/2025/tricking-xcode-into-running-on-an-unsupported-macos?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci)
+
+If you've been an Apple platforms developer for some time, I am sure the situation described in this article is familiar to you. A new version of macOS launches with some features you are eager to test and, after you finish updating your machine, you realize that **the version of Xcode you are using no longer launches**.
+
+You must be thinking: _well the solution is simple right?_ _You can just update to the latest compatible Xcode version for that macOS version._
+
+Well... while that is true for a lot of cases, some others are not that simple, especially if you work on a large app maintained by numerous developers. If you're in this situation and want to launch **incompatible versions of Xcode on newer macOS versions**, [Marcel Voss](https://www.linkedin.com/in/marcel-voss-80679389/) has a solution for you!
+
+## [❓ Apple has open-sourced Swift Build: Now what?](https://www.swift.org/blog/the-next-chapter-in-swift-build-technologies?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci)
+
+Last week, we were greeted by a post by [Owen Voorhees](https://x.com/owenvoorhees) on the Swift Blog announcing that Apple is open-sourcing **Swift Build**. **Swift Build** is a powerful and extensible **build engine** that provides a set of build rules for building **Swift projects** and that Xcode itself uses under the hood when building apps and Swift Packages written in Swift.
+
+What does this mean for us developers? How can we make use of this engine? The announcement post does a great job of answering this, but if you are interested in learning more, [I would recommend reading this article](https://tuist.dev/blog/2025/02/03/swift-build) by [Pedro Piñera](https://x.com/pepicrft) on the [Tuist](https://x.com/tuistdev) blog.
+
+## BEFORE YOU GO...
+
+I can't believe [we have created 1,000 Helm issues in Linear](https://x.com/helm_app/status/1887445412874707101) in under a year of active development. I guess we've been pretty busy adding new features and improving the overall look and feel of the app 🚀!
