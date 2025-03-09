@@ -1,0 +1,60 @@
+---
+number: 63
+date: 2025-03-09
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Supercharge your GitHub Actions with M4 Pro runners from the creators of Tart"
+  url={`https://cirrus-runners.app/?utm_source=ioscinewsletter&utm_medium=email&utm_campaign=iosci`}
+  description="Enjoy the fastest Apple Silicon chips at a fixed monthly price — fully managed so you can focus on shipping great code. Get an additional 50% off your first month with code IOSCI50OFF — exclusively for subscribers. Start your free 10-day trial now."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/cirrus.jpg"
+/>
+
+Hey everyone! I hope you've all had an amazing couple of weeks, and welcome to another issue of the newsletter!
+
+This week, while I was working on some improvements to the **RevenueCat iOS sample apps**, I noticed a small annoyance in the release process for our iOS SDK. We release new versions very often, and sometimes we have to do **hotfix releases** for older versions of the SDK.
+
+While this is a common enough process, I realised that the automation we use to create GitHub releases marks **each new release as the latest**, regardless of whether it is a **new version**, a **pre-release version** or a **hotfix**.
+
+This can lead to some confusion for our users, as they might look at the repository's home page and think that **an old version with a recent hotfix release is the most up-to-date version of the SDK**.
+
+Example of a hotfix release being marked as the latest available version
+
+I set out on a mission to fix this and quickly spotted what the issue was. We use the [set_github_release](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly9kb2NzLmZhc3RsYW5lLnRvb2xzL2FjdGlvbnMvc2V0X2dpdGh1Yl9yZWxlYXNlLw==) built-in fastlane action to create a GitHub release and, while we have the logic in place to check whether **the new release should be marked as the latest**, the action, which uses the GitHub API under the hood, does not support the **make_latest** parameter.
+
+We wanted to fix the issue quickly for us, so we **forked the action** and **added support for the missing parameter locally**. Once we had added the missing functionality for ourselves, we also decided to make it **available to everyone else** by upstreaming the changes, so [we created a PR in the Fastlane repository](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly9naXRodWIuY29tL2Zhc3RsYW5lL2Zhc3RsYW5lL3B1bGwvMjk0NzU=).
+
+This is a process that I really enjoy and I have followed at a few places I worked at and, as important as it is to **get things working as quickly as possible for your project**, for me it is also very important to give back to the Open Source project you are working with and **upstream the changes** if you can ❤️.
+
+<Providers />
+
+## ​[**🚀 An introduction to fastlane for iOS developers**](https://nowham.dev/posts/into_to_fastlane?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_63)​
+
+Over the years, **fastlane** has established itself as a standard for automating tasks and processes in the mobile community. While the tech stack might seem unintuitive or even obsolete at first, the incredible amount of **built-in** actions and **community** around fastlane make it an **obvious choice**.
+
+If you're completely new to fastlane and want to understand **why** and **how** to use it, make sure you check out this amazing article by my good friend [Noam](https://x.com/No_Wham).
+
+## [**🔨 Coding with ChatGPT on macOS just got so much better!** ](https://x.com/OpenAIDevs/status/1897700857833193955)
+
+I have been using ChatGPT while I code for quite some time and, since the beginning of the year, I migrated over from VSCode to Cursor for all my non-Apple work.
+
+Ever since I started using Cursor, I fell in love with the chat experience and how easy it was to feed codebase-specific context to the model, and I have been longing for the same experience from Xcode. This announcement from the OpenAI team was music to my ears ❤️.
+
+## [**🪛 A template for writing Shell Scripts**](https://collin.blog/2025/03/02/shell-script-template?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_63)
+
+Let's say you need to create a new shell script for your next automation. You create the file and are ready to automate.
+
+But do you remember what the syntax for the shebang at the top of the file is? Or how you handle errors in shell scripts? I have to look these things up all the time, so this template from [Collin Donnell](https://ruby.social/@collin) is very much welcome!
+
+## [**📺 Turning your Swift command-line apps into beautiful macOS apps**](https://www.swiftyplace.com/blog/building-macos-utiltiy-apps?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_63)
+
+As iOS engineers, we usually have to come up with small utility apps that we can run from the command-line both locally and on CI/CD. Some of these might benefit from having some UI that can help configure and run these executables.
+
+This article from Karin Prater shows you how you can call command-line tools from a SwiftUI app.
