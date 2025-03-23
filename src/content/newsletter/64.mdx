@@ -1,0 +1,64 @@
+---
+number: 64
+date: 2025-03-23
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​Discover the Top 10 Best Practices for App Distribution in Testing with AppCircle"
+  url={`https://appcircle.io/blog/10-best-practices-in-app-distribution-for-testing?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_64`}
+  description="Appcircle seamlessly integrates the best app distribution practices into your CI/CD pipeline, backed by years of mobile CI/CD expertise. Maximize efficiency and streamline your app testing process with Appcircle's proven solutions."
+  image="https://embed.filekitcdn.com/e/hMaFYHCjGv2jTKsg3QHDt6/46qcW1UBn4VaHvwR5wy6fQ"
+/>
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+If you have been following me or the newsletter for a while, you will know I am passionate about **mobile automation**, **tooling**, and **performance**.
+
+I have been lucky enough to spend most of my career focusing on **improving performance** for apps at scale and making sure that the user's experience is as seamless and smooth as possible.
+
+Apple provides us with a set of tools that can help us **diagnose** and **investigate** all sorts of performance issues: from **Main Thread usage** and **UI hangs** all the way to **resource usage** and **CoreML**.
+
+These tools are all bundled up in an app included in Xcode called **Instruments**. While I can't stress the importance of being familiar with Instruments and templates such as the _Time Profiler, Leaks,_ or _SwiftUI_ enough, I feel like a vast majority of Apple app developers don't know how to use **Instruments** or rarely think of using them when **diagnosing performance issues**.
+
+For this reason, I decided to put together a talk called **Tuning your app using Instruments** that I gave at the [ARCtic Conference](https://x.com/ARCTIConference) last week. I received amazing feedback and I am planning on doing the same talk again at other conferences such as [Swift Craft](https://x.com/swiftcraftuk), which is taking place in a couple of months!
+
+If you are unable to catch any of my talks on the topic at conferences this year, worry not! Starting **Monday the 24th of March**, I am going to start sharing tips and tricks on **how to use Instruments** and how to **improve your app's performance** in short-form video format on my social media.
+
+If you are interested in the topic, [**follow me on your social media of choice**](https://bento.me/pol).
+
+## ​[**📦 FREE Webinar: CI/CD for Swift Packages**](https://streamyard.com/watch/62AzM2xGJ2hB?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_64)​
+
+Do you work with Swift Packages on a daily basis? Or do you happen to maintain a Swift library that is installable via **SPM**? Well, this **FREE** webinar that I am running on **Wednesday the 26th of March** is for you!
+
+I will show you tips and tricks that will **save you time** and will help you **increase confidence** when you ship new versions of your Swift Packages!
+
+## ​[**🚨 Upcoming breaking changes in GitHub Actions**](https://github.blog/changelog/2025-03-20-notification-of-upcoming-breaking-changes-in-github-actions?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_64)​
+
+If you use **GitHub Actions** as your CI/CD provider, you need to read this one!
+
+There are a set of **upcoming BREAKING changes** coming to the platform and you might need to do some work to **get your project ready** for them and **avoid any disruption**!
+
+## ​[**🚀 How to build an iOS app using fastlane**](https://nowham.dev/posts/build_app_with_fastlane?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_64)​
+
+A new newsletter issue usually means another amazing new article from [Noam Efergan](https://x.com/No_Wham) showing **how to automate processes using fastlane**.
+
+This time, [Noam](https://x.com/No_Wham) walks us through how you can write a fastlane lane **to build an app from the command line**, a key step to most iOS CI/CD workflows, such as releases.
+
+## ​[**🪝 Writing git hooks in Swift**](https://swifttoolkit.dev/posts/git-hooks?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_64)​
+
+If you work as part of a big team, it is likely that you have some **git hooks** that help you sanity-check the changes that you are about to commit or push. These checks take the form of small executable scripts that live under the .git directory.
+
+What most people don't know, is that if you have Swift installed on your machine, you can just write your git hook (or any other) scripts using Swift, provided you use **the correct shebang in the executable file**. If you'd like to start making your git hooks easier to maintain and understand, check out this blog post on the [swifttoolkit.dev blog](https://x.com/SwiftToolkit).
+
+## ​[**⚙️ Solving Swift Macro trust issues in Xcode Cloud**](https://jeehut.medium.com/solving-swift-macro-trust-issues-in-xcode-cloud-builds-a0fc27bc60b8?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_64)​
+
+**Swift Macros** are an incredibly powerful resource that can help you **generate code at compile time** and remove boilerplate and repetitive code from your codebase.
+
+However, using them has a set of implications, especially when building from **a non-interactive command line environment** like building the app from a CI/CD workflow. If you use Swift macros and are struggling to get your builds to run on **Xcode Cloud**, make sure you read this article by [Cihat Gündüz](https://x.com/Jeehut).
