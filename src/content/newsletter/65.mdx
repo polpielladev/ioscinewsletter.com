@@ -1,0 +1,66 @@
+---
+number: 65
+date: 2025-04-06
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic makes Apple M2 machines available, even on the free tier!"
+  url={`https://codemagic.io/start/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_65`}
+  description="Codemagic is the first CI/CD to make Apple M2 machines available to everyone (including the free tier!). This is a free upgrade from M1 machines with no price change."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+## How to use GitHub Actions as CI/CD for your Swift projects
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+Last week, I ran the first of many webinars exclusive to this newsletter's subscribers. For the first edition, I picked a topic that I am truly passionate about and the goal was to **inspire Swift Package authors and maintainers**, especially those with **Open Source projects**, to automate **manual processes** such as running unit tests or creating new releases with CI/CD **entirely for free**.
+
+I am truly thankful to everyone who subscribed and registered to attend the webinar, we nearly **reached 100 registrations**! And of course, to those who made it on Wednesday, it was a lot of fun.
+
+As I said during the webinar, I would use this issue to share the session's recording for those who couldn't attend along with the code that we built together on Wednesday:
+
+- 🎥 [Webinar recording](https://streamyard.com/asubu9a35gcn)
+- 🧪 [Workflow that runs unit tests on all available platforms on every push to main and every push to a Pull Request targetting the main branch](https://github.com/polpielladev/reading-time/blob/main/.github/workflows/main.yml).
+- 📦 [Workflow that runs when on every new tag with a Semver version as the name that compiles executables for each available platform and creates a GitHub release.](https://github.com/polpielladev/reading-time/blob/main/.github/workflows/release.yml)
+
+If you have any questions about what I shared during the session or about the workflows' code, please do not hesitate to **reply to this email** or **message me on social media**!
+
+## [**📦 Swiftly 1.0: Apple's own Swift toolchain manager**](https://www.swift.org/blog/introducing-swiftly_10?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_65)
+
+While the **latest version of Swift** is already bundled with every Xcode release, there are times when you are interested in installing a Swift toolchain **without relying on Xcode**. An example of this is when you need to install Swift on platforms where Xcode is not available, **such as Linux**.
+
+Apple built a **tool exactly for this**. While it has been around for a while, last week, Apple shipped its first stable release (**1.0**) with **support for macOS**. It is also worth noting that [the Vapor team built an action that uses Swiftly under the hood and that installs any version of Swift you want as part of your GitHub Actions workflows](https://github.com/vapor/swiftly-action).
+
+## [**✂️ How Duolingo reduced 70% of their manual regression tests using AI**](https://blog.duolingo.com/reduced-regression-testing?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_65)
+
+**Regression testing** is a key step of any mobile release process as it ensures that the version that you're about to ship does not **break any of the app's business-critical features**.
+
+Most mobile teams perform these tests **manually**, which can be very **time-consuming**. Therefore, researching ways to automate regression testing can greatly impact your team's time management.
+
+As [Brock Janikowski](https://x.com/brockjanikowski) explains in this article, [Duolingo](https://x.com/duolingo) did exactly this and managed to **remove 70% of their manual regression tests** using AI, allowing their QA teams to focus on tasks with a higher ROI 👏.
+
+## [**🚀 How to automate App Store screenshot generation for macOS apps**](https://www.jessesquires.com/blog/2025/03/24/automate-perfect-mac-screenshots?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_65)
+
+One of the questions that I get asked the most whenever I give a CI/CD-related talk at a conference is: **_How do you automate App Store screenshot generation?_**
+
+While there is a set of tools that can help you automate this process on iOS, the answer becomes **a lot more complex on macOS**. That's why I really enjoyed reading this article on how [Jesse Squires](https://x.com/jesse_squires) managed to **streamline this process**!
+
+## [**🐙 GitHub Copilot code review now has Swift support**](https://github.blog/changelog/2025-04-04-copilot-code-review-now-generally-available?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_65)
+
+Over a month ago, GitHub launched a feature **that allows developers to add GitHub Copilot as a reviewer on their Pull Requests**.
+
+As of yesterday, GitHub moved the feature off preview and **made it generally available for everyone to use**. Along with this announcement, GitHub also **added support for Swift**, which is amazing!
+
+## [**⚙️ How to Cross-Compile Swift projects to other platforms**](https://khanwinter.com/2025-03-29-Cross-Compiling-Swift?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_65)
+
+Did you know that if you have built a tool with Swift you can create a **Linux-compatible binary** directly from your Mac using [Static Linux SDKs](https://www.swift.org/documentation/articles/static-linux-getting-started.html?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_65)? This becomes incredibly useful when you want to **compile** and **deploy** a **Server-Side Swift application**.
+
+In this article, [Khan Winter](https://bsky.app/profile/khanwinter.com) takes you through the process of how **they built a Discord bot using Swift** and **cross-compiled it** to run on Linux. The article is well worth a read!
