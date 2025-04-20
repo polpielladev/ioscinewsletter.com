@@ -1,0 +1,68 @@
+---
+number: 66
+date: 2025-04-20
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Level Up Your iOS Code Reviews: Best Practices for High-Quality Pull Requests"
+  url={`https://appcircle.io/blog/ios-code-review-practices-for-efficient-pull-requests?utm_source=pol&utm_medium=web&utm_campaign=april_20`}
+  description="Make your iOS development faster and smoother with smarter code reviews. Appcircle gives your team the tools to avoid bottlenecks and keep pull requests clean, clear, and quick to merge."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/appcircle-code-review.png"
+/>
+
+## Enter the Automation MCP Server era!
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+In November of last year, [Anthropic](https://www.anthropic.com/) open-sourced [the Model Context Protocol, a new standard for providing context to LLMs](https://www.anthropic.com/news/model-context-protocol?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66). Most of you will have heard of or even used MCP servers by now, but if you haven't, let me explain why they are needed.
+
+AI Assistants such as [Claude](https://claude.ai/) or [ChatGPT](https://openai.com/index/chatgpt/) cannot access live data by default and are **constrained to a set amount of information**. There are good reasons why that's the case, but as you can imagine, the power that **access to live data** or even **the power to act on your behalf** on certain services is incredible.
+
+That's where the **Model Context Protocol** comes into play. It provides an **open-source**, **standard** interface for connecting LLMs to **live data sources**. With the Open-Source SDKs, developers can now build **servers** that expose a set of **tools** that an AI assistant can invoke.
+
+The community's response to this has been incredible, and there are already numerous [ready-to-use MCP Servers](https://github.com/modelcontextprotocol/servers?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66). For example, you could install the [Linear](https://github.com/jerhadf/linear-mcp-server?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66), [Filesystem](https://github.com/modelcontextprotocol/servers/blob/main/src/filesystem?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66), [GitHub](https://github.com/modelcontextprotocol/servers/blob/main/src/github?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66), and [Slack](https://github.com/modelcontextprotocol/servers/blob/main/src/slack?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66) MCP servers and feed your AI assistant the following prompt:
+
+Find the first issue with an 'In Progress' status assigned to 'Pol', make the necessary changes to the codebase, create a Pull Request on GitHub, and finally, send the link to the new Pull Request in the #pull-requests channel on Slack.
+
+This is where the true power of MCP Servers comes into play, as the AI assistant will **be able to pick and choose from all installed tools** by the conversation's context and then **parse the contents of the response** to provide the best possible answer to the user 🚀.
+
+In this issue, I will share some **examples of MCP servers** in real life and how they can be applied to CI/CD. If you have found a cool use case you'd like to share, feel free to **reply to this email** or **reach out to me on social media**!
+
+💡 If you are interested in building an MCP Server but don't want to write Kotlin, Python, or TypeScript (I don't blame you 😅), check out [this tutorial on how to build an MCP Server in Swift](https://www.artemnovichkov.com/blog/creating-mcp-servers-in-swift?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66) by [Artem Novichkov](https://x.com/iosartem).
+
+### [**🤖 Interacting with GitHub Actions from an AI Assistant**](https://github.com/ko1ynnky/github-actions-mcp-server?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66)
+
+While scrolling through [the list of MCP servers in the official Model Context Protocol repository](https://github.com/modelcontextprotocol/servers), I came across this very interesting one: [github-actions-mcp-server](https://github.com/ko1ynnky/github-actions-mcp-server).
+
+As its name states, the server exposes a set of tools that bring context as well as the possibility of performing tasks on your behalf in GitHub Actions.
+
+### [**🤖 Interacting with Bitrise from an AI Assistant**](https://bitrise.io/blog/post/chat-with-your-builds-ci-and-more-introducing-the-bitrise-mcp-server?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66)
+
+[Bitrise](https://x.com/bitrise) have been super quick to build their own MCP server that exposes tools to get live data from their API. Similarly to the unofficial GitHub Actions MCP I shared above, the MCP server also brings functionality **such as triggering or canceling builds to your AI Assistant of choice**.
+
+Read this amazing blog post from [Arpad Kun](https://x.com/ArpadKun) to find out more about what you can do.
+
+### [**🍎 Can your AI Assistant help you with App Store Connect issues?**](https://github.com/JoshuaRileyDev/app-store-connect-mcp-server?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66)
+
+Last MCP server I share in this issue, I promise! But I thought this was cool and worth sharing! 😅
+
+[Joshua Riley](https://x.com/JoshuaRiley01) built an MCP Server that **exposes information from our beloved App Store Connect** to your LLM of choice so that you can better **diagnose issues and access live data for your apps and users** 👏.
+
+### [**🚀 Is fastlane the right tool for Mobile Automation in 2025?**](https://tuist.dev/blog/2025/04/15/automation-in-swift-projects?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66)
+
+[Fastlane](https://x.com/FastlaneTools) is an **open-source source established solution** that many mobile apps use to automate their processes. While [fastlane](https://x.com/FastlaneTools) is still incredibly **powerful** and **relevant**, as it provides a vast amount of **built-in actions**, it is written in Ruby and requires developers to context-switch when working on their automation code.
+
+What **alternatives are there in 2025**? Is there a good Swift-based solution? [Pedro Piñera](https://x.com/pepicrft) walks you through some of the options you can pick from.
+
+### [**📦 Inspect and secure your app's .ipa files**](https://www.artemnovichkov.com/blog/how-to-inspect-ipa-files?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_66)
+
+Keeping an eye on the **size** and **contents** of **your .ipa** files is incredibly important to make sure that new releases don't introduce unexpected changes to your final binary.
+
+[Artem Novichkov](https://x.com/iosartem) walks you through how to **inspect .ipa files** and **explore their internal structure**. Once you have read this and know what to look out for, make sure **you automate the process on CI/CD**! 🚀
