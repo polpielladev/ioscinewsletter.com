@@ -1,0 +1,62 @@
+---
+number: 67
+date: 2025-05-04
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic makes Apple M2 machines available, even on the free tier!"
+  url={`https://codemagic.io/start/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_67`}
+  description="Codemagic is the first CI/CD to make Apple M2 machines available to everyone (including the free tier!). This is a free upgrade from M1 machines with no price change."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+## **Automating Multiplatform App Releases**
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+In this issue, I will cover the following topics:
+
+- New **FREE** webinar for all subscribers.
+- Testing applications **at scale**.
+- Running unit tests **in parallel.**
+- Draft PRs are now available for **all GitHub Free users**.
+- The **Release Tax** on your organization.
+
+Happy reading!
+
+## ​[🎥 FREE Webinar: Automating Multiplatform App Releases](https://streamyard.com/watch/BwQ2t4Q5aCkk)​
+
+Have you ever wondered what a **reliable** and **mature** release CI/CD pipeline looks like? And how to handle apps available on **multiple Apple platforms**?
+
+Join this exclusive **FREE** webinar for subscribers at the end of May to learn all about it!
+
+### ​[🧪 How does an app like Netflix write Unit Tests?](https://medium.com/androiddevelopers/netflix-app-testing-at-scale-eb4ef6b40124?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_67)​
+
+Have you ever wondered how massive apps like [Netflix](https://x.com/NetflixEng) write unit tests and what their testing infrastructure looks like? Well, thanks to [Ken Yee](https://x.com/kenkyee), you don't have to wonder anymore!
+
+In this article from [Jose Alcérreca](https://x.com/ppvi)'s Testing at scale series, [Ken Yee](https://x.com/kenkyee) talks about [Netflix](https://x.com/NetflixEng)'s Android codebase but, before you get scared and close your email client, hear me out. The article has a lot of interesting takeaway points that are also applicable to iOS Unit Tests, so I would encourage you to give it a read.
+
+### ​[💨 Speed up your CI/CD pipelines by running Unit Tests in parallel](https://nowham.dev/posts/parallelize_unit_tests?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_67)​
+
+One of the most important things to do when writing CI/CD workflows, is to make sure that you **run as many tasks as possible in parallel**, especially unit tests!
+
+Not only will this have an effect on **the speed of your CI/CD pipeline runs**, but it will also help you **detect flakiness** and **shared state** in your unit tests. Learn how to enable parallel testing for your iOS app with this article by [Noam Efergan](https://x.com/No_Wham).
+
+### ​[🆓 Draft Pull Requests are now available in all repositories](https://github.blog/changelog/2025-05-01-draft-pull-requests-are-now-available-in-all-repositories?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_67)​
+
+Up until this announcement, GitHub only allowed Free users to **create draft pull requests in public repositories**.
+
+As of the 1st of May, GitHub have lifted this restriction so that users on the Free plan can now create draft pull request **in any repository, public or private, completely free of charge**.
+
+### ​[🤑 The numbers behind the 'hidden costs' of Mobile Releases](https://www.linkedin.com/posts/gsavit_yesterday-i-wrote-about-how-fine-mobile-activity-7318674643580563456-7c3G?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_67)
+
+As mobile engineers, we know that release processes can be time consuming and introduce friction. But have you ever spent time figuring out what the costs and impact for your organization actually are?
+
+​[Gabriel Savit](https://x.com/GabrielSavit), [Runway](https://x.com/RunwayTeam)'s CEO and Co-Founder talks about the concept of a **'Release Tax'** that mobile teams are paying without even realizing it in this LinkedIn post.
