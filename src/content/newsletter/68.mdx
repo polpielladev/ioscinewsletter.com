@@ -1,0 +1,64 @@
+---
+number: 68
+date: 2025-05-18
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="How Secure Is Your Mobile CI/CD Pipeline?"
+  url={`https://appcircle.io/blog/mobile-ci-cd-security-top-5-best-practices?utm_source=pol&utm_medium=web&utm_campaign=may_18`}
+  description="With the growing adoption of mobile CI/CD, hidden security risks can surface at any phase of the pipeline. This blog uncovers the top 5 vulnerabilities and the proven best practices to address them, based on findings from over 200 enterprise audits. Explore the post to uncover the gaps and secure your mobile CI/CD pipeline."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/appcircle-cicd-security.png"
+/>
+
+## **My WWDC Wishlist**
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+As WWDC 25 quickly approaches, so do the nerves and excitement about hearing what Apple will unveil at this year's conference.
+
+This statement is especially true for me this year as I will be travelling to Cupertino and, for the first time in my career, [I managed to get a ticket to watch the keynote at Apple Park 😱](https://x.com/polpielladev/status/1923763292629029261).
+
+I am expecting the announcements for the week to be very AI-heavy, and, like everyone else in the community, I have my personal pre-WWDC wishlist:
+
+- First-class Xcode Cloud support for standalone Swift Packages.
+- Building and running app targets using Swift Packages only.
+- Swift Assist release date, or any other first-party alternative that gets Xcode up to speed with other modern IDEs.
+- Ratings resource in the App Store Connect API.
+- Improvements to the Translations API with more languages supported.
+- More on-device AI APIs.
+- Sessions around MLX and more emphasis on running your own on-device ML models.
+
+What are your WWDC wishes? Make sure you share them by replying to this email or by reaching out directly on social media.
+
+Happy reading!
+
+## ​[**📦 How to analyze your app's bundle size with Tuist**](https://tuist.dev/blog/2025/05/15/bundle-size-analysis?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_68)​
+
+​[**Tuist**](https://x.com/tuistdev) has introduced a new feature called **Bundle Analysis** to help developers monitor and reduce app size as it grows. This feature allows you to generate **a detailed visual breakdown** of your app bundle, highlighting **duplicate assets**, **unused symbols**, and other inefficiencies that **unnecessarily bloat your app's size**.
+
+Check out this announcement post by [**Marek Fořt**](https://x.com/marekfort) to learn more!
+
+## ​[**🧪 Xtool: A cross-platform Xcode replacement**](https://forums.swift.org/t/xtool-cross-platform-xcode-replacement-build-ios-apps-on-linux-and-more/79803?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_68)​
+
+Have you ever wanted to create an iOS app **using only Swift Packages**? I certainly did while I was trying to add an example app to a Swift Package library and was immediately frustrated at the fact that **I couldn't do it without an Xcode project** 😭.
+
+But... do you really need an Xcode project? You might want to check out the tool in this Swift forums post... 🤔
+
+## ​[**🔐 CodeQL now supports Swift 6.1**](https://github.blog/changelog/2025-05-14-codeql-support-for-swift-6-1-in-version-2-21-2?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_68)​
+
+CodeQL, the engine that powers [GitHub's Code Scanning feature](https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_68), which **identifies and remediates security issues in your code**, has now **gained support for Swift 6.1**.
+
+Projects built with Swift 6.1 can now be analyzed for security issues and vulnerabilities using version [2.21.2 of CodeQL](https://codeql.github.com/docs/codeql-overview/codeql-changelog/codeql-cli-2.21.2?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_68) or higher.
+
+## ​[**🪝How to use Git Hooks for iOS projects**](https://nowham.dev/posts/git_hooks?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_68)​
+
+In this newsletter, I usually show you how to automate manual processes using CI/CD, but there are certain times when you can identify issues **before you even push code to your repository**.
+
+This way, you can ensure that CI/CD resources are **reserved for important tasks** and **that costs are kept to a minimum**. Check out this article by [**Noam**](https://x.com/No_Wham) to get started!
