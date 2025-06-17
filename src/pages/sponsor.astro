@@ -14,24 +14,34 @@ import ListItem from "../components/sponsor/ListItem.astro";
   ctaType="sponsor"
 >
   <section class="flex flex-col gap-9">
-    <StatsSection title="How much does it cost?">
+    <div
+      class="dark:text-gray-100 text-gray-900 bg-violet-500/20 p-6 rounded-lg border-violet-800 border-2 flex gap-8 items-center"
+    >
+      <div class="max-w-lg space-y-1">
+        <p class="text-xs font-bold text-violet-500">EXCLUSIVE BUNDLE OFFER</p>
+        <p class="text-lg font-bold">Get 10% off by sponsoring a full month</p>
+        <p class="text-sm">Book a whole month of sponsorship (2 issues and a webinar) and get 10% off the full price </p>
+      </div>
+      <p class="text-2xl font-semibold">
+        £2,475
+        <span class="line-through text-gray-500 ml-2 font-normal">£2,750</span>
+      </p>
+    </div>
+    <StatsSection title="Sponsor an email issue">
+      <p class=" max-w-prose">You will be the exclusive sponsor of an email issue that reaches over 2,000 iOS developers interested in iOS CI/CD and automation. Some of these developers work at companies like Apple, Meta and Amazon among others.</p>
+      <p class="text-lg font-semibold">Price</p>
       <ul class="list-disc list-inside space-y-4">
         <ListItem>
-          Sponsored slot in 1 issue: <Highlight text="750￡" />.
-        </ListItem>
-        <ListItem>
-          Sponsored slot in 4 issue: <Highlight text="2250￡" />. You get 1
-          issue for free!
+          Sponsored slot in 1 email issue: <Highlight text="750￡" />.
         </ListItem>
       </ul>
-    </StatsSection>
-
-    <StatsSection title="What's in it for you?">
-      <ul
-        class="text-lg font-normal lg:text-xl text-gray-300 flex flex-col gap-3 list-disc list-inside"
-      >
+      <p class="text-lg font-semibold">What's in it for you?</p>
+      <ul class="list-disc list-inside space-y-4">
         <ListItem>
-          A <strong>sponsored slot</strong> in the email newsletter.
+          Your brand reaching over <Highlight text="2.2k+" /> developers' email inboxes.
+        </ListItem>
+        <ListItem>
+          Your brand reaching over <Highlight text="1k+" /> subscribers of the iOS CI Newsletter on LinkedIn.
         </ListItem>
         <ListItem>
           A <strong>sponsored slot</strong> in the web version of the newsletter
@@ -49,9 +59,33 @@ import ListItem from "../components/sponsor/ListItem.astro";
             >previous sponsor</strong
           > section of this page.
         </ListItem>
+      </ul>
+    </StatsSection>
+
+    <StatsSection title="Sponsor a webinar">
+      <p class=" max-w-prose">As part of building a community around iOS CI/CD and Automation, I run a monthly webinar series, which is exclusive and free to attend for subscribers of the newsletter. If you would like to support me and get your brand in front of the audience, you can sponsor a webinar.</p>
+      <p class="text-lg font-semibold">Price</p>
+      <ul class="list-disc list-inside space-y-4">
         <ListItem>
-          A <Highlight text="highly customisable" /> component where you pick the
-          image, content and colours to match your brand.
+          Webinar Sponsorship: <Highlight text="1250￡" />.
+        </ListItem>
+      </ul>
+      <p class="text-lg font-semibold">What's in it for you?</p>
+      <ul class="list-disc list-inside space-y-4">
+        <ListItem>
+          A full list of <Highlight text="attendee data (name and email)" />, with permission through Sign Up form T&Cs.
+        </ListItem>
+        <ListItem>
+          Exclusive <Highlight text="sponsor slot" /> in the webinar.
+        </ListItem>
+        <ListItem>
+          Tailoring of the webinar content to use the product or service you're <Highlight text="advertising" />.
+        </ListItem>
+        <ListItem>
+          Sponsor <Highlight text="overlay" /> in the webinar.
+        </ListItem>
+        <ListItem>
+          Sponsor name included in the webinar <Highlight text="title" />.
         </ListItem>
       </ul>
     </StatsSection>
@@ -68,15 +102,6 @@ import ListItem from "../components/sponsor/ListItem.astro";
         class="text-lg underline font-normal text-violet-600 dark:text-violet-300"
         >You can see it in context in any of the site's articles.</a
       >
-    </StatsSection>
-    <StatsSection title="Some stats about the newsletter">
-      <ul
-        class="text-lg font-normal lg:text-xl text-gray-300 flex flex-col gap-3 list-disc list-inside"
-      >
-        <ListItem><Highlight text="2k+" /> email subscribers.</ListItem>
-        <ListItem><Highlight text="50+" /> issues released so far.</ListItem>
-        <ListItem><Highlight text="75%" /> average open rate.</ListItem>
-      </ul>
     </StatsSection>
   </section>
 </BaseLayout>
