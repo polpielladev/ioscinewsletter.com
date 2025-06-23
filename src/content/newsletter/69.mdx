@@ -1,0 +1,68 @@
+---
+number: 69
+date: 2025-06-15
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Want to Stay Ahead in Mobile CI/CD?"
+  url={`https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7211299460243460097&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69`}
+  description="The Mobile CI/CD Report is a biweekly LinkedIn newsletter delivering expert insights, industry trends, and practical guidance on mobile DevOps. Explore the insights enterprise DevOps leaders and mobile CI/CD teams rely on to stay ahead."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/appcircle-linkedin-newsletter.png"
+/>
+
+## Must-watch WWDC Developer Tools sessions
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+I am writing this issue one day late but I promise I have a good excuse this time. I just got back from my first ever in-person WWDC and I wanted to share so much in this issue that I felt like it warranted mulling everything over for an extra day.
+
+That, and the fact that I felt absolutely exhausted after such an intense week and two very long flights 😅.
+
+The experience of attending WWDC in person was incredible and has made me feel very energized, inspired and ready to build amazing things for the rest of the year. I feel like after attending it in person for the first time, this is going to become a yearly tradition for me.
+
+In terms of what was announced during the week in the CI/CD and Automation space, one thing that shocked me was the fact that there was **no mention of Xcode Cloud** in either the **Platforms State of the Union** or any of the **Sessions** for the first time since its announcement.
+
+I have been thinking about what this means for Apple's CI/CD service, could it be a sign of **lower investment** in the platform? Or that the product now has enough features that they focused on performance improvements and bug fixes this year?
+
+I also went ahead and checked if something had changed in [the release notes](https://developer.apple.com/xcode-cloud/release-notes/) that wasn't quite **PSOTU** or **Session** worthy, but I was surprised to only see installed software updates 😭. I will continue to keep an eye on the product and let you know of any updates, but I am a bit gutted there was no real update this year (or at least that I could see!)
+
+On the other hand though, this has been a **VERY good year** for automation and there is plenty to be excited about in that front, as I tell you in this issue.
+
+Happy reading!
+
+### ​[**🚀 What's new in the App Store Connect API**](https://developer.apple.com/videos/play/wwdc2025/324?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69)​
+
+Apple shipped a new major version of the [App Store Connect API (4.0)](https://developer.apple.com/documentation/appstoreconnectapi/app-store-connect-api-4-0-release-notes?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69) during WWDC and it is packed with great features that will unlock a set of new automations for teams.
+
+This release definitely empowers us to build a new set of features for [Helm](https://x.com/helm_app?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69) to try and make developer's lives even easier. Check out this session to find out more about what's new.
+
+### ​[**📈 New and Improved analytics to better track apps' usage and performance**](https://developer.apple.com/videos/play/wwdc2025/252?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69)​
+
+While most people don't know about it, the App Store Connect API is an incredible source of **metric points** and **analytics** that can help you better understand your app in a wide range of different dimensions.
+
+This year, Apple added a couple of notable monetization analytics to the API: **Subscription Event** and **Subscription State** reports. On top of this, Apple also improved the Power and Performance metrics to include a recommended baseline, instead of relying on users to provide one.
+
+### ​[**🧳 Reduce your app's install size by using Apple-Hosted Background Assets**](https://developer.apple.com/videos/play/wwdc2025/325?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69)​
+
+If you are a **game developer** or are building an app that **relies heavily on content**, you might want to check out this new feature as it can help you **reduce your app's initial bundle size**, leading to a better first impression for your users.
+
+As of WWDC25, you can now upload background assets to an app in App Store Connect and **leverage system capabilities** and **new APIs** to download them on-demand.
+
+### ​[**🐳 A first-party Docker alternative?**](https://developer.apple.com/videos/play/wwdc2025/346?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69)​
+
+Apple introduced a new Open Source project written entirely in Swift called **Containerization**. This project allows you to **create and run Linux containers** directly on your mac in a secure and private way.
+
+Could this be a good first-party alternative to Docker for macOS users?
+
+### ​[**🧪 Best practices to perform automated UI tests in Xcode**](https://developer.apple.com/videos/play/wwdc2025/344?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69)​
+
+Xcode provides an amazing set of tools to automating the testing of your application. One of these tools is [XCUIAutomation](https://developer.apple.com/documentation/xcuiautomation?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_69), a framework that allows you to **record interactions** with your app's UI, **replay them in different configurations** and environments and then **test or review them** in video format.
+
+This year, Apple recorded a session showing best practices when using this framework.
