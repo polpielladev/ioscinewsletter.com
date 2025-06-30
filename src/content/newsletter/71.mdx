@@ -1,0 +1,66 @@
+---
+number: 71
+date: 2025-06-30
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic makes Apple M2 machines available, even on the free tier!"
+  url={`https://codemagic.io/start/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71`}
+  description="Codemagic is the first CI/CD to make Apple M2 machines available to everyone (including the free tier!). This is a free upgrade from M1 machines with no price change."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+## Why filing Apple Feedback is not a waste of time
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+I recently saw [this article by Eric Dorphy in the latest issue of Antoine's SwiftLee Weekly](https://www.linkedin.com/pulse/why-ive-filed-over-1000-apple-feedbacks-you-should-too-eric-dorphy-qfe8c?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71) and it got me thinking about feedback and how important it has been for Hidde and I when building Helm. Over his career, Eric has submitted over **1,000 Apple feedbacks** and he has now written an article summarizing his learnings where he talks about why it is **incredibly valuable to file feedback** and **gives numerous tips on how to effectively file issues**.
+
+What I really like about the article is that he challenges the common misconception in the iOS community **that filing feedback is a waste of time** and that **Apple ignores our feedback**.
+
+This couldn't be further from the truth, as I have also experienced first hand, and while you won't always get an answer and maybe the issues won't get fixed right away, it **does not mean that they are getting ignored**. And this quote from [Eric](https://x.com/ericdorphy?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71)'s article sums up the point incredibly well:
+
+Feedback doesn’t always bring instant results, but over time, it adds up.
+
+I had the pleasure to meet [Eric](https://x.com/ericdorphy?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71) at one of the events during this year's edition of WWDC and, of course, he provided me with **incredibly valuable feedback** about a pretty serious bug that he found in Helm' iOS Beta. It was thanks to his feedback that we were made aware of a bug that could have gone unnoticed for months and learning about it earlier helped us fix it in a timely manner.
+
+I hope [Eric](https://x.com/ericdorphy?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71)'s story inspires you to **keep filing feedback** and **report any issues you find** or any **new features** that you want to see implemented in your favorite software.
+
+Happy reading!
+
+### ​[**📦 How to set up a Swift Package registry**](https://albertodebortoli.com/2025/06/06/how-to-setup-a-swift-package-registry-in-artifactory?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71)​
+
+Did you know that Swift Package Manager **deep-clones the entire Git repository** for each dependency that you bring into your project or package?
+
+This can be **time-consuming**, especially if you maintain a large codebase with numerous dependencies. This specific problem inspired [Alberto](https://x.com/albertodebo?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71) and his team to set up their own **Swift Package Registry** and, in this article, he shares his experience doing so.
+
+### ​[**🫙 Getting started with Apple's Docker alternative**](https://swifttoolkit.dev/posts/container?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71)​
+
+During WWDC 25 Apple launched [Container](https://github.com/apple/container?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71): a native, open-source tool that allows developers to **build and run Linux images without using Docker at all**.
+
+If you would like to learn more about how it works and how you can get started, make sure you read this article by [Natan Rolnik](https://x.com/natanrolnik?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71) on [swifttoolkit.dev](https://swifttoolkit.dev/posts/container?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71).
+
+### ​[**🚀 Speed up your launch times with this Open Source tool**](https://blog.sentry.io/open-source-tool-speed-up-ios-app-launch?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71)​
+
+Last month, [Sentry announced that they were acquiring Emerge Tools](https://blog.sentry.io/emerge-tools-is-now-a-part-of-sentry?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71), a company focused on building first-class tools to improve the performance of mobile applications.
+
+A few weeks ago, in their first major release together, Sentry announced that they were open sourcing a tool that allows you to dramatically improve your app's launch times. Read more in this announcement post by [Max Topolsky](https://x.com/MPTop27?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71) and [Noah Martin](https://x.com/sond813?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71).
+
+### ​[**🧪 How to run Unit Tests on CI/CD**](https://nowham.dev/posts/github_actions_unit_tests?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71​)
+
+This article is part of [Noam](https://x.com/No_Wham?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71)'s amazing _"GitHub Actions to TestFlight - from zero to hero"_, where he shows how you can automate all sorts of mobile tasks using GitHub Actions.
+
+In this article, he talks through how you can **automate** what's arguably one of the most important tasks in the mobile development lifecycle: **running unit tests**.
+
+### ​[**⛓️‍💥 Never ship breaking changes with the wrong version type again**](https://medium.com/@kamil.wyszomierski/automate-versioning-for-swift-packages-6bcba80e59f7?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71)​
+
+Have you ever shipped breaking changes of your Swift Package in a non-major version? Well you're not alone, I have done this many times 😅.
+
+To prevent this from happening, [Kamil Wyszomierski](https://x.com/Filozoff90?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_71) wrote a shell script that automates semantic versioning by comparing the public API of the current code with the latest tagged version, which is perfect to run on CI!
