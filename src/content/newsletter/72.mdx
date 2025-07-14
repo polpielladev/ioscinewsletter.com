@@ -1,0 +1,77 @@
+---
+number: 72
+date: 2025-07-14
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​🚀 Fastlane alternative - Codemagic CLI tools​"
+  url={`https://github.com/codemagic-ci-cd/cli-tools/tree/master?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72`}
+  description="Are you tired of Ruby and Fastlane installation issues? There's got to be a better way! ​Discover Codemagic open source CLI tools​. 
+It is not a drop-in replacement for all of what Fastlane does (screenshots for example), but we use it at Codemagci to build and publish iOS and Android apps, also versioning and device provisioning."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+## AI writes code Fast, CI/CD keeps it Safe
+
+Hey everyone! I hope you’ve all had a **fantastic couple of weeks** — welcome to another issue of the newsletter!
+
+As we find ourselves _deep in the era of AI-assisted development_, the way we write code is evolving faster than ever. Tools like **GitHub Copilot**, **ChatGPT**, and **Claude** are enabling developers to generate and ship code at unprecedented speed. What once took _hours_ of meticulous implementation can now be scaffolded in _minutes_ with a well-crafted prompt. On top of that, _vibe coding_ has made it possible for people to bring their ideas to life with **very little hands-on coding**. It’s exciting, empowering — and also a little terrifying.
+
+Because with that speed comes **risk**.
+
+This is something [Hidde](https://x.com/hiddevdploeg) **and** I have been experimenting with in **Helm**, using OpenAI’s **Codex** feature. When we get support tickets we _can’t easily reproduce_, we sometimes spin up a coding agent that attempts to fix the bug and open a PR on our behalf… or at least _tries to_.
+
+These agents will confidently output code that _compiles_ — but not necessarily code that’s _correct_. Which means your **CI/CD setup** is no longer just a _nice-to-have_ — it’s your **safety net**. It’s what catches the **silent regressions**, **unintentional side effects**, and the **sneaky race conditions** introduced by an overly helpful AI. If you don’t have a comprehensive test suite yet, your CI/CD can still be useful by _simply making sure all platforms compile_.
+
+Here's an example of a fix that Codex did for us in Helm. Having CI/CD helps us understand the quality of the changes very quickly:
+
+![Commits added to a PR by Codex and being validated by an Xcode Cloud workflow](https://embed.filekitcdn.com/e/hMaFYHCjGv2jTKsg3QHDt6/j3ScX8kM7j5PTt18SxQDvi/email)
+
+Once you’ve got that in place — and this is what I’m currently doing with Helm — I’d recommend starting to write **tests for your core functionality**. Not only will it help _guide the LLM_ when it’s generating fixes, but it will also let you **experiment and iterate more confidently**. Let the AI fix it. _If the CI/CD passes — ship it!_
+
+I know that writing tests might often feel like a waste of time, especially for us indie developers as it doesn't have an immediate customer impact, but **believe me it will pay off in the era of AI-assisted** (or more AI-driven 😅) development.
+
+### ​[🚀 Fastlane alternative - Codemagic CLI tools](https://github.com/codemagic-ci-cd/cli-tools/tree/master?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72)​
+
+Are you tired of Ruby and Fastlane installation issues? There's got to be a better way! [Discover Codemagic open source CLI tools](https://github.com/codemagic-ci-cd/cli-tools/tree/master?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72).
+
+It is not a drop-in replacement for all of what Fastlane does (screenshots for example), but we use it at Codemagci to **build and publish iOS and Android apps**, also **versioning** and **device provisioning**.
+
+### ​[⚠️ Important updates to GitHub-hosted macOS runners](https://github.blog/changelog/2025-07-11-upcoming-changes-to-macos-hosted-runners-macos-latest-migration-and-xcode-support-policy-updates?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72)​
+
+GitHub recently announced **important updates to hosted macOS runners** that might affect your GitHub Actions workflows.
+
+These updates impact **several runner types** and **Xcode installations**, so make sure you read their announcement to ensure your app is ready for the changes.
+
+### ​[🏷️ Uploading your app to TestFlight using GitHub Actions](https://nowham.dev/posts/github_actions_testflight?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72)​
+
+In the latest article of [Noam](https://x.com/No_Wham)’s amazing “GitHub Actions to TestFlight – from zero to hero” series, he goes through how you can **automate distribution to TestFlight**.
+
+This article is a must-read if you’re looking to **streamline your release process** and **ship builds to testers with confidence** — all without leaving GitHub.
+
+### ​[✂️ How Duolingo deleted 1% of their code using this Open Source tool](https://blog.sentry.io/an-open-source-sdk-for-finding-dead-code?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72)​
+
+Last week, I shared the news about Sentry open-sourcing the core functionality behind [Emerge](https://x.com/emergetools)’s **Launch Booster** product. This week, I’m excited to share yet another project they’ve open-sourced since joining [Sentry](https://x.com/getsentry): **Reaper**.
+
+**Reaper** uses runtime analysis to effectively detect unused code in production — making it easier to clean up, slim down your binaries, and ship more maintainable apps. A super exciting tool for anyone working in large Swift codebases! 👻🧹
+
+### ​[✨ How to build delight Swift CLIs](https://swifttoolkit.dev/posts/terminal-utilities?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72)​
+
+It’s very common to **build small scripts** and **command-line tools** to support your iOS project’s needs — especially when working on CI/CD pipelines.
+
+Building these tools in **Swift** is a great choice: you get **type safety**, **strong performance**, a **small memory footprint**, and — most importantly — **better maintainability** thanks to using a familiar language.
+
+In this piece, [Natan](https://x.com/natanrolnik) shares some must-know tips and tricks to make your Swift tools not just functional, **but delightful to use**!
+
+### ​[📦 A decentralized CLI tool manager](https://albertodebortoli.com/2025/07/13/how-to-implement-a-decentralised-cli-tool-manager?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_72)​
+
+Installing third-party CLI tools like SwiftLint, Tuist, and Fastlane is common in iOS projects — **but Homebrew’s lack of version pinning and clunky tap system often gets in the way**. Tools like Mint and Mise offer better control, letting teams activate specific versions per project.
+
+In this article, [Alberto](https://x.com/albertodebo) shares how he built a **simple**, **decentralized** approach to managing CLI tools — **no registry**, just **zip downloads** and **per-project version control**.
