@@ -1,0 +1,52 @@
+---
+number: 74
+date: 2025-09-10
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​Run UI tests on every PR​"
+  url={`https://marathonlabs.io?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_74`}
+  description="With Marathon Cloud, you can run unlimited iOS UI tests and get results in just 15 minutes — even for 1,000+ tests."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/marathon-labs.webp"
+/>
+
+## Apple Event week!
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+September is one of the most exciting months of the year for us Apple developers and enthusiasts. The new OS versions are released, new devices are announced, and we’re all busy making sure our apps provide the best possible experience on the latest OS and hardware.
+
+Of course, this excitement often comes with long nights of work and a fair bit of stress to get everything ready in time. That’s especially true with the 26 release, which introduces a major system redesign.
+
+So, I’ll keep the intro short and sweet — we’ve all got plenty on our plates already 😅. But before we dive in, I’d love to hear from you: What was your favorite announcement from Tuesday’s Apple event? And if you’re working on something cool for iOS 26, hit reply — I’d be thrilled to share some of your work in the next issue!
+
+### ​[🤖 How to generate GitHub Actions workflows automatically​](https://elegantchaos.com/2025/08/28/action-builder.html?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_74)​
+
+If you’ve ever found yourself **hand-crafting repetitive GitHub Actions workflow files for Swift packages**, you need to follow along on [Sam Deane](https://mastodon.scot/@elegantchaos)'s progress on this project.
+
+His goal? To come up with a **near zero-configuration tool** that can be used **to generate GitHub Action workflows** for a Swift Package, inferring all the necessary steps from its manifest. Brilliant idea!
+
+### ​[​📦 An all-you-need GitHub Action for building Swift projects​](https://brightdigit.com/tutorials/swift-build?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_74)​
+
+I am really on a mission to share resources to make setting up CI/CD for your apps no effort at all. There are no excuses, I want you to start automating! 😅
+
+This article by [Leo Dion](https://x.com/leogdion) talks about [swift-build](https://github.com/brightdigit/swift-build), a GitHub Action for Swift projects that handles all set up and complexity for you. This one is a must-read for your next project!
+
+### ​[​🐙 Automatically triage and moderate GitHub issues​](https://github.blog/changelog/2025-09-05-github-actions-ai-labeler-and-moderator-with-the-github-models-inference-api/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_74)​
+
+If you own or actively collaborate on an **Open Source repository**, you will know that issue management can quickly become overwhelming. Sorting through bug reports, feature requests, and general questions often eats into valuable development time.
+
+GitHub have just released **two new actions** that leverage the power of their **AI Models** to automate most of these tasks!
+
+### ​[​🧰 Automating Swift binary releases using GitHub Actions​](https://www.ioscoffeebreak.com/issue/issue58?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_74)​
+
+Have you ever built a command line tool using Swift and are tired of juggling builds, tags, and manual uploads every time you want to release a new version?
+
+If the answer is yes, you need to read this article by [Tiago Henriques](https://x.com/tiagodhenriques), where he goes through how with a few lines of YAML, you can have GitHub Actions do the heavy lifting — **compiling binaries, compressing them, and attaching them straight to your release page**.
