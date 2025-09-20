@@ -1,0 +1,61 @@
+---
+number: 75
+date: 2025-09-21
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​🚀 Fastlane alternative - Codemagic CLI tools​"
+  url={`https://github.com/codemagic-ci-cd/cli-tools/tree/master?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_75`}
+  description="Are you tired of Ruby and Fastlane installation issues? There's got to be a better way! ​Discover Codemagic open source CLI tools​. 
+It is not a drop-in replacement for all of what Fastlane does (screenshots for example), but we use it at Codemagci to build and publish iOS and Android apps, also versioning and device provisioning."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+## Apple's 26 release is finally here!
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+I’m sure many of you are just as excited as I am about the iOS 26 release. It’s always a thrill **to unbox new devices**, explore **fresh design systems**, and see how **our favorite apps adapt to Apple’s latest OS**.
+
+As I write this, I’m setting up my brand new iPhone 17 Pro in Cosmic Orange. Choosing this color was a big change for me — I usually stick to silver or natural tones — but seeing it in person with the new TechWoven case, I can safely say I have no regrets!
+
+On the app side, [Hidde](https://x.com/hiddevdploeg) and I have just shipped our biggest update ever for [NowPlaying​](https://x.com/NowPlayingGold), and [Helm for iOS](https://x.com/helm_app) has been refreshed to feel right at home in the new design system. Work on the macOS update is also well underway and should be ready very soon.
+
+That’s it from me this week — but I’d love to hear from you! What do you think of the new devices? And which apps are you most excited to try on the new OS?
+
+### ​[​🤯 Want to try an AI agent that can automatically test your app end-to-end?​​](https://x.com/pepicrft/status/1969076040992772188?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_75)​
+
+A few issues ago, I shared a post from the [Tuist](https://x.com/tuistdev) team where they discussed the possibility of using AI agents to automate regression testing processes that would otherwise be done manually.
+
+Well, this week I am super happy to say that this seems to be shaping up and [Pedro](https://x.com/pepicrft/status/1969076040992772188) just shared a super insightful and exciting demo of what they are building. If you are interested in trying the product out, make sure you reach out to them!
+
+### ​[​💪 Use Diagnostics to improve user support and debug faster​​](https://www.avanderlee.com/debugging/introducing-diagnostics-improved-debugging-and-user-support?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_75)​
+
+A while back, I wrote a [blog post about my debugging process](https://www.polpiella.dev/how-i-fix-bugs-in-my-apps). One of the most important factors in diagnosing and fixing production issues is having as much context as possible about why they occurred in the first place.
+
+That’s where [Antoine](https://x.com/twannl)’s open-source library Diagnostics comes in. I use it in every one of my apps, and it has been invaluable. Check out the article to learn more and start improving your own debugging workflow today.
+
+### ​[​​⚠️ Node 20 will soon be deprecated on GitHub Actions​​](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_75)​
+
+With Node 20 reaching end-of-life in April 2026, GitHub have just announced their plans to migrate all of their actins to run on Node 24 in this year's Fall.
+
+If you are an Actions maintainer, you should update to Node 24 as soon as possible and, if you're just an Actions user, you must update your workflows with latest versions of the actions that run on Node 24.
+
+### ​[​👋 macOS 13 GitHub-hosted images are closing down​​](https://github.blog/changelog/2025-09-05-github-actions-ai-labeler-and-moderator-with-the-github-models-inference-api?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_75)​
+
+In similar news, GitHub have recently announced that the macOS 13 runners will be removed on the 4th of December of this year.
+
+If you're still using one of these runners, make sure to update your workflows to use a supported runner as soon as possible.
+
+### ​[​​✨ Build your command-line tools in Swift​​](https://swifttoolkit.dev/posts/argument-parser-gems-2#the-argumentparserinfo-library?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_75)​
+
+If you're building tools to automate processes for your Swift Application, please make sure you build them using Swift. The ecosystem is great and you'll build them in a language that you and your team are familiar with, making them a breeze to maintain.
+
+If you're already doing this and want some more advanced tips to step up your game, check out the second article of [Natan Rolnik](https://x.com/natanrolnik)'s **Hidden Gems in the Swift Argument Parser** series!
