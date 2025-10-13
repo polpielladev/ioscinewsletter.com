@@ -1,0 +1,60 @@
+---
+number: 78
+date: 2025-10-13
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​​Run your entire CI/CD pipeline in AWS​​"
+  url={`https://aws.amazon.com/blogs/aws/announcing-amazon-ec2-m4-and-m4-pro-mac-instances?utm_campaign=mac&utm_content=001&utm_id=iosci&utm_medium=banner&utm_source=newsletter`}
+  description="Modernize your iOS CI/CD workflows with access to the latest Apple silicon through the new Amazon EC2 M4 instances, ideal for building and testing iOS apps at any scale.
+Now with up to 20% better build performance than M2 instances."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-black.png"
+  imageDark="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-white.png"
+/>
+
+## SwiftLeeds 2025
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+I have just come back from the **5th edition of SwiftLeeds** and I have to say that it somehow keeps getting better every year. I want to use this opportunity to thank [Adam Rush](https://x.com/Adam9Rush) and the team for organizing such an amazing conference and for having me ❤️.
+
+The conference ran super smoothly, the talk show and the talks were great, I was able to catch up with good friends and meet a lot of new people and, in classing SwiftLeeds style, there was a good amount of Karaoke too 🎤.
+
+This year I also had the chance to **give a talk on the second day**, which I really enjoyed. I gave my revisited Instruments talk **updated for Xcode 26** where **I diagnosed and fixed some real NowPlaying performance issues live on stage**.
+
+I really enjoy giving this talk at different conferences as it helps bring **the often overlooked power of Instruments to the top of people's minds** through practical examples.
+
+I would like to hear your thoughts: **How familiar are you with instruments? Would you be interested in a performance-focused webinar? **Let me know by replying to this week's issue!
+
+Now, let's dive into today's issue 👀...
+
+### [​⚠️ Don't lose access to the App Store Connect API, sign the new agreement!​](https://x.com/helm_app/status/1976278173957619804?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_78)
+
+Apple has just revised the **Apple Developer Program License Agreement** to support updated policies and to provide clarification on existing ones.
+
+As you might know, having signed and acknowledged the latest agreement is a requirement to use the App Store Connect API, so if you rely on using it (in [Helm](https://x.com/helm_app) for example 😜), **make sure you sign it before the 23rd of October**.
+
+### [​🚨 CircleCI Xcode version deprecations​](https://circleci.com/changelog/deprecation-of-eol-xcode-versions?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_78)
+
+Following their Xcode image retention policy, [CircleCI](https://x.com/circleci) will soon be **deprecating a set of Xcode images** that are no longer supported by the platform.
+
+If [CircleCI](https://x.com/circleci) is your CI/CD provider, I would thoroughly encourage you to check out their article and **update your CI if needed** before the Xcode versions are deprecated on the** 7th of November**.
+
+### [🧪 How to test Swift CLIs using GitHub Actions​](https://www.ioscoffeebreak.com/issue/issue59?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_78)
+
+Swift is a great language to build the tooling that accompanies your app's project. It is **type-safe**, has a **low memory footprint** and, most importantly, it is** a language that you and your team will be familiar with.**
+
+If you have already built a tool and are wondering how to **automate the process of testing it**, you need to check out the latest edition of [Tiago Henriques](https://x.com/tiagodhenriques)' [iOS Coffee Break newsletter](https://www.ioscoffeebreak.com/issue/issue59?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_78).
+
+### [​🐙 GitHub Dependabot upcoming deprecations​](https://github.blog/changelog/2025-10-07-upcoming-changes-to-github-dependabot-pull-request-comment-commands?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_78)
+
+GitHub have just announced that several Dependabot-specific pull request comment commands **will be deprecated** in favor of GitHub’s native pull request features and functionality **on the 27th of January 2026**.
+
+If you use any of the commands listed in the post, make sure you check out the migration guide before the deprecation date.

@@ -1,5 +1,5 @@
 ---
-const { image, title, url, description } = Astro.props;
+const { image, imageDark, title, url, description } = Astro.props;
 ---
 
 <div
@@ -11,11 +11,26 @@ const { image, title, url, description } = Astro.props;
     Sponsored
   </p>
 
-  <img
-    class="relative hidden aspect-square w-28 object-contain px-2 sm:block"
-    src={image}
-    alt="Sponsor logo"
-  />
+  {imageDark ? (
+    <>
+      <img
+        class="relative hidden aspect-square w-28 object-contain px-2 sm:block dark:hidden"
+        src={image}
+        alt="Sponsor logo"
+      />
+      <img
+        class="relative hidden aspect-square w-28 object-contain px-2 sm:hidden dark:sm:block"
+        src={imageDark}
+        alt="Sponsor logo"
+      />
+    </>
+  ) : (
+    <img
+      class="relative hidden aspect-square w-28 object-contain px-2 sm:block"
+      src={image}
+      alt="Sponsor logo"
+    />
+  )}
 
   <div class="max-w-md">
     <a

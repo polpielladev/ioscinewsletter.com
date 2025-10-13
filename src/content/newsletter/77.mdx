@@ -1,0 +1,60 @@
+---
+number: 77
+date: 2025-10-06
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​​Use your SwiftUI Previews as Snapshot Tests!​​​"
+  url={`https://screenshotbot.io/blog/swiftui-previews-and-prefire-free-snapshot-tests?utm_source=pol`}
+  description="Read our guide on repurposing #Previews, and learn how you can scale up your snapshot testing, without the friction."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/screenshotbot.png"
+/>
+
+## How do you automate your app's release process?
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+Last week I ran another edition of my free webinar series exclusive to iOS CI Newsletter. In the session, I set up a **full CI/CD release pipeline from scratch** for an iOS app to automate** testing, archiving** and **uploading builds** to App Store Connect.
+
+I used this opportunity to try a set up that I have been meaning to test for a long time: using **GitHub Actions** as the CI/CD service with a **[Namespace](https://namespace.so)** macOS runner.
+
+I have to admit that I am very impressed with **how easy the set up was** and how **running on Apple Silicon M2/M4 machines** dramatically improved my runs compared to running the same workflow in Xcode Cloud.
+
+I was able to run for a production app (not just a simple TODO test app) in **just 6 minutes**!
+
+I think I found my favorite set up for my indie apps, I would thoroughly encourage you to check it out.
+
+Now, let's dive into today's issue 👀...
+
+### [​🔨 How to reduce your build times with Xcode's compilation caching​](https://bitrise.io/blog/post/accelerate-ios-builds-with-xcode-26-compilation-caching-on-bitrise?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_77)
+
+Xcode 26 introduced a brand new feature called **Compilation Caching**, which improves build times when **switching branches** or **doing clean builds**.
+
+If you'd like to know how it works, check out this awesome article by [Dan Žďárek](https://www.linkedin.com/in/dan-zdarek/) on the [Bitrise](https://x.com/bitrise) blog. Oh, and if you're a Bitrise user, you'll be happy to know that they have already added support for it 👏.
+
+### [​🧠 Start formatting your CI/CD output with AI in mind​](https://ldomaradzki.com/blog/stop-wasting-context-build-output?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_77)
+
+When working with an AI coding agent, providing the right amount of context is key. Too little context can lead to poor results, while too much can waste valuable tokens — and money.
+
+This is especially true when **debugging CI/CD issues**, where logs from tools like **xcodebuild** are often **verbose** and span **thousands of lines**. This challenge inspired [Łukasz Domaradzki](https://x.com/ldomaradzki) to build **[xcsift](https://github.com/ldomaradzki/xcsift)**, a command-line tool that transforms build output into structured data that’s easier for AI agents to process.
+
+### [​🐙 Use GitHub Copilot directly from the Terminal​](https://github.blog/changelog/2025-09-25-github-copilot-cli-is-now-in-public-preview?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_77)
+
+Last week, **GitHub** announced the public preview release of the **GitHub Copilot CLI**. Similarly to [Anthropic's very popular Claude Code](https://www.claude.com/product/claude-code?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_77), the Copilot CLI allows you to **interact directly with Copilot's AI agents from your terminal**.
+
+All you need to try it today is a GitHub account and access to Copilot Pro.
+
+### [​🎥 CI/CD for iOS Developers webinar recording​](https://streamyard.com/ik659maf7b32?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_77)
+
+Last week I ran a **free webinar for all iOS CI Newsletter subscribers** about how to **get started with CI/CD** and how to **set up a release pipeline from scratch for an iOS app**.
+
+If you weren't able to attend or if you'd like to watch it again, you can [now access the recording here](https://streamyard.com/ik659maf7b32?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_77).
+
+[​If you're interested in the code that I used for the webinar, check out this step by step guide that I put together.​](https://pol.link/ci-cd-for-ios-workshop)

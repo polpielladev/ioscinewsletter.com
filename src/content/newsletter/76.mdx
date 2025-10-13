@@ -1,0 +1,58 @@
+---
+number: 76
+date: 2025-10-01
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​​Run your entire CI/CD pipeline in AWS​​"
+  url={`https://aws.amazon.com/ec2/instance-types/mac/?utm_campaign=mac&utm_content=001&utm_id=iosci&utm_medium=banner&utm_source=newsletter`}
+  description="Modernize your iOS CI/CD workflows with access to the latest Apple silicon through the new Amazon EC2 M4 instances, ideal for building and testing iOS apps at any scale.
+Now with up to 20% better build performance than M2 instances."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-black.png"
+  imageDark="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-white.png"
+/>
+
+## Helm 2.0 is here!
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+Yesterday [Hidde](https://x.com/hiddevdploeg) and I released the iOS and macOS 26 versions of our app [Helm](https://x.com/helm_app). We didn't manage to make day one as we did with our other app [NowPlaying](https://x.com/NowPlayingGold), but we are certainly **very proud of what we have achieved** and taking the extra time to make sure we could make the** update as good as possible** really paid off!
+
+Not only have we embraced the **new Liquid Glass design system**, but we have also focused on **addressing feedback for some of our most important features**, making them better than ever before!
+
+We have made significant enough changes to make this release **our second ever major update: 2.0**!
+
+You can read more about the release in [this update post we have written](https://helm-app.com/changelog/helm-2-0?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_76) and we would love it if you could check out the new version, which is now live on the store and give us a nice review if you enjoy using it ⭐️.
+
+Now, let's dive into today's issue 👀...
+
+### [​⚖️ Is your project ready to scale?​](https://tuist.dev/blog/2025/09/22/scale?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_76)
+
+Scaling a Swift project isn’t just about adding more code — it often means **slower builds, tangled dependencies**, and frustratingly **long build and test runs**. Many teams hit this wall sooner than they expect, and some even consider drastic moves like **switching frameworks** or **replacing their build system** entirely.
+
+If these problems sound familiar, make sure you read this article by [Pedro Piñera](https://x.com/pepicrft) on the [Tuist](https://x.com/tuistdev) blog, there are plenty of tips there!
+
+### [​💪 ReleaseTools: A lightweight alternative to Fastlane written entirely in Swift​](https://elegantchaos.com/2025/09/26/release-tools.html?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_76)
+
+I’ve been a fastlane user for a long time and love **its community support, rich features**, and how quickly you can go from zero to a **working CI/CD pipeline**.
+
+That being said, I’ve never been a fan of Ruby, which fastlane relies on, and I usually end up using just one or two of fastlane's vast amount of features. [Sam Deane](https://mastodon.scot/@elegantchaos) felt the same way, so he built his own solution: **ReleaseTools**, a lightweight and highly focused alternative written entirely in Swift.
+
+### [​💪 How to install Xcode 26's Metal Toolchain on CI/CD​](https://www.polpiella.dev/metal-toolchain-ci-cd?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_76)
+
+We migrated our Xcode Cloud workflows this week to use Xcode 26 and, as we did, we were greeted with an unexpected failure: **The Metal Toolchain was not installed and could not compile the Metal source files**.
+
+As you probably know, the solution locally is to just download the toolchain and build again, but **how do we do that when we don't have access to the build runner**? I tell you all about it in this article!
+
+### [​🧠 Profile your Foundation Models calls in Xcode 26​](https://artemnovichkov.com/blog/foundation-models-profiling-with-xcode-instruments?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_76)
+
+Are you curious to see **how your Foundation Models are performing under the hood** but struggling to get the right information using logs and print statements?
+
+You definitely need to read this article by [Artem Novichkov](https://x.com/iosartem), who explains one of **the new instruments in Xcode 26 in great detail**.
