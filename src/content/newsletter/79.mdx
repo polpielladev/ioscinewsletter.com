@@ -1,0 +1,66 @@
+---
+number: 79
+date: 2025-11-02
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​Run UI tests on every PR​"
+  url={`https://marathonlabs.io?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79`}
+  description="With Marathon Cloud, you can run unlimited iOS UI tests and get results in just 15 minutes — even for 1,000+ tests."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/marathon-labs.webp"
+/>
+
+## How I set up Helm's CI/CD
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+I am just back from **Pragma Conference** in Italy and wow was I blown away by how good an event they put on. The quality of **the talks and speakers was incredibly high**, **the location was ideal**, and I got to **meet a bunch of awesome people from the community**.
+
+I want to use take this issue as an opportunity to thank [Klaus Lanzarini](https://x.com/klauslanza) and the rest of the Pragma team for doing such an amazing job with the conference, and for inviting me to such as special Pragma edition, I am honored ❤️.
+
+I also wanted to quickly mention something else **I have done this past two weeks**, I have finally migrated Helm's CI away from Xcode Cloud.
+
+As I mentioned a few issues ago, [I used a recent webinar to trial Namespace as a runner provider](https://www.ioscinewsletter.com/issues/77?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) and I absolutely loved it, so I decided to go for it with Helm too.
+
+And what a difference it made, [from 15 minute runs in Xcode Cloud to 2 minutes using GitHub Actions + Namespace 🤯](https://x.com/polpielladev/status/1980957119722713270?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79).
+
+If you are still using Xcode Cloud and are struggling for slow builds, this is definitely a good combination to use. If you want a comprehensive list of alternatives, check out [runs-on-mac.com](https://runs-on-mac.com?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79), a resource by [Pedro Piñera Buendia](https://x.com/pepicrft?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) that I came across this week.
+
+Now, let's dive into today's issue 👀...
+
+### [​🖥️ How this app saved $4000+ every month with self-hosted CI/CD Runners​](https://jeffverkoeyen.com/blog/2025/10/17/SelfHostingMacMinis/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79)
+
+I am a big fan of using Mac hardware providers like [Namespace](https://www.linkedin.com/company/namespace?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) in conjunction with GitHub Actions to run my CI/CD workflows. However, this approach usually gets more expensive as your app scales.
+
+[Jeff Verkoeyen](https://www.linkedin.com/in/jeffverkoeyen?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) tells you all about it and why they decided to move to self-hosted runners. If you are convinced by [Jeff Verkoeyen](https://www.linkedin.com/in/jeffverkoeyen?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79)'s approach, you are in luck as the article also guides you through configuring your first self-hosted runner with GitHub Actions.
+
+### [🚀 How to speed up your app's builds](https://www.avanderlee.com/optimization/analysing-build-performance-xcode?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79)
+
+We often tend to think that the only way to speed up our CI/CD workflows is **to pay for machines with more computing power**. While that will definitely improve things, some times **it is not necessary** as the problem **lies with inefficiencies in our app's code compilation**.
+
+In this article, [Antoine van der Lee](https://www.linkedin.com/in/ajvanderlee?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) goes through how you can **visualize your build performance** in Xcode and shares some tips on how **you can reduce compilation times**.
+
+### [🤩 Improvements to review submissions in App Store Connect](https://9to5mac.com/2025/10/29/apple-adds-new-app-store-submission-and-marketing-features-will-phase-out-promo-codes-in-2026?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79)
+
+Apple announced some exciting improvements to App Store Connect (and soon to [Helm](https://x.com/helm_app?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) of course 😜).
+
+The one I am most excited about allows us to submit extra content for review even if we already have an app version in review. Read Apple's announcement to learn more!
+
+### [📈 spmgraph: A CLI tool to Visualize your Swift Dependency Graph](https://github.com/getyourguide/spmgraph?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79)
+
+As [Felipe Marino](https://www.linkedin.com/in/marinofelipe?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) announces [in this post on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7389606947768918016?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79), the [GetYourGuide](https://www.linkedin.com/company/getyourguide-ag/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) iOS team has recently open-sourced **a CLI tool that allows you to visualize your app's Swift Dependency Graph**.
+
+This tool unlocks a set of different functionality, keep reading this issue and you will see how generating a dependency graph can come in handy to **speed up your CI/CD builds**.
+
+### [🎥 Speed up your CI/CD pipelines with Selective Testing](https://www.youtube.com/watch?v=U1fJQRbq-TY)
+
+If you have a large codebase with extensive test coverage that takes a long time to run in CI/CD, you might be interested in this talk by [Mike Gerasymenko](https://www.linkedin.com/in/mikeamike/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79) at this year’s edition of [Swift Connection](https://x.com/swiftconn?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_79).
+
+The talk walks you through how to save time by running your tests selectively based on the changes you’ve made — in other words, **testing only what has changed**. This is especially useful for PR workflows 🚀
