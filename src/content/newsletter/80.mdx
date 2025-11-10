@@ -1,0 +1,66 @@
+---
+number: 80
+date: 2025-11-10
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Level up your iOS CI/CD: top tips for success​"
+  url="https://bitrise.io/whitepapers/level-up-your-ios-game-tips-for-speeding-up-your-continuous-integration?utm_medium=paid_other&utm_source=ios%20ci%20newsletter&utm_campaign=all_ebook_time-for-a-tuneup-ios_all_2025-07-28&utm_content=newsletter-sponsorship"
+  description="Long iOS builds don’t have to be the norm.  This eBook shows you a better way — with proven CI/CD tips to build faster and stay focused. Perfect for iOS Devs starting out or anyone done watching progress bars crawl."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/bitrise.png"
+  imageDark="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/bitrise-white.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+This week's iOS CI Newsletter edition features:
+
+- Back Market's migration to Tuist
+- How RightMove manage their Mobile Automation
+- A roundup of all updates to GitHub Actions
+- The 2025 DevOps Awards
+
+👀 Now, let’s dive into today’s issue 👀…
+
+### [​💨 This is how Back Market made their iOS clean builds 40% faster​​](https://engineering.backmarket.com/back-market-x-tuist-part-i-why-we-moved-our-ios-project-to-tuist-f161cf914700?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_80)
+
+Do you work on a project that's growing and want to explore the options you have to make sure that it scales appropriately?
+
+You should definitely check out this article from [Alberto Salas](https://x.com/albsalapointer) on why and how [Back Market](https://x.com/backmarket) migrated their iOS project to [Tuist](https://x.com/tuistdev) and made their **clean builds between 35 and 40% faster** in the process.
+
+### [​​🎥 [FREE WEBINAR] Automate your app's releases with AWS​​](https://streamyard.com/watch/WfUTdS8snB6i?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_80)
+
+Have you ever been frustrated with GitHub’s slow runners and wanted **to set up your own infrastructure**? You're not alone, as a lot of companies out there are moving towards using **infrastructure providers** as **self-hosted** runners for GitHub Actions.
+
+In this free webinar, exclusive to iOS CI Newsletter subscribers, I will show you how you can do the same and set up self-hosted GitHub Actions runners using **AWS EC2 instances**.
+
+### [​🚀 Improve your SwiftUI app's performance now!​​](https://www.eventbrite.com/e/improve-your-swiftui-apps-performance-with-xcode-26-tickets-1821715834099?aff=oddtdtcreator&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_80)
+
+Have you ever spent hours trying to **diagnose UI hangs** or **hitches** with little to no success?
+
+You’re not alone — that’s something I hear from developers all the time. That’s why I decided to put together a **2-hour workshop** where I’ll share everything **I’ve learned from years of improving app performance at scale**.
+
+### [​​👀 A sneak peek into RightMove's CI/CD set up​​​](https://bitrise.io/blog/post/behind-the-scenes-rightmove-mobile-transformation-with-bitrise?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_80)
+
+I found this Q&A that [Bitrise](https://x.com/bitrise) did with the team behind [RightMove](https://x.com/rightmove) incredibly interesting.
+
+In the **interview-like blog post**, they discuss their CI/CD set up and **their approach to mobile automation** among other many things.
+
+### [​​🆕 What's new in GitHub Actions​​​​](https://github.blog/changelog/2025-11-06-new-releases-for-github-actions-november-2025?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_80)
+
+GitHub have just published a blog post **where they round up all of the updates to GitHub Actions that have shipped this month**.
+
+From **new infrastructure to increased limits**, this is a must-read if you are a GitHub Actions user.
+
+### [​​​🏆 2025 DevOps Awards​](https://devopsonline.co.uk/devops-awards/winners-2025?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_80)
+
+This week I discovered that DevOps Awards are an actual thing and I am here for it!
+
+The winners for this year's edition across all categories have just been announced too! Make sure you check them out if you're on the look out **for a CI/CD solution** or if you're **just curious about the space**.
