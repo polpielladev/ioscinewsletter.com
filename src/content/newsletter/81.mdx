@@ -1,0 +1,70 @@
+---
+number: 81
+date: 2025-11-24
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Fastlane alternative - Codemagic CLI tools​​"
+  url="https://github.com/codemagic-ci-cd/cli-tools/tree/master?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81"
+  description="Are you tired of Ruby and Fastlane installation issues? There's got to be a better way! ​Discover Codemagic open source CLI tools​. It is not a drop-in replacement for all of what Fastlane does (screenshots for example), but we use it at Codemagic to build and publish iOS and Android apps, also versioning and device provisioning."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+Last week I ran a workshop in partnership with AWS to showcase how you can use EC2 macOS instances as self-hosted runners for your GitHub Actions workflows and I wanted to share some thoughts now that I have gone through the whole set up flow.
+
+**Why go self-hosted and why GitHub Actions?**
+
+I am and have been a fan of GitHub Actions for a while, due to its deep integration with repositories, its great Actions ecosystem and community and how easy it is to plug and play different infrastructure (usually it is as easy as just changing the runs-on line of the workflow 😅).
+
+However, GitHub-hosted infrastructure is not that good, it is pretty costly and it is not as powerful or fast as you might think. This is the reason why a lot of teams and companies out there tend to go for either self-hosted or cloud-hosted Mac instances to reduce costs and drastically improve speed, while still benefiting from the GitHub Actions service.
+
+**When would you use EC2 instances?**
+
+AWS EC2 instances are the perfect solution for those who want full control over their hardware and want it to be dedicated to them but don't want to maintain their own runner infrastructure.
+
+As the hardware is dedicated to you, you can SSH in, install any software that you want and have it always available to you.
+
+This means no time spent on queueing, as you don't have to wait for a runner to become available, and not sharing the machines with anyone else. With Apple Silicon M4 EC2 instances now available in AWS, you can also dramatically improve the speed of your workflows.
+
+However, it is important to know that all of these features come at a price, which might not be suitable to everyone. In my opinion, EC2 instances make sense for medium to large enterprise teams, and there are other solutions that would definitely be more suitable for small teams or indie developers.
+
+All in all, while the set up flow can be a bit tricky, the benefits are easily glanceable. If you are interested in setting an EC2 instance up with GitHub Actions, make sure you keep reading the issue to get access to the full webinar recording and please do not hesitate to reply to this email with any questions you might have.
+
+### [​🧪 Test your GitHub Actions workflows locally with Magnolia​​](https://x.com/pepicrft/status/1990376319696122209?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81)
+
+Running your workflow logic locally can be drastically different from running it on your CI/CD runners, as **they may have different software installed and different environments**. This usually means you have to **keep pushing changes** to your repository just to get the workflow working as expected.
+
+This approach is **cumbersome** and **time-consuming**, which is why [Pedro Piñera](https://x.com/pepicrft) and the amazing team over at [Tuist](https://x.com/tuistdev) came up with **Magnolia**, a tool that lets you run GitLab CI, GitHub Actions, and Forgejo pipelines locally.
+
+### [​❄️ ARCtic Conference speakers announced!​​​](https://arcticonference.com/#Tickets?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81)
+
+ARCtic Conference have just announced the full line up of speakers for this year's edition and wow does it look good! I was lucky enough to be part of the conference as a speaker last year and can't honestly recommend it enough.
+
+The **location is incredible**, **the vibe is second to none** and **the speaker line up looks super good**! Also, I heard there will be an automation-related talk from my good friend [Noam Efergan](https://x.com/No_Wham) which you should not miss. **Make sure you buy your tickets before they sell out**!
+
+### [​​🎥 [WEBINAR RECORDING] Automate your app's releases with AWS​​​​](https://streamyard.com/watch/WfUTdS8snB6i?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81)
+
+As I mentioned during today's intro section, I ran a webinar last week in collaboration with AWS on **how to set up EC2 macOS instances** and use them as **GitHub Actions self-hosted CI/CD runners**.
+
+The full recording is now available and you can find all of the [set up code and instructions in this amazing example project](https://github.com/sebsto/amplify-ios-getting-started/tree/main?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81) that [Sébastien Stormacq](https://x.com/sebsto) prepared.
+
+### [​⛴️ Make your apps ship automatically​​​​​](https://www.linkedin.com/posts/leocardz_iosdevelopment-cicd-automation-activity-7396618755025502208-8W8v?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81)
+
+I have spoken about the concept of **release trains online in the past** and the fact that **they become truly powerful if the whole process is automated**.
+
+This is exactly what [Leonardo](https://www.linkedin.com/in/leocardz) is doing with their apps, which **ship weekly with little to no manual input**! 🤩
+
+### [​🚀 Set up iOS CI/CD on Azure DevOps​​](https://brightinventions.pl/blog/first-ios-ci-in-azure-devops?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81)
+
+I haven't used Azure DevOps much for iOS CI/CD pipelines, but I thought I would share this awesome article by [Tomasz Lizer](https://www.linkedin.com/in/tomasz-lizer/) as some of you might **be using Azure already** or are **on the look out for a CI/CD service**.
+
+The article goes into great detail about **how to use Azure DevOps for iOS apps** and guides you through the **creation of your first CI pipeline**.
