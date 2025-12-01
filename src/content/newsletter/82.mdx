@@ -1,0 +1,59 @@
+---
+number: 82
+date: 2025-12-01
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​​Try new Amazon EC2 M4 instances​​​"
+  url={`https://aws.amazon.com/blogs/aws/announcing-amazon-ec2-m4-and-m4-pro-mac-instances?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_81`}
+  description="Provision and access macOS environments within minutes, dynamically scale capacity as needed, and benefit from pay-as-you-go pricing. Available as M4 and M4 Pro for your demanding CI pipelines, EC2 M4 instances deliver up to 20% better build performance than M2 instances."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-black.png"
+  imageDark="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-white.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another
+issue of the newsletter!
+
+Diving right into the content this time, here's what you can expect from today's newsletter:
+
+- How to optimize your xcodebuild logs for AI agents.
+- GitHub Actions workflows for Swift Packages.
+- How to improve your SwiftUI app's performance.
+- How git hooks can save you unnecessary CI/CD runs.
+
+### [​🤖 How could AI understand Xcode build logs?​​](https://tuist.dev/blog/2025/11/27/teaching-ai-to-read-xcode-builds?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_82)
+
+Have you ever tried scrolling through hundreds — or even thousands — of lines of **xcodebuild output** just to understand what happened in your build?
+
+As [Pedro Piñera](https://x.com/pepicrft) rightly points out in his article on the [Tuist](https://x.com/tuistdev) blog, the **build system speaks a language optimised for machines**, **not for humans or AI agents**. It raises an important question: how could we evolve this in the future to make build output more parseable for both developers and AI?
+
+​[Pedro](https://x.com/pepicrft)’s article is a must-read. He highlights some of the work already happening in this space — including tools like **[xcsift](https://github.com/ldomaradzki/xcsift)** by [Łukasz Domaradzki](https://x.com/ldomaradzki), which I shared back in Issue 77 of the newsletter. It **reformats xcodebuild output** to make it far **more approachable and AI-friendly**.
+
+### [​​💨 [Workshop] How to improve your SwiftUI app's performance with Xcode 26​​​​](https://www.eventbrite.com/e/improve-your-swiftui-apps-performance-with-xcode-26-tickets-1821715834099?aff=oddtdtcreator?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_82)
+
+Have you ever spent hours trying to diagnose **UI hangs or hitches**, or received user feedback about your app feeling sluggish on certain devices? And when you did, did you feel unsure where to even begin?
+
+You’re not alone! I’ve spent much of my career working on products where **performance was critical to their success**, and over time I’ve learned how to track down and fix the subtle — and sometimes not-so-subtle — bottlenecks that make native Apple apps stutter.
+
+Join me next week for an **online workshop** where I’ll share all these techniques and insights!
+
+### [​​​📦 A list of ready-to-use GitHub Actions workflows for Swift Packages​​​​​](https://danielsaidi.com/blog/2025/11/26/improving-swift-package-scripts-with-github-action-workflows?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_82)
+
+Do you maintain a Swift Package and find yourself doing the same **manual**, **repetitive** tasks over and over?
+
+If so, you should definitely check out the **new collection of GitHub Actions workflow examples** that [Daniel Saidi](https://x.com/danielsaidi) has added to his open-source project **Swift Package Scripts**. From **building and testing your package across multiple platforms** to **generating a binary .xcframework**, it’s a great starting point for automating your entire workflow.
+
+Start streamlining your process today!
+
+### [​⏭️ Skip unnecessary CI/CD runs with Git Hooks​​​​​​](https://useyourloaf.com/blog/format-swift-with-a-git-commit-hook?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_82)
+
+While it’s important to ensure your coding style and best practices **are enforced in CI/CD**, running full workflows just to catch formatting issues can be **inefficient** and **costly**.
+
+A better approach is to **handle these checks locally** by setting up **git hooks** that prevent you from pushing code that would otherwise **break your CI/CD workflows**. This creates a much **faster** and more **efficient** feedback loop — like the approach [Keith Harrison](https://x.com/kharrison) shares in his article.
