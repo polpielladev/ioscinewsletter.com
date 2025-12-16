@@ -1,0 +1,58 @@
+---
+number: 83
+date: 2025-12-16
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Fastlane alternative - Codemagic CLI tools​​"
+  url="https://github.com/codemagic-ci-cd/cli-tools/tree/master?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_83"
+  description="Are you tired of Ruby and Fastlane installation issues? There's got to be a better way! ​Discover Codemagic open source CLI tools​. It is not a drop-in replacement for all of what Fastlane does (screenshots for example), but we use it at Codemagic to build and publish iOS and Android apps, also versioning and device provisioning."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/codemagic-star.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+On the 1st of December, I started a new series called **#AdventOfPerformance** on my [X](https://x.com/polpielladev) and [LinkedIn](https://www.linkedin.com/in/polpielladev/) accounts where, every day until the 24th of December, I will be sharing **a tip that can help you improve your app’s performance**.
+
+What I have found over the years is that performance issues are rarely caused by a single “big mistake.” More often, they’re the result of many small decisions that compound over time, an extra allocation here, an expensive computed property there, or even the wrong use of system libraries that are hard to debug.
+
+This series is both about showing you **how to prevent these issues** and giving you the **right toolset to find them and fix them when they occur** (trust me, they do, no matter how hard you try 😅).
+
+Some of these tips are things **you might already know**, others are lessons I’ve learned the hard way while working on **production apps** and **CI pipelines**. My hope is that by sharing them publicly, you’ll **build a better understanding** of what tools we have available to diagnose and fix **performance issues on Apple platforms**.
+
+If you’ve been following along daily, thank you so much! If you haven't, I'd encourage you to do so as I also share ideas on **automations** and **workflows** you can **bring to your app or your project's CI/CD** right away!
+
+Now, let's dive into today's issue!
+
+### [​​🎩 Install mobile apps from CI artifacts​​](https://shopify.engineering/shopify-tophat-mobile-developer-testing?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_83)
+
+A big part of reviewing a Pull Request is **validating that the changes actually work**, not just checking that the code meets standards. In large codebases, **switching branches** and **rebuilding the app** can take a significant amount of time.
+
+his is exactly the challenge [Shopify](https://x.com/ShopifyEng) faced. To give their developers the best possible experience, they **built a small app** that lets developers **install PR CI builds** directly from the irMac’s menu bar.
+Read this awesome article by [Lukas Romsicki](https://www.linkedin.com/in/lfroms/) on their blog to find out more!
+
+### [​​​🧪 Automated Accessibility testing with UI Tests​​](https://github.com/Steady5063/iOS-Automated-Accessibility-Example-Lib?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_83)
+
+Did you know that you can perform **automated accessibility audits** using XCTest and no third party libraries? They are a great way to make sure **your apps meet accessibility requirements** and **to catch accessibility regressions early**.
+
+If you want to get started and **write your first accessibility audit**, check out this open-source example by [Mark Steadman](https://x.com/Steady5063)!
+
+### [​​​​🎥 [FREE WEBINAR] Running iOS Automated Tests on Real Devices​](https://streamyard.com/watch/6UKiHuAgBQb7?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_83)
+
+I am back with **another FREE webinar** on Wednesday! This time I will show you how you can **set up and run automated tests on CI/CD** using **real devices** without maintaining your own device farm.
+
+Spaces are limited, so make sure you reserve your spot for free! See you on Wednesday!
+
+### [​​​​​🇪🇺 Bitrise has opened a Data Center in the European Union](https://bitrise.io/blog/post/our-eu-data-center-is-live-with-next-gen-hardware?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_83)
+
+[​Bitrise](https://x.com/bitrise) has just announced the opening of a **new data center in the European Union**, which is great news both for teams based in **Europe** and for teams **elsewhere in the world**.
+
+[​Catherine Doyle](https://www.linkedin.com/in/catherinemdoyle/) explains in this article, teams in the EU will benefit **from the proximity of the new data center**, resulting in **lower latency** and the ability to **keep their code entirely within the EU**. At the same time, teams outside the EU **will benefit from a bigger pool of runners** leading to shorter queues and reduced waiting times.
+Great news all round!
