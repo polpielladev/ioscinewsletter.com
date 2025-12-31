@@ -1,0 +1,67 @@
+---
+number: 84
+date: 2025-12-31
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="​​Try new Amazon EC2 M4 instances​​​"
+  url={`https://aws.amazon.com/blogs/aws/announcing-amazon-ec2-m4-and-m4-pro-mac-instances?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84`}
+  description="Provision and access macOS environments within minutes, dynamically scale capacity as needed, and benefit from pay-as-you-go pricing. Available as M4 and M4 Pro for your demanding CI pipelines, EC2 M4 instances deliver up to 20% better build performance than M2 instances."
+  image="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-black.png"
+  imageDark="https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/aws-logo-white.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+I can't believe it's already the end of the year, time really flies when you're having fun and you're busy!
+
+This year has truly had it all, after **launching Helm in 2024** and being **indie for a few months**, I joined RevenueCat and went back to full-time employment in January of this year, with a clear goal to improve the user experience across the product.
+
+Throughout the course of the year, I continued running webinars, shipping app updates, attending conferences, curating issues of the newsletter and working full-time at RevenueCat and the truth is that it has been a lot of fun.
+
+However, over the **past few months** I have felt like I was **stretched a bit thin** and really **wanted to get some time back** to focus more on my indie apps and I am super happy to share that, as of January, I will be doing exactly that!
+
+As you may already know, [Hidde](https://x.com/hiddevdploeg) and I have been working together on several apps for quite some time. We’ve now decided to take the next step and **start a new app development studio**, where we’ll continue building great products like [Helm](https://helm-app.com?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84) and [NowPlaying](https://www.nowplaying.co?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84), while also helping others create fantastic software.
+
+For our work at RevenueCat, this means **we’ll be transitioning to part-time roles**, while continuing to ship features that improve the developer experience across the product.
+
+We are super grateful to RevenueCat for giving us the freedom to focus on our own work while still supporting their efforts.
+
+If you'd like to find out more about our roadmap and plans for the new year, make sure you [check out our latest post on the Helm blog](https://helm-app.com/changelog/helm-2025-past-present-future?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84).
+
+As far as the iOS CI Newsletter goes, I will continue strong next year and I want to also use this opportunity to **thank you for the continued support** and all of this year's sponsors for **helping me continue on my mission to provide free quality content for the community ❤️.**
+
+Hope you all have a fantastic end of the year today and start 2026 in the best possible way! 🥂🍾
+
+Now, let's dive into today's issue!
+
+### [​​​🐙 GitHub's Platform fee explained​​](https://cloud.namespace.so/pd3382pdfrpeq/updates/github-pricing-dec16-2025?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84)
+
+Earlier this month, **GitHub** announced plans to introduce **a new platform fee** starting in March 2026, applied to **every GitHub Actions job minute**, regardless of where it runs. This change would have affected **third-party providers** such as [Namespace](https://x.com/namespacelabs), which estimated an average **25% price increase** for customers as a result.
+
+A few weeks later, the situation shifted. After listening to community feedback, GitHub acknowledged that while the fee **was intended to offset the real costs of maintaining the Actions platform**, more discussion was needed. As a result, GitHub has decided to postpone the introduction of the platform fee for now.
+
+### [​​​✂️ How monday.com cut their CI build times in half​​​](https://tuist.dev/case-studies/monday?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84)
+
+Do you have a **large codebase** and struggle with your **CI/CD builds taking too long** and **slowing your team down**? Have you considered **modularizing your codebase** to mitigate this?
+
+If you ask yourself these questions, make sure you check out this article on the [Tuist](https://x.com/tuistdev) blog that goes through how [monday.com](https://x.com/mondaydotcom) managed to cut their **CI times in half** by migrating to [Tuist](https://x.com/tuistdev).
+
+### [​​​​🪝 How the new App Store Connect webhooks can power your automations​](https://en.zhgchg.li/posts/zrealm-dev/app-store-connect-api-webhook-automate-ci-cd-workflows-seamlessly-7c0974856393?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84)
+
+During this year’s WWDC, Apple introduced webhooks to App Store Connect. These webhooks let you react to a wide range of events, such as **build upload status changes** or **app version state updates**.
+
+As [Harry Li](https://x.com/zhgchgli) explains in a great article on the topic, this new capability unlocks powerful new CI/CD automation workflows. I also recently shared [a post showing how you can use these webhooks to react to user feedback in real time](https://x.com/polpielladev/status/2002771324125479297), if that’s something you’d like to explore further.
+
+### [​​​​​🤖 How to use the Subprocess Swift Package to run commands from Swift​​](https://swiftdevjournal.com/posts/subprocess?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_84)
+
+Are you working on a **Command Line Tool** or **script** in Swift for one of your automations and need a convenient way to **run terminal commands**?
+
+Check out this article by [Mark Szymczyk](https://mastodon.world/@swiftdevjournal), where they introduce **a Swift Package from the Swift Language Group** that will save you a bunch of time and effort!
