@@ -1,0 +1,72 @@
+---
+number: 86
+date: 2026-03-31
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+If you or your team have been using **AI coding tools** for a while now, you've probably noticed something ironic: you’re shipping **more code and are more productive than ever**, but you also **have more pull requests than ever to review**. Last year's [AI Productivity Paradox Report by Faros AI](https://www.faros.ai/blog/ai-software-engineering) found that AI-assisted teams merged **98% more PRs** and completed **21% more tasks**, but PR review times went up by **91%**. The bottleneck didn’t go away at all, it just moved from the feature development to the PR review process.
+
+While human PR review is still needed, there are a few AI automated solutions that can help review the bulk of the changes on a PR and let you focus more on testing the functionality and the overall quality of those changes, helping reduce the bottleneck and speed up the overall process.
+
+These tools are especially useful for **solo builders and small teams**, where you don’t always have someone available to review your code and a second pair of eyes, even an AI one, can catch bugs before they ship. I have been using **Copilot**, **Codex**, and **Cursor BugBot** for some time, and I have to say that I am impressed by the quality of the reviews and how often they catch bugs that I would have personally missed 😱.
+
+However, the market has gotten crowded fast. From tools that deeply index your entire codebase to ones that bundle review into your existing AI subscription, there’s something for every team, but **picking the right one** can feel overwhelming.
+
+For this reason, and because I wanted to see what options were available, I put together a comprehensive **comparison of 10 AI code review tools**, breaking down their **real pricing, strengths, and trade-offs** so you don’t have to do the heavy lifting yourself.
+
+| Tool                                                            | Price                               | Review limit                  | Full codebase analysis | Free for OSS  |
+| --------------------------------------------------------------- | ----------------------------------- | ----------------------------- | ---------------------- | ------------- |
+| [**OpenAI Codex**](https://developers.openai.com/codex/pricing) | $30/dev/mo (included in ChatGPT)    | ~40–100/mo                    | Yes                    | No            |
+| [**Cursor BugBot**](https://cursor.com/pricing)                 | $40/dev/mo (included in Cursor)     | 200/mo                        | No                     | No            |
+| [**GitHub Copilot**](https://github.com/features/copilot/plans) | $10/user/mo                         | Shared with other AI features | No                     | Yes (limited) |
+| [**Claude Review**](https://claude.com/pricing)                 | ~$15/review                         | Pay per use                   | Yes                    | No            |
+| [**CodeRabbit**](https://www.coderabbit.ai/pricing)             | $24/dev/mo                          | Unlimited                     | No                     | Yes           |
+| [**Greptile**](https://www.greptile.com/pricing)                | $30/dev/mo                          | 50/dev/mo                     | Yes                    | No            |
+| [**Qodo**](https://www.qodo.ai/pricing/)                        | $30/dev/mo                          | 20/dev/mo                     | No                     | Yes           |
+| [**Macroscope**](https://docs.macroscope.com/pricing)           | $0.05/KB reviewed (min 50KB/review) | Pay per use                   | Yes (AST)              | Yes           |
+| [**Graphite**](https://graphite.com/pricing)                    | $40/dev/mo                          | Unlimited                     | No                     | No            |
+| [**CodeAnt AI**](https://www.codeant.ai/pricing)                | $24/user/mo                         | Unlimited                     | No                     | No            |
+
+> Note that I have tried to use the Team plan where available at the time of writing this issue. Prices may vary if you need lower or higher tiers and the time at which you read this.
+
+The table above should help you get a better idea of the different options available and what you should consider when picking the right tool for your needs. I will let you make your own decision, as I can only speak of what works for me and can only assess the quality of the reviews for the tools that I have tried.
+
+Now, let’s dive into it!
+
+### [​​​🚨 Remember to sign the new Apple Developer Program License Agreement](https://developer.apple.com/news/?id=fwswmjcn&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_86)
+
+Apple has updated their **Developer Program License Agreement** and, as developers, we need to sign it to continue using resources tied to your Developer Membership, such as the App Store Connect API.
+
+The deadline to do so is the **16th of April**, so make sure you log in to your [developer account](https://developer.apple.com/account) and sign it before then.
+
+### [​​​⚠️ Upcoming SDK minimum requirements for App Store Connect](https://developer.apple.com/news/?id=ueeok6yw&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_86)
+
+April is the month of deadlines for App Store Connect and your apps, it seems! Aside from having to sign the new Developer Program License Agreement, from the **28th of April**, all new apps and games uploaded to App Store Connect must be built with the **Xcode 26 SDK** or later.
+
+Download Xcode 26 now if you haven't done so yet and make sure your app compiles with it before the deadline!
+
+### [🏃‍♂️ Improve your app's build times using this new AI agent](https://www.avanderlee.com/xcode/xcode-build-optimization-using-6-agent-skills?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_86)
+
+A few weeks ago I received a message from my friend [Antoine van der Lee](https://x.com/twannl) asking me if I would like to help him test a new AI agent that he was working on. When I saw that it was aimed to help developers improve the build times of their apps, I was immediately interested.
+
+I went ahead and tried it on our app [Helm](https://helm-app.com), and I have to say that I was impressed by the results. The agent was able to identify a few issues with our build settings and suggested and implemented a set of changes that helped us get **61 seconds faster** Xcode builds!
+
+### [🔍 How fast can each CI/CD service build your app?](https://blog.codemagic.io/build-speed-benchmark-comparison?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_86)
+
+The infrastructure your app runs on can make a big impact in your CI/CD times, and it is a big factor to consider when picking a CI/CD service.
+
+I really enjoyed reading this article by [Masaki Sato](https://x.com/masak1sat0) in the [Codemagic](https://x.com/codemagicio) blog, as it benchmarks the performance of each CI/CD service and helps you pick the right one for your needs.
+
+### [📝 The App Store now supports localized metadata for 11 new languages](https://developer.apple.com/news/?id=97t4mt64&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_86)
+
+Localizing your app's metadata is a great way to make your app relevant to potential users across languages and cultures, helping you reach a wider audience and increase your app's visibility.
+
+To aid with this, Apple has announced that they have added support for 11 new languages that you can update your app's metadata for in App Store Connect (and [Helm](https://helm-app.com) of course 😜).
