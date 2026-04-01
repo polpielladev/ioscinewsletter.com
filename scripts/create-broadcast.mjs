@@ -2,16 +2,19 @@
 
 /**
  * Creates a Kit.com draft broadcast from an MDX newsletter issue.
+ * Optionally generates LinkedIn newsletter text and copies it to the clipboard.
  *
  * Usage:
  *   node scripts/create-broadcast.mjs <issue-number>
+ *   node scripts/create-broadcast.mjs <issue-number> --linkedin
  *
- * Requires KIT_API_KEY environment variable.
+ * Requires KIT_API_KEY environment variable (unless --linkedin-only is used).
  */
 
 import { readFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { execSync } from "child_process";
 import MarkdownIt from "markdown-it";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -23,14 +26,24 @@ const KIT_TEMPLATE_ID = 5100069; // "iOS CI Newsletter HTML" Classic template
 // 1. Parse the MDX issue file
 // ---------------------------------------------------------------------------
 
-const issueNumber = process.argv[2];
+const args = process.argv.slice(2);
+const flags = new Set(args.filter((a) => a.startsWith("--")));
+const positional = args.filter((a) => !a.startsWith("--"));
+
+const issueNumber = positional[0];
 if (!issueNumber) {
-  console.error("Usage: node scripts/create-broadcast.mjs <issue-number>");
+  console.error(
+    "Usage: node scripts/create-broadcast.mjs <issue-number> [--linkedin] [--linkedin-only]",
+  );
   process.exit(1);
 }
 
+const linkedinOnly = flags.has("--linkedin-only");
+const generateLinkedin = linkedinOnly || flags.has("--linkedin");
+const generateKit = !linkedinOnly;
+
 const apiKey = process.env.KIT_API_KEY;
-if (!apiKey) {
+if (generateKit && !apiKey) {
   console.error("Error: KIT_API_KEY environment variable is required.");
   console.error(
     "Get your API key from Kit.com → Settings → Developer → API keys",
@@ -205,13 +218,12 @@ const articlesHtml = articleParts
 
 // Assemble message_content
 const messageContent =
-  headerHtml + authorBioHtml + introHtml + sponsorHtml + communityTag + articlesHtml;
+  (headerHtml + authorBioHtml + introHtml + sponsorHtml + communityTag + articlesHtml)
+    .replace(/utm_medium=web/g, "utm_medium=email");
 
 // ---------------------------------------------------------------------------
 // 5. Create draft broadcast via Kit API
 // ---------------------------------------------------------------------------
-
-const subject = `iOS CI Newsletter - Issue #${issueNumber}`;
 
 const articleTitles = articleParts
   .map((a) => {
@@ -219,39 +231,105 @@ const articleTitles = articleParts
     return m ? m[1].replace(/^[^\w]*/, "") : null;
   })
   .filter(Boolean);
-const previewText =
-  articleTitles.length > 0
-    ? `${articleTitles.slice(0, 3).join(", ")} and more!`
-    : "";
 
-const response = await fetch("https://api.kit.com/v4/broadcasts", {
-  method: "POST",
-  headers: {
-    "X-Kit-Api-Key": apiKey,
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    subject,
-    content: messageContent,
-    preview_text: previewText,
-    email_template_id: KIT_TEMPLATE_ID,
-  }),
-});
+if (generateKit) {
+  const subject = `iOS CI Newsletter - Issue #${issueNumber}`;
 
-const data = await response.json();
+  const previewText =
+    articleTitles.length > 0
+      ? `${articleTitles.slice(0, 3).join(", ")} and more!`
+      : "";
 
-if (!response.ok) {
-  console.error("Failed to create broadcast:", data);
-  process.exit(1);
+  const response = await fetch("https://api.kit.com/v4/broadcasts", {
+    method: "POST",
+    headers: {
+      "X-Kit-Api-Key": apiKey,
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      subject,
+      content: messageContent,
+      preview_text: previewText,
+      email_template_id: KIT_TEMPLATE_ID,
+    }),
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    console.error("Failed to create broadcast:", data);
+    process.exit(1);
+  }
+
+  const broadcast = data.broadcast;
+  console.log(`Draft broadcast created!`);
+  console.log(`  ID:      ${broadcast.id}`);
+  console.log(`  Subject: ${broadcast.subject}`);
+  console.log(`  Template: ${broadcast.email_template?.name}`);
+  console.log(`  Preview: ${broadcast.preview_text || "(none)"}`);
+  console.log(
+    `\nOpen Kit.com to review and send: https://app.kit.com/broadcasts/${broadcast.id}`,
+  );
 }
 
-const broadcast = data.broadcast;
-console.log(`Draft broadcast created!`);
-console.log(`  ID:      ${broadcast.id}`);
-console.log(`  Subject: ${broadcast.subject}`);
-console.log(`  Template: ${broadcast.email_template?.name}`);
-console.log(`  Preview: ${broadcast.preview_text || "(none)"}`);
-console.log(
-  `\nOpen Kit.com to review and send: https://app.kit.com/broadcasts/${broadcast.id}`,
-);
+// ---------------------------------------------------------------------------
+// 6. Generate LinkedIn newsletter text
+// ---------------------------------------------------------------------------
+
+if (generateLinkedin) {
+  // Build article list with titles, URLs, and descriptions
+  const articleEntries = articleParts
+    .map((a) => {
+      const m = a
+        .trim()
+        .match(/^###\s+\[([^\]]+)\]\(([^)]+)\)\s*\n\n?([\s\S]*)/);
+      if (!m) return null;
+      const [, title, url, description] = m;
+      return { title, url, description: description.trim() };
+    })
+    .filter(Boolean);
+
+  // Render intro markdown paragraphs to HTML
+  function renderLinkedinParagraphs(text) {
+    return text
+      .split(/\n\n+/)
+      .map((p) => p.trim())
+      .filter(Boolean)
+      .filter((p) => !p.startsWith("|") && !p.startsWith("> "))
+      .map((p) => {
+        let html = md.render(p).trim();
+        // Unwrap single <p> tags from markdown-it
+        html = html.replace(/^<p>([\s\S]*)<\/p>$/, "$1");
+        return `<p>${html}</p>`;
+      })
+      .join("");
+  }
+
+  // Build the LinkedIn HTML
+  const htmlParts = [];
+
+  // Intro paragraphs
+  htmlParts.push(renderLinkedinParagraphs(introPart));
+
+  // Article sections
+  for (const article of articleEntries) {
+    htmlParts.push(`<p><strong><a href="${article.url}">${article.title}</a></strong></p>`);
+    htmlParts.push(renderLinkedinParagraphs(article.description));
+  }
+
+  const linkedinHtml = htmlParts.join("\n").replace(/utm_medium=web/g, "utm_medium=linkedin");
+
+  // Copy HTML to clipboard with the correct pasteboard type (macOS)
+  const pbcopyHtml = resolve(__dirname, "pbcopy-html.swift");
+  try {
+    execSync(pbcopyHtml, { input: linkedinHtml });
+    console.log("\nLinkedIn newsletter HTML copied to clipboard!");
+    console.log("Paste into the LinkedIn newsletter editor with Cmd+V.");
+  } catch {
+    // Fallback: print the HTML to stdout
+    console.log("\n--- LinkedIn Newsletter HTML ---\n");
+    console.log(linkedinHtml);
+    console.log("\n--- End ---");
+  }
+}
