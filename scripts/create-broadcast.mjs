@@ -155,12 +155,37 @@ function renderInlineMarkdown(text) {
   return html;
 }
 
+function stripMargins(style) {
+  return style
+    .split(";")
+    .map((s) => s.trim())
+    .filter((s) => s && !/^margin-(top|bottom)\s*:/.test(s))
+    .join(";");
+}
+
+function renderListBlock(text, style) {
+  let html = md.render(text).trim();
+  html = html.replace(
+    /<a /g,
+    `<a class="ck-link" target="_blank" rel="noopener noreferrer" style="${LINK_STYLE}" `,
+  );
+  const listStyle = `${stripMargins(style)};margin-top:24px;margin-bottom:24px;padding-left:24px`;
+  const itemStyle = `${stripMargins(style)};margin-top:0;margin-bottom:8px`;
+  html = html.replace(/<(ul|ol)>/g, `<$1 style="${listStyle}" class="">`);
+  html = html.replace(/<li>/g, `<li style="${itemStyle}" class="">`);
+  return html;
+}
+
 function renderParagraphs(text, style = P_STYLE) {
   return text
     .split(/\n\n+/)
     .map((p) => p.trim())
     .filter(Boolean)
-    .map((p) => styledParagraph(renderInlineMarkdown(p), style))
+    .map((p) =>
+      /^([-*+]|\d+\.)\s+/.test(p)
+        ? renderListBlock(p, style)
+        : styledParagraph(renderInlineMarkdown(p), style),
+    )
     .join("");
 }
 

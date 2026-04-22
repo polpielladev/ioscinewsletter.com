@@ -1,0 +1,47 @@
+---
+number: 87
+date: 2026-04-22
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+This week's issue covers the following topics:
+
+- Requirement updates to **App Store Connect**.
+- How to manage your project's **tools and skills**.
+- How to let your agents help you **stay on top of your PRs**.
+
+Now, let’s dive into it!
+
+### [​​​⚠️ Reports of stricter requirements when submitting new apps for review](https://x.com/anulagarwal/status/2046092716153709039?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_87)
+
+While I haven’t personally run into this myself yet, I’ve seen multiple reports that Apple is increasingly asking developers to submit a **video recording** of their app running on a **physical device** as part of the review process for new apps. I don't think this is a new requirement, but rather a **stricter enforcement** of [existing guidelines around performance and real-device testing](https://developer.apple.com/app-store/review/guidelines/#performance) and may be part of Apple’s response to the recent surge of _“vibe-coded”_ apps.
+
+A large portion of the community views this as a **negative change**, with even one user saying they need to automate and fake the video recording, but I **strongly disagree**. I actually share [Mike Rundle’s perspective that this is a good thing](https://x.com/flyosity/status/2046246997976391832)!
+
+### [📦 Luca: A Decentralized Tool and Skills Manager](https://albertodebortoli.com/2026/04/13/luca-a-decentralized-tool-and-skills-manager-for-the-ai-augmented-developer-workflow?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_87)
+
+It's always great to see an article by my friend [Alberto De Bortoli](https://x.com/albertodebo). He's truly passionate about **developer tooling and automation**, and consistently comes up with thoughtful ideas and solutions to real problems we face as developers.
+
+This time, he introduces _Luca_, a **decentralized tool and skills manager** designed for the **AI-augmented developer workflow**. The idea is to give teams a **simple and lightweight** way to define, share, and reuse tools and capabilities across projects without relying on heavy, centralized systems.
+
+### [​​​🚨 Upcoming SDK minimum requirements for App Store Connect (Last Reminder!)](https://developer.apple.com/news/?id=ueeok6yw&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_86)
+
+I shared this news in my previous issue, but I wanted to remind you that from next week (from the **28th of April** onwards), all new apps and games uploaded to App Store Connect must be built with the **Xcode 26 SDK** or later.
+
+Download Xcode 26 now if you haven't done so yet and make sure your app compiles with it before the deadline!
+
+### [🍼 A skill that helps you monitor your PRs](https://skills.sh/openai/codex/babysit-pr?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_87)
+
+As I write less and less of my code these days, and my productivity keeps increasing, I find myself spending more time **manually checking PR status**, **waiting on CI**, and **responding to review comments** than actually implementing changes. That's why this skill immediately caught my eye.
+
+The _babysit-pr_ skill in the Codex repo is designed to **continuously monitor a pull request** for CI failures, review comments, mergeability changes, and all the other signals that usually require constant manual checking. Instead of treating a PR as something you occasionally remember to look at, the idea is to have an agent stay on top of it, react to changes, and **surface only what actually needs your attention**.
+
+I also like that it’s not just about **passive monitoring**. The skill is built around the idea of **taking action when it can**: whether that means diagnosing CI failures, retrying flaky checks, or helping process review feedback while still **knowing when to hand things back to a human**.
