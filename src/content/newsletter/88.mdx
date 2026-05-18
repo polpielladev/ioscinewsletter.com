@@ -1,0 +1,46 @@
+---
+number: 88
+date: 2026-05-18
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+This week's issue covers the following topics:
+
+- Letting your **agents control Xcode’s Simulator** efficiently.
+- Extending **Xcode Cloud workflows** with shell scripts.
+- An upcoming change to the **GitHub Actions `macos-latest`** image.
+- A practical introduction to **Bazel persistent workers**.
+
+Now, let’s dive into it!
+
+### [​​​📲 How to let your agents interact with Xcode's Simulator](https://www.avanderlee.com/ai-development/ai-powered-xcode-simulator-automation-token-efficient?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_88)
+
+My good friend [Antoine van der Lee](https://x.com/twannl) has recently shipped a CLI for RocketSim, that allows AI agents to interact with the Simulator in a fast, accurate and token-efficient way.
+
+Antoine and I have had many conversations over the past few months about how best to **expose app functionality to agents**, how to **ship a CLI alongside a Mac app**, and what agent-ready tooling should actually look like. He has been a **massive inspiration** for our upcoming [Helm CLI](https://helm-app.com), which we are planning to ship this summer!
+
+### [☁️ How to extend Xcode Cloud Workflows with shell scripts](https://cuteios.dev/2026/05/10/shell-scripts?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_88)
+
+While Xcode Cloud is really easy to set up and gets you most of the way there for the common automations you need as an Apple developer, there are times when you need to extend its functionality.
+
+This is where shell scripts come in handy, as [Amy](https://cuteios.dev/about?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_88) explains in this article.
+
+### [⚠️ GitHub Actions macos-latest image is changing](https://github.blog/changelog/2026-05-14-github-actions-upcoming-image-migrations?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_88)
+
+Starting **June 15**, GitHub Actions will migrate `macos-latest` from **macOS 15 to macOS 26** over about **30 days**. This means that your workflows may switch images without any YAML changes on your side, and your builds may start failing.
+
+If you are not ready yet, **pin `macos-15`** until you have tested the upgrade. [Read the changelog](https://github.blog/changelog/2026-05-14-github-actions-upcoming-image-migrations?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_88) for dates and other runner migrations.
+
+### [🔧 Get started with Bazel persistent workers](https://adincebic.com/2026/05/10/a-practical-introduction-to-bazel.html?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_88)
+
+**Persistent workers** keep a long-lived Bazel process alive to avoid repeated JVM or compiler startup costs — useful when you author custom rules and care about build performance.
+
+[Adin Ćebić](https://x.com/adincebic) demonstrates this with a simple **uppercase-file** rule and a Swift worker using Bazel’s JSON protocol. [Their guide](https://adincebic.com/2026/05/10/a-practical-introduction-to-bazel.html?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_88) walks through the full implementation step by step.
