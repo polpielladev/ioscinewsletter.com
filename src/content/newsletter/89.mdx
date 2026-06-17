@@ -1,0 +1,47 @@
+---
+number: 89
+date: 2026-06-17
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+I am just back from an awesome trip to California for WWDC! I think I have finally recovered from the jet lag, and I now feel motivated and energized to get back into the swing of things. It was my second in person WWDC, and I had such a good time meeting so many of you in person and hearing about all the great features coming to the 27 releases.
+
+For me, it's now time to watch a lot of different sessions, download all the betas and start playing with the new APIs to see how they all can fit into our projects. What's your favorite announcement from this year's WWDC? What sessions are you watching first? Let me know by replying to this email!
+
+### [​​​🚀 Automate your App Store Connect workflows with Helm's new CLI!​​](https://helm-app.com/changelog/helm-2-3-helm-cli?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_89)
+
+Last week, to celebrate [Helm](https://x.com/helm_app)'s 2nd anniversary and WWDC, we launched a new version of Helm with a brand-new CLI.
+
+You can read more about it in our announcement post, but in short, the goal is to bring the Helm functionality you already love to your terminal, scripts, and agentic workflows. The CLI is installable from the app itself, and there is also an agent skill available to give your agents the best chance of success.
+
+### [​​​🤖 Make use of Xcode 27's Agent Skills anywhere​​](https://www.avanderlee.com/ai-development/using-xcode-27s-agent-skills-in-claude-codex-and-cursor?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_89)
+
+If you watched Apple's State of the Union last week, you might have noticed that Apple have leaned more into agentic development this year, and Xcode 27 is a great example of this.
+
+Something you might have missed though is that Xcode 27 also introduces a bunch of different Agent Skills that, as [Antoine](https://x.com/twannl) explains in this great article, while they might be bundled directly in Xcode, can be used in your agents of choice 👀.
+
+### [​​🚀 WWDC26: Improvements to Instruments in Xcode 27](https://youtu.be/9zjeImiYtow?si=vEN-AD55cyLIUnr4&t=1279&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_89)
+
+Another interesting feature that has gone under the radar is that Xcode 27 introduces a brand new **Top Functions** feature that makes it easier to identify performance bottlenecks in your app without having to dig through the whole call tree.
+
+I am so excited to try this out in the next few days and see how it works in practice, looks really promising in the session!
+
+### [​​​❓ WWDC26: App Store Connect Group Lab](https://www.youtube.com/watch?v=QPWPgSjg9Kc&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_89)
+
+I was not able to watch any of this year's WWDC group labs live this year and ask any questions, but I was really happy to see that they were all recorded and **are now available to watch on YouTube**.
+
+As it could not be any other way, I watched the App Store Connect Group Lab session today and it was a great way to hear about the latest features and improvements to the App Store Connect API and **see so many great questions answered by the App Store Connect team**.
+
+### [​​☁️ WWDC26: Build, deliver, and automate with Xcode Cloud](https://www.youtube.com/watch?v=sbdA41c2o88&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_89)
+
+While there might not be much new in terms of features, I am really excited to give Xcode Cloud another chance this year, as the State of the Union **promised improvements in speed and reliability**.
+
+In this session, you can already see some improvements to the set up flows in Xcode 27, but I will report back on how it actually performs in the next issue or two of the newsletter.
