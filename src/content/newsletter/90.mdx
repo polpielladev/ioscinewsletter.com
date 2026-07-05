@@ -12,9 +12,9 @@ import Providers from "../../components/providers/Providers.astro";
 
 Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
 
-It has been a busy couple of weeks in the world of Apple developer tooling. We now have the Swift Package Index joining Apple, Safari getting its own MCP server, and more teams sharing how they scale CI/CD and release workflows.
+It has been a busy couple of weeks in the world of Apple developer tooling. We now have **Swift Package Index joining Apple**, **Safari getting its own MCP server**, and more teams sharing how they scale CI/CD and release workflows.
 
-This week's issue also has a special one for me: the first interview in our new _Shipped with Helm_ series, where [Frederik Riedel](https://x.com/frederikRiedel), the founder of [one sec](https://one-sec.app), shares how the team behind one sec plans, tests, and ships updates.
+This week's issue also has a special one for me: the first interview in our new _Shipped with Helm_ series, where [Frederik Riedel](https://x.com/frederikRiedel), the founder of [one sec](https://one-sec.app), shares how the team behind one sec **plans, tests, and ships updates**.
 
 Now, let’s dive into it!
 
@@ -26,30 +26,30 @@ Well, wonder no more! [Frederik](https://x.com/frederikRiedel) has joined us for
 
 ### [​​📦 Swift Package Index joins Apple](https://swiftpackageindex.com/blog/swift-package-index-joins-apple?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_90)
 
-[Swift Package Index](https://swiftpackageindex.com) has become one of those tools that many of us rely on without thinking too much about it, whether that's for discovering packages, checking compatibility, or browsing documentation.
+[Swift Package Index](https://swiftpackageindex.com) has become one of those tools that many of us rely on without thinking too much about it, whether that's for **discovering packages**, **checking compatibility**, or **browsing documentation**.
 
-Last week, we found out that [Swift Package Index](https://swiftpackageindex.com) is joining Apple through an announcement on their blog. I personally think this is super exciting and will help the index grow and become even more useful for the community!
+Last week, we found out that [Swift Package Index](https://swiftpackageindex.com) is joining Apple through an announcement on their blog. I personally think this is super exciting, and it should help the index grow and become even more useful for the community!
 
 ### [​​👀 How Warp runs their CI/CD pipelines](https://namespace.so/customers/warp?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_90)
 
-I always enjoy reading real CI/CD implementation stories, especially when they include real results. In this case, [Warp](https://x.com/warpdotdev) explain how and why they moved their macOS builds to [Namespace](https://x.com/namespacelabs) and went from builds taking up to an hour to around 12 to 15 minutes.
+I always enjoy reading real CI/CD implementation stories, especially when they include real results. In this case, [Warp](https://x.com/warpdotdev) explains how and why they moved their macOS builds to [Namespace](https://x.com/namespacelabs), going from builds taking up to an hour to around **12 to 15 minutes**.
 
-I am a big fan and user of [Namespace](https://x.com/namespacelabs) as the main CI/CD provider for all my projects and I can't recommend them enough!
+I am a big fan and user of [Namespace](https://x.com/namespacelabs) as the main CI/CD provider for all my projects, and I can't recommend them enough!
 
 ### [​​🤖 Safari now has an MCP!](https://webkit.org/blog/18136/introducing-the-safari-mcp-server-for-web-developers?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_90)
 
-This one is not strictly CI/CD, but it felt too relevant to developer tooling and agents not to include. Safari Technology Preview 247 now includes an MCP server that lets compatible agents inspect and interact with a Safari browser window.
+This one is not strictly CI/CD, but it felt too relevant to developer tooling and agents not to include. Safari Technology Preview 247 now includes an **MCP server** that lets compatible agents inspect and interact with a Safari browser window.
 
-That means your agents can access things like the DOM, console logs, network requests, screenshots, and page interactions directly from Safari. This is great news, and another sign that Apple is truly investing in providing the best tools for agentic development in Apple platforms!
+That means your agents can access things like the DOM, console logs, network requests, screenshots, and page interactions directly from Safari. This is great news, and another sign that Apple is truly investing in providing the best tools for agentic development on Apple platforms!
 
 ### [☁️ How to set a custom build number for your builds in Xcode Cloud](https://antongubarenko.substack.com/p/swift-bits-xcode-cloud-build-number?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_90)
 
 By default, Xcode Cloud will automatically start at build number one and continuously increment it for each build you deploy to TestFlight. This is great for new projects, but if you already have TestFlight builds for your app and are migrating to Xcode Cloud, it might not work for you.
 
-Thankfully, and as [Anton](https://x.com/AntonGubarenko) explains in this short post, the answer isn't to keep submitting builds until you get to the number you want. Instead, you can set a custom build number for your builds in Xcode Cloud.
+Thankfully, and as [Anton](https://x.com/AntonGubarenko) explains in this short post, the answer isn't to keep submitting builds until you get to the number you want. Instead, you can **set a custom build number** for your builds in Xcode Cloud.
 
 ### [🧐 What you need to know about Git LFS](https://www.scottberrevoets.com/2026/07/01/how-github-handles-git-lfs?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_90)
 
-Snapshot tests are great, but they often leave teams with a lot of image files to store somewhere. Git LFS can look like the obvious answer, but as [Scott Berrevoets](https://www.linkedin.com/in/sberrevoets) explains in this post, there are some important GitHub-specific details to keep in mind.
+Snapshot tests are great, but they often leave teams with a lot of image files to store somewhere. Git LFS can look like the obvious answer, but as [Scott Berrevoets](https://www.linkedin.com/in/sberrevoets) explains in this post, there are some important _GitHub-specific_ details to keep in mind.
 
-The main takeaway for me is that Git LFS is not just "Git, but better for big files". Storage, bandwidth, CI clones, deleted files, and history rewrites all have their own trade-offs, and understanding those upfront can save you a lot of pain later.
+The main takeaway for me is that Git LFS is not just **"Git, but better for big files"**. Storage, bandwidth, CI clones, deleted files, and history rewrites all have their own trade-offs, and understanding those upfront can save you a lot of pain later.
