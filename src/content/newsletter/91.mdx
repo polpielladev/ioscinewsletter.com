@@ -1,0 +1,51 @@
+---
+number: 91
+date: 2026-07-28
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+It is the peak of beta testing season at the moment and, if you develop macOS apps like me, you have probably been running the beta version of macOS on your laptop since day one to test the new APIs.
+
+The problem is that only **Xcode 27** runs on the macOS 27 beta, and builds created with a beta version of Xcode cannot be submitted to the App Store. This makes having a reliable CI/CD workflow more important than ever, as it lets you keep testing the latest APIs locally while producing release builds in a stable environment.
+
+For my apps, I use a **Fastlane** workflow that uploads builds to App Store Connect. I trigger it manually from GitHub Actions using [Namespace](https://x.com/namespacelabs) runners, select the branch, version number, and platform, and the script takes care of everything else:
+
+![A screenshot of the GitHub Actions workflow for uploading a multi-platform app to App Store Connect](https://d2thv89fb05cma.cloudfront.net/ioscinewsletter/images/github-actions-release.webp)
+
+If you're interested in how the workflow works in detail, reply to this email and I'll share more details!
+
+### [❓ New Age Rating Declaration Questions in App Store Connect​](https://helm-app.com/changelog/helm-ios-feedback#social-media-age-rating-declaration&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_91)
+
+Apple recently updated the age rating declaration with new questions about social media capabilities, ahead of Time Allowances shipping later this year. Following this update, we have updated Helm to support these, so you can review and answer those questions without leaving the app.
+
+Responses become required for new apps and updates starting in **September 2026**, so this is a good moment to get ahead of it.
+
+### [📈 New Pull Request Metrics in the GitHub API](https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_91)
+
+GitHub has just added two new code review metrics to the Copilot usage metrics API: the **time from opening a pull request to its first review** and the **number of review cycles before it is merged**.
+
+Both metrics are available by AI adoption phase in enterprise and organisation reports, making it easier to understand whether teams with deeper Copilot adoption are getting pull requests reviewed faster and through fewer review cycles.
+
+### [🚨 Bitrise is retiring its Xcode 26 edge stacks](https://bitrise.io/blog/post/xcode-26-edge-stack-removal?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_91)
+
+If you use Bitrise for your CI/CD workflows, make sure you are no longer relying on an **Xcode 26 edge stack**. Bitrise will permanently remove all of these stacks on **July 31**, so you should move to the equivalent stable stack or the new Xcode 27 edge stack.
+
+This is particularly important if your `bitrise.yml` is stored in your repository, as Bitrise cannot migrate it automatically and your builds will start failing. Remember to check every workflow and any long-lived branches, then run a test build after switching.
+
+### [✍️ Understanding Code Signing and Provisioning](https://tanaschita.com/ios-code-signing-provisioning?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_91)
+
+Code signing, certificates and provisioning profiles can be confusing, especially when you are first getting started with iOS development. In this guide, [Natascha Fadeeva](https://x.com/tanaschita) breaks down how **certificates, private keys, and provisioning profiles** work together to identify developers, configure app capabilities, and securely sign apps for distribution.
+
+### [👀 Make sure you get this right in your CI/CD scripts](https://medium.com/eureka-engineering/when-your-ci-is-green-but-the-linter-actually-failed-dc64d6625ae5?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_91)
+
+Did you know that a CI check can be green even when some commands in it have failed? When you pipe a command's output, such as a linter's result, into another command, the shell uses the exit code of the **last command in the pipeline**, which can hide an earlier failure.
+
+Thankfully, the fix is as simple as enabling `pipefail` as [Aymen Rebouh](https://www.linkedin.com/in/rebouhaymen/). This is a short but important reminder to add `set -o pipefail` to your CI/CD scripts and occasionally test that your checks **really do fail when something goes wrong**.
