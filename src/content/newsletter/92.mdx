@@ -1,0 +1,41 @@
+---
+number: 92
+date: 2026-08-23
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+It has been another busy couple of weeks. This issue covers Apple’s new **EU business terms**, what a **package registry** actually is, **generating promo assets from UI tests**, and using **SwiftPM traits** to cut transitive dependencies.
+
+Now, let’s dive into it!
+
+### [🇪🇺 Changes for apps in the European Union​](https://developer.apple.com/news/?id=gmws0jgp&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_92)
+
+Apple is moving every developer that distributes apps in the EU onto a **single set of business terms**.
+
+Among the changes, the per-install **Core Technology Fee** is becoming a **5% Core Technology Commission** on digital transactions outside the App Store, effective **October 1, 2026**. You can agree to the updated [license agreement](https://developer.apple.com/news/?id=0cgo95n6&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_92) today in App Store Connect.
+
+### [📦 What is a Package Registry?](https://swiftpackageindex.com/blog/what-is-a-package-registry?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_92)
+
+When [Swift Package Index](https://swiftpackageindex.com) [joined Apple](https://swiftpackageindex.com/blog/swift-package-index-joins-apple?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_92), they said they would help build a **package registry** for Swift.
+
+This post explains what a registry actually is, and how it differs from an **index**. If you are interested in trying one out, you can already do so with the [Tuist registry](https://tuist.dev/en/docs/guides/features/registry?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_92).
+
+### [🎥 Using an automation to generate promotional assets](https://thosewhoswift.substack.com/p/devs-for-devs-from-xcuitest-to-promo?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_92)
+
+I always love featuring articles from my good friend [Noam Efergan](https://x.com/No_Wham), and this time he showcases an automation that generates promotional assets from UI tests.
+
+Instead of recreating screenshots by hand, Noam freezes the real SwiftUI screens with a **debug launch argument** and lets **XCUITest** capture them to later use them as promotional assets.
+
+### [✂️ Using traits to reduce the number of transitive dependencies](https://www.pointfree.co/blog/posts/216-trait-ifying-our-libraries-to-reduce-transitive-dependencies?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_92)
+
+**SwiftPM traits** let you opt into only the parts of a package you actually need, which is a great way to **cut down on transitive dependencies**.
+
+[Point-Free](https://www.pointfree.co) have just used this in libraries like [SwiftNavigation](https://github.com/pointfreeco/swift-navigation), so you can enable traits such as `Perception` or `CasePaths` and skip the rest. This is a really good trick to keep in mind for package maintainers.
