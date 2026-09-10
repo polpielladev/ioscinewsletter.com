@@ -1,0 +1,55 @@
+---
+number: 93
+date: 2026-09-10
+title: Time to submit your 27 updates now!
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Mac at any scale"
+  url="https://namespace.so/github-actions?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93"
+  description="With Namespace, you can run your iOS builds on fast, ephemeral Mac runners. Framer switched from GitHub and saw 2x faster CI/CD pipelines and 60% lower costs."
+  image="/namespace-logo.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks — welcome to another issue of the newsletter!
+
+It has been a big week, as the new devices — including the shiny new iPhone Duo — have finally been announced. This also means that we iOS developers now know when iOS 27 will be available: **September 14**.
+
+For [Hidde](https://x.com/hiddevdploeg) and me over at [Anima](https://x.com/AnimaSoftware), it has been a really busy summer, packed with new features, refining our apps for the new device form factors, and creating a best-in-class experience when using our apps with Siri AI.
+
+As it could not be any other way, we also managed to squeeze in plenty of other fun features that we had not planned at the beginning of the summer, including new Strava-like share images for Gigs: Concert Tracker and a metronome view in NowPlaying that shows a song’s key and tempo!
+
+The work is done for us — and probably for you too — but the most important step is to submit your app version as soon as possible, to help make sure the release you have worked so hard on is available on day one.
+
+So, happy shipping everyone — and let’s dive into today’s issue!
+
+### [🚀 App Store submissions now open for the 27 releases](https://developer.apple.com/news/?id=k1mtkt1k&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93)
+
+With the 27 releases nearly here and the big summer-long sprint done for us iOS developers done, Apple is now accepting builds archived with the **Xcode 27 Release Candidate** and the latest SDKs.
+
+There are a couple of important reminders in Apple's announcement: **macOS 27 is Apple silicon only**, and new submissions will need to use the 27 SDKs from **April 2027**. It is also a good moment to make sure you have answered the updated age rating questions in App Store Connect, which you can do in one click using [Helm for App Store Connect](https://helm-app.com/changelog/helm-ios-feedback#social-media-age-rating-declaration?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93).
+
+### [🔐 Block merging PRs that contain secrets](https://github.blog/changelog/2026-09-09-block-pull-requests-with-exposed-secrets-from-merging?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93)
+
+GitHub has added a new repository ruleset that can **block a pull request from merging** when it introduces an unresolved secret scanning alert.
+
+The rule makes sure a scan has completed for the head commit and that no secrets introduced by the pull request are still open. The feature is now available in public preview for GitHub Secret Protection and GitHub Advanced Security customers.
+
+### [🔨 Visualize Xcode's build timeline using Tuist](https://github.com/tuist/tuist/pull/12963?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93)
+
+Tuist has just merged a new **build timeline feature PR** for Xcode builds, and it looks incredibly useful for figuring out why a build is slow.
+
+The new Timeline tab turns the standard `.xcactivitylog` into a view of individual build steps, their overlap, and synchronized CPU, memory, network, and disk metrics. No extra Xcode project settings required 🤩.
+
+### [🤖 The iOS Simulator in Cursor, Claude Code and Codex](https://www.avanderlee.com/ai-development/the-ios-simulator-inside-cursor-claude-code-and-codex?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93)
+
+[Antoine van der Lee](https://x.com/twannl) has been building some really interesting tools for the agentic development workflow, from bringing the **iOS Simulator directly into Cursor, Claude Code, and Codex** with [RocketSim](https://www.rocketsim.app?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93), to making performance tweaks and fixes more approachable with [RocketTrace](https://rockettrace.app?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93).
+
+I am good friends with Antoine, so I have been lucky enough to test some of the works in progress, and wow they are both really impressive! Make sure you subscribe to [his newsletter](https://swiftlee-weekly.com?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_93) to be the first to know when they ship!

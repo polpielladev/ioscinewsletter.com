@@ -21,6 +21,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
 const KIT_TEMPLATE_ID = 5100069; // "iOS CI Newsletter HTML" Classic template
+const SITE_URL = "https://ioscinewsletter.com";
 
 // ---------------------------------------------------------------------------
 // 1. Parse the MDX issue file
@@ -108,6 +109,7 @@ if (sponsorMatch) {
     title: extractProp("title"),
     url: extractProp("url"),
     description: extractProp("description"),
+    image: extractProp("image"),
   };
   body = body.replace(/<NewsletterSponsorSlot[\s\S]*?\/>/, "").trim();
 }
@@ -143,6 +145,19 @@ const SUBTITLE_STYLE =
 
 function styledParagraph(html, style = P_STYLE) {
   return `<p style="${style}" class="">${html}</p>`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function absoluteUrl(url) {
+  return new URL(url, SITE_URL).href;
 }
 
 function renderInlineMarkdown(text) {
@@ -210,10 +225,14 @@ function wrapArticleSection(content) {
 
 // Title + date header
 const firstSentence = introPart.match(/^([^.!?\n]+[.!?]?)/)?.[1] || "";
-const titleText = firstSentence
-  .replace(/\*\*(.*?)\*\*/g, "$1")
-  .replace(/\[(.*?)\]\(.*?\)/g, "$1")
-  .trim();
+const titleText = frontmatter.title
+  ? escapeHtml(frontmatter.title)
+  : escapeHtml(
+      firstSentence
+        .replace(/\*\*(.*?)\*\*/g, "$1")
+        .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+        .trim(),
+    );
 
 const headerHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 28px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 28px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><h1 style="${H1_STYLE}" class=""><strong>${titleText}</strong></h1><p style="${SUBTITLE_STYLE}" class="">Issue ${issueNumber} · ${formattedDate}</p></div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
 
@@ -221,16 +240,21 @@ const headerHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><ce
 const authorBioHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 0px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 0px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><table class="ck-layout-block ck-layout-stack" width="100%" border="0" cellPadding="0" cellSpacing="0" bgcolor="transparent" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;border-radius:0px;overflow:hidden"><tbody><tr><td as="td" class="ck-column ck-column-stack ck-column-1" width="10%" style="background-size:cover;background-position:center;border-radius:0px;box-sizing:border-box;vertical-align:middle"><div style="padding:0px 0px 0px 0px"><table width="100%" border="0" cellSpacing="0" cellPadding="0" style="text-align:left;table-layout:fixed;float:none" class="email-image"><tbody><tr><td align="left"><figure style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;max-width:60px;width:100%"><div style="display:block"><img src="https://embed.filekitcdn.com/e/hMaFYHCjGv2jTKsg3QHDt6/woiBSyafGEtL851xemWeq9" width="60" height="auto" style="border-radius:4px 4px 4px 4px;width:60px;height:auto;object-fit:contain"/></div></figure></td></tr></tbody></table></div></td><td style="padding-left:10px"></td><td as="td" class="ck-column ck-column-2" width="90%" style="background-size:cover;background-position:center;border-radius:0px;box-sizing:border-box;vertical-align:top"><div style="padding:0px 0px 0px 0px"><h3 style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:22px;color:#000000;font-weight:400;line-height:1.1;margin-top:0;margin-bottom:0" class=""><strong>Pol Piella Abadia</strong></h3><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#4d4d4d;font-weight:400;line-height:1.2;margin-top:4px;margin-bottom:0" class="">iOS Developer &amp; CI/CD Specialist</p></div></td></tr></tbody></table></div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
 
 // Intro paragraphs
-const introHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 56px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 56px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px">${renderParagraphs(introPart)}</div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+const hasSponsor = Boolean(sponsor?.title && sponsor?.url && sponsor?.description);
+const introBottomPadding = hasSponsor ? 24 : 56;
+const introHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px ${introBottomPadding}px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px ${introBottomPadding}px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px">${renderParagraphs(introPart)}</div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
 
-// Sponsor sections
+// Sponsor section: full-width light-gray background, with content aligned to the issue body.
 let sponsorHtml = "";
-if (sponsor) {
-  const sponsorTag = `<div class="ck-section sponsored" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 0px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 0px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#ffffff;font-weight:400;line-height:1.5;margin-top:0;margin-bottom:24px" class=""><strong>SPONSORED</strong></p></div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+if (hasSponsor) {
+  const sponsorUrl = escapeHtml(sponsor.url);
+  const sponsorTitle = escapeHtml(sponsor.title);
+  const sponsorDescription = escapeHtml(sponsor.description);
+  const sponsorImage = sponsor.image
+    ? `<td width="112" style="vertical-align:middle"><a href="${sponsorUrl}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(absoluteUrl(sponsor.image))}" alt="" width="112" style="display:block;width:112px;height:auto;border:0;outline:none;text-decoration:none" /></a></td><td width="16" style="font-size:0;line-height:0">&nbsp;</td>`
+    : "";
 
-  const sponsorContent = `<h3 style="${H3_STYLE}" class="">\u200b<a href="${sponsor.url}" target="_blank" class="ck-link" rel="noopener noreferrer" style="${LINK_STYLE}"><strong>${sponsor.title}</strong></a>\u200b</h3><p style="${ARTICLE_P_STYLE}" class="">${sponsor.description}</p>`;
-
-  sponsorHtml = sponsorTag + wrapArticleSection(sponsorContent);
+  sponsorHtml = `<div class="ck-section sponsor ck-hide-in-public-posts" style="margin:0px auto 48px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto"><tbody><tr><td contenteditable="false"></td><td style="background-color:#f8fcff;border-radius:0px;box-sizing:border-box" bgcolor="#f8fcff"><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="box-sizing:border-box;mso-padding-alt:32px 56px" bgcolor="#f8fcff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:32px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><table width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation"><tbody><tr>${sponsorImage}<td style="vertical-align:middle"><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:12px;color:#6b7280;font-weight:700;letter-spacing:0.08em;line-height:1.2;margin:0 0 8px;text-transform:uppercase">Sponsored</p><h3 style="${H3_STYLE};margin-top:0;margin-bottom:8px" class=""><a href="${sponsorUrl}" target="_blank" class="ck-link" rel="noopener noreferrer" style="${LINK_STYLE}"><strong>${sponsorTitle}</strong></a></h3><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#3d3d3d;font-weight:400;line-height:1.5;margin:0" class="">${sponsorDescription}</p></td></tr></tbody></table></div></div></td><td contenteditable="false"></td></tr></tbody></table></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
 }
 
 // "FROM THE COMMUNITY" tag
@@ -336,6 +360,14 @@ if (generateLinkedin) {
 
   // Intro paragraphs
   htmlParts.push(renderLinkedinParagraphs(introPart));
+
+  // Sponsor entry — rendered as a standard LinkedIn content item without artwork.
+  if (sponsor?.title && sponsor?.url && sponsor?.description) {
+    htmlParts.push(
+      `<p><strong><a href="${escapeHtml(sponsor.url)}">[Sponsored] ${escapeHtml(sponsor.title)}</a></strong></p>`,
+    );
+    htmlParts.push(renderLinkedinParagraphs(sponsor.description));
+  }
 
   // Article sections
   for (const article of articleEntries) {
