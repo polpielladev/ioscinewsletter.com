@@ -215,13 +215,30 @@ function renderArticle(text) {
   return h3 + renderParagraphs(rest, ARTICLE_P_STYLE);
 }
 
+function wrapEmailSection(
+  content,
+  {
+    className = "",
+    margin = "0px auto 0px auto",
+    backgroundColor = "transparent",
+    verticalPadding = "0px 0px 0px 0px",
+  } = {},
+) {
+  return `<div class="ck-section ${className}" style="margin:${margin};width:100%;max-width:none"><center><table cellPadding="0" cellSpacing="0" role="presentation" style="width:100%;margin:0 auto;max-width:none"><tbody><tr><td style="background-color:${backgroundColor};border-radius:0px;box-sizing:border-box" bgcolor="${backgroundColor}"><div class="ck-inner-section ck-responsive-gutter" style="padding:${verticalPadding}"><table align="center" cellPadding="0" cellSpacing="0" role="presentation" width="100%" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td>${content}</td></tr></tbody></table></div></td></tr></tbody></table></center></div>`;
+}
+
 function wrapArticleSection(content) {
-  return `<div class="ck-section article ck-hide-in-public-posts" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 56px 56px" bgcolor="transparent"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 56px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px">${content}</div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+  return wrapEmailSection(content, {
+    className: "article ck-hide-in-public-posts",
+    verticalPadding: "0px 0px 56px 0px",
+  });
 }
 
 // ---------------------------------------------------------------------------
 // 4. Build the message_content (dynamic parts only)
 // ---------------------------------------------------------------------------
+
+const mobileFullWidthStyles = `<style data-no-inline="true">body { margin:0 !important;padding:0 !important; } body > div[style*="padding: 15px"], body > div[style*="padding:15px"], .mail-message-content > div[style*="padding: 15px"], .mail-message-content > div[style*="padding:15px"] { padding:0 !important; } .mail-message-content { width:100% !important;max-width:none !important;margin:0 !important;padding:0 !important; } .ck-section > center > table { width:100% !important;max-width:none !important; } @media only screen and (max-width:600px) { .ck-section > center > table > tbody > tr > td[contenteditable="false"] { display:none !important;width:0 !important;max-width:0 !important; } .ck-section .ck-inner-section { padding-left:20px !important;padding-right:20px !important; } }</style>`;
 
 // Title + date header
 const firstSentence = introPart.match(/^([^.!?\n]+[.!?]?)/)?.[1] || "";
@@ -234,15 +251,27 @@ const titleText = frontmatter.title
         .trim(),
     );
 
-const headerHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 28px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 28px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><h1 style="${H1_STYLE}" class=""><strong>${titleText}</strong></h1><p style="${SUBTITLE_STYLE}" class="">Issue ${issueNumber} · ${formattedDate}</p></div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+const headerHtml = wrapEmailSection(
+  `<h1 style="${H1_STYLE}" class=""><strong>${titleText}</strong></h1><p style="${SUBTITLE_STYLE}" class="">Issue ${issueNumber} · ${formattedDate}</p>`,
+  { backgroundColor: "#ffffff", verticalPadding: "0px 0px 28px 0px" },
+);
 
 // Author bio
-const authorBioHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 0px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 0px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><table class="ck-layout-block ck-layout-stack" width="100%" border="0" cellPadding="0" cellSpacing="0" bgcolor="transparent" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;border-radius:0px;overflow:hidden"><tbody><tr><td as="td" class="ck-column ck-column-stack ck-column-1" width="10%" style="background-size:cover;background-position:center;border-radius:0px;box-sizing:border-box;vertical-align:middle"><div style="padding:0px 0px 0px 0px"><table width="100%" border="0" cellSpacing="0" cellPadding="0" style="text-align:left;table-layout:fixed;float:none" class="email-image"><tbody><tr><td align="left"><figure style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;max-width:60px;width:100%"><div style="display:block"><img src="https://embed.filekitcdn.com/e/hMaFYHCjGv2jTKsg3QHDt6/woiBSyafGEtL851xemWeq9" width="60" height="auto" style="border-radius:4px 4px 4px 4px;width:60px;height:auto;object-fit:contain"/></div></figure></td></tr></tbody></table></div></td><td style="padding-left:10px"></td><td as="td" class="ck-column ck-column-2" width="90%" style="background-size:cover;background-position:center;border-radius:0px;box-sizing:border-box;vertical-align:top"><div style="padding:0px 0px 0px 0px"><h3 style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:22px;color:#000000;font-weight:400;line-height:1.1;margin-top:0;margin-bottom:0" class=""><strong>Pol Piella Abadia</strong></h3><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#4d4d4d;font-weight:400;line-height:1.2;margin-top:4px;margin-bottom:0" class="">iOS Developer &amp; CI/CD Specialist</p></div></td></tr></tbody></table></div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+const authorBioHtml = wrapEmailSection(
+  `<table class="ck-layout-block ck-layout-stack" width="100%" border="0" cellPadding="0" cellSpacing="0" bgcolor="transparent" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;border-radius:0px;overflow:hidden"><tbody><tr><td as="td" class="ck-column ck-column-stack ck-column-1" width="10%" style="background-size:cover;background-position:center;border-radius:0px;box-sizing:border-box;vertical-align:middle"><div style="padding:0px 0px 0px 0px"><table width="100%" border="0" cellSpacing="0" cellPadding="0" style="text-align:left;table-layout:fixed;float:none" class="email-image"><tbody><tr><td align="left"><figure style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;max-width:60px;width:100%"><div style="display:block"><img src="https://embed.filekitcdn.com/e/hMaFYHCjGv2jTKsg3QHDt6/woiBSyafGEtL851xemWeq9" width="60" height="auto" style="border-radius:4px 4px 4px 4px;width:60px;height:auto;object-fit:contain"/></div></figure></td></tr></tbody></table></div></td><td style="padding-left:10px"></td><td as="td" class="ck-column ck-column-stack ck-column-2" width="90%" style="background-size:cover;background-position:center;border-radius:0px;box-sizing:border-box;vertical-align:top"><div style="padding:0px 0px 0px 0px"><h3 style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:22px;color:#000000;font-weight:400;line-height:1.1;margin-top:0;margin-bottom:0" class=""><strong>Pol Piella Abadia</strong></h3><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#4d4d4d;font-weight:400;line-height:1.2;margin-top:4px;margin-bottom:0" class="">iOS Developer &amp; CI/CD Specialist</p></div></td></tr></tbody></table>`,
+  { backgroundColor: "#ffffff" },
+);
+
+const authorBioMobileStyles = `<style data-no-inline="true">@media only screen and (max-width:600px) { .ck-column.ck-column-stack.ck-column-1 { margin-bottom:12px !important; } .ck-column.ck-column-stack.ck-column-2 { margin-bottom:12px !important; } }</style>`;
 
 // Intro paragraphs
 const hasSponsor = Boolean(sponsor?.title && sponsor?.url && sponsor?.description);
-const introBottomPadding = hasSponsor ? 24 : 56;
-const introHtml = `<div class="ck-section" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="background-color:#ffffff;border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px ${introBottomPadding}px 56px" bgcolor="#ffffff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px ${introBottomPadding}px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px">${renderParagraphs(introPart)}</div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+const introBottomPadding = 56;
+const introHtml = wrapEmailSection(renderParagraphs(introPart), {
+  className: "intro",
+  backgroundColor: "#ffffff",
+  verticalPadding: `0px 0px ${introBottomPadding}px 0px`,
+});
 
 // Sponsor section: full-width light-gray background, with content aligned to the issue body.
 let sponsorHtml = "";
@@ -251,14 +280,21 @@ if (hasSponsor) {
   const sponsorTitle = escapeHtml(sponsor.title);
   const sponsorDescription = escapeHtml(sponsor.description);
   const sponsorImage = sponsor.image
-    ? `<td width="112" style="vertical-align:middle"><a href="${sponsorUrl}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(absoluteUrl(sponsor.image))}" alt="" width="112" style="display:block;width:112px;height:auto;border:0;outline:none;text-decoration:none" /></a></td><td width="16" style="font-size:0;line-height:0">&nbsp;</td>`
+    ? `<td class="sponsor-desktop-logo" width="88" style="vertical-align:middle"><a href="${sponsorUrl}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(absoluteUrl(sponsor.image))}" alt="" width="88" style="display:block;width:88px;height:auto;border:0;outline:none;text-decoration:none" /></a></td><td class="sponsor-logo-gap" width="16" style="font-size:0;line-height:0">&nbsp;</td>`
     : "";
+  const sponsorMobileImage = sponsor.image
+    ? `<a href="${sponsorUrl}" target="_blank" rel="noopener noreferrer"><img class="sponsor-mobile-logo" src="${escapeHtml(absoluteUrl(sponsor.image))}" alt="" width="44" style="display:none;width:44px;height:auto;border:0;outline:none;text-decoration:none" /></a>`
+    : "";
+  const sponsorMobileStyles = `<style data-no-inline="true">@media only screen and (max-width:600px) { .sponsor { margin-top:12px !important;margin-bottom:12px !important; } .intro p:first-child { margin-top:12px !important; } .sponsor td[contenteditable="false"] { display:none !important;width:0 !important;max-width:0 !important; } .sponsor-desktop-logo, .sponsor-logo-gap { display:none !important;width:0 !important;max-width:0 !important; } .sponsor-content { display:block !important;width:100% !important; } .sponsor-mobile-logo { display:block !important;width:44px !important;height:auto !important;margin:0 0 12px !important; } }</style>`;
 
-  sponsorHtml = `<div class="ck-section sponsor ck-hide-in-public-posts" style="margin:0px auto 48px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto"><tbody><tr><td contenteditable="false"></td><td style="background-color:#f8fcff;border-radius:0px;box-sizing:border-box" bgcolor="#f8fcff"><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="box-sizing:border-box;mso-padding-alt:32px 56px" bgcolor="#f8fcff"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:32px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><table width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation"><tbody><tr>${sponsorImage}<td style="vertical-align:middle"><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:12px;color:#6b7280;font-weight:700;letter-spacing:0.08em;line-height:1.2;margin:0 0 8px;text-transform:uppercase">Sponsored</p><h3 style="${H3_STYLE};margin-top:0;margin-bottom:8px" class=""><a href="${sponsorUrl}" target="_blank" class="ck-link" rel="noopener noreferrer" style="${LINK_STYLE}"><strong>${sponsorTitle}</strong></a></h3><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#3d3d3d;font-weight:400;line-height:1.5;margin:0" class="">${sponsorDescription}</p></td></tr></tbody></table></div></div></td><td contenteditable="false"></td></tr></tbody></table></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+  sponsorHtml = sponsorMobileStyles + `<div class="ck-section sponsor ck-hide-in-public-posts" style="margin:24px 0 24px 0;width:100%;max-width:none"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto"><tbody><tr><td style="background-color:#f8fcff;border-radius:0px;box-sizing:border-box" bgcolor="#f8fcff"><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="box-sizing:border-box;mso-padding-alt:32px 56px" bgcolor="#f8fcff"><div class="ck-inner-section ck-responsive-gutter" style="padding:32px 0px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><table width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation"><tbody><tr>${sponsorImage}<td class="sponsor-content" style="vertical-align:middle"><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:12px;color:#6b7280;font-weight:700;letter-spacing:0.08em;line-height:1.2;margin:0 0 8px;text-transform:uppercase">Sponsored</p>${sponsorMobileImage}<h3 style="${H3_STYLE};margin-top:0;margin-bottom:8px" class=""><a href="${sponsorUrl}" target="_blank" class="ck-link" rel="noopener noreferrer" style="${LINK_STYLE}"><strong>${sponsorTitle}</strong></a></h3><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#3d3d3d;font-weight:400;line-height:1.5;margin:0" class="">${sponsorDescription}</p></td></tr></tbody></table></div></div></td><td contenteditable="false"></td></tr></tbody></table></td></tr></tbody></table></center></div>`;
 }
 
 // "FROM THE COMMUNITY" tag
-const communityTag = `<div class="ck-section tag ck-hide-in-public-posts" style="margin:0px auto 0px auto"><center><table cellPadding="0" cellSpacing="0" style="width:100%;margin:0 auto;max-width:640px"><tbody><tr><td contenteditable="false"></td><td width="640" style="border-radius:0px;box-sizing:border-box;mso-padding-alt:0px 56px 0px 56px" bgcolor="transparent"><div class="ck-inner-section ck-padding-left-mobile-friendly ck-padding-right-mobile-friendly" style="padding:0px 56px 0px 56px"><div style="margin-left:auto;margin-right:auto;max-width:640px"><p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#ffffff;font-weight:400;line-height:1.5;margin-bottom:24px;margin-top:0" class=""><strong>FROM THE COMMUNITY</strong></p></div></div></td><td contenteditable="false"></td></tr></tbody></table></center></div>`;
+const communityTag = wrapEmailSection(
+  `<p style="font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-size:16px;color:#ffffff;font-weight:400;line-height:1.5;margin-bottom:24px;margin-top:0" class=""><strong>FROM THE COMMUNITY</strong></p>`,
+  { className: "tag ck-hide-in-public-posts" },
+);
 
 // Article sections
 const articlesHtml = articleParts
@@ -267,7 +303,7 @@ const articlesHtml = articleParts
 
 // Assemble message_content
 const messageContent =
-  (headerHtml + authorBioHtml + introHtml + sponsorHtml + communityTag + articlesHtml)
+  (mobileFullWidthStyles + headerHtml + authorBioMobileStyles + authorBioHtml + sponsorHtml + introHtml + communityTag + articlesHtml)
     .replace(/utm_medium=web/g, "utm_medium=email");
 
 // ---------------------------------------------------------------------------
