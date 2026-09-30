@@ -1,0 +1,69 @@
+---
+number: 94
+date: 2026-09-30
+title: It's easier than ever to automate your workflows
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Mac at any scale"
+  url="https://namespace.so/github-actions?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94"
+  description="With Namespace, you can run your iOS builds on fast, ephemeral Mac runners. Framer switched from GitHub and saw 2x faster CI/CD pipelines and 60% lower costs."
+  image="/namespace-logo.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+I keep noticing small manual jobs in my workflow that never used to seem worth automating on their own. Then I realise how often I do them, how much time they take, and how easy they are to forget when I’m busy with something else.
+
+One example is keeping up with new versions of the App Store Connect OpenAPI spec. We used to miss them regularly, updating the App Store Connect Swift SDK that we use in **Helm** only when we remembered or needed a new API.
+
+I decided to fix that by building a workflow that checks for new API specs, regenerates the SDK, and [opens a pull request for us](https://github.com/AvdLee/appstoreconnect-swift-sdk/pull/349?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94). That has been working great for a while, but this week I noticed another manual step hiding inside the process: checking whether the patches to the spec or generated code were still needed after every update.
+
+Before AI tools, I probably would have spent a lot of time figuring out how to script that extra check, or kept doing it manually because it didn’t seem worth the effort. With Codex, it took me less than two minutes to automate it.
+
+I’ve now added a report to those PRs that flags patches needing another look. We still review the result, but I no longer have to remember to go hunting for it each time. That’s what I find exciting about automation right now: with today’s tools, these small improvements take far less effort to build, so even a recurring annoyance can be worth fixing.
+
+Let’s dive in!
+
+### [🚨 GitHub is enforcing minimum versions for self-hosted runners](https://github.blog/changelog/2026-09-28-self-hosted-runner-version-enforcement-date-has-moved/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94)
+
+If your team uses **GitHub Enterprise Cloud** with self-hosted Actions runners, GitHub’s minimum runner version enforcement has been in effect since **September 29**. Runners older than `2.329.0` can no longer register or reregister, and already-registered runners below the separate minimum for running jobs will stop receiving work.
+
+It’s worth checking your runner fleet now if you manage your own Mac build machines. GitHub Enterprise Server is not affected by this change.
+
+### [🤖 How Tuist built an AI-first operations platform](https://tuist.dev/blog/2026/09/23/atlas-what-we-built-next?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94)
+
+Tuist’s four-person team has built **Atlas**, an internal platform that brings customer context, support, finances, incidents, and other company operations into one place. The interesting part is that its tools are also available to coding agents through a dedicated **MCP**, so the team can work with that shared context from Codex or Claude.
+
+[Pedro Piñera](https://x.com/pepicrft)’s write-up is a detailed look at what they built, why they brought these workflows together, and how a small team uses agents to run the business.
+
+### [🔎 Catch accessibility issues with XCTest](https://tanaschita.com/ios-accessibility-automated-audits/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94)
+
+[Natascha Fadeeva](https://x.com/tanaschita) shows how to add `performAccessibilityAudit()` to an **XCTest UI test** after navigating to a screen. The audit can flag problems such as missing descriptions, small hit targets, poor contrast, and clipped text, then fail the test with the affected element.
+
+I especially like the advice to audit meaningful **screens and states**, including forms with validation errors and presented sheets. Automated checks are a great safety net, especially now that we write more code than ever!
+
+### [📁 Xcode projects get a new JSON format](https://fatbobman.com/en/posts/from-pbxproj-to-xcproj?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94)
+
+With **Xcode 27.2**, `project.xcproj` offers a JSON alternative to the familiar `project.pbxproj`. As [Fatbobman](https://x.com/fatbobman) explains, it replaces the **build graph inside** an `.xcodeproj` bundle, not the bundle itself. The new structure aims to make diffs easier to read and reduce merge conflicts when project settings change.
+
+Existing projects are not converted automatically, and both formats remain supported. If you maintain an Xcode project directly, this is a useful tour of what actually changes before you decide whether to switch.
+
+### [🧚 SwiftFairy reviews Swift code for coding agents](https://nilcoalescing.com/blog/IntroducingSwiftFairy/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94)
+
+**SwiftFairy** is a new Mac app with a local **MCP server** that lets coding agents request Swift and SwiftUI code reviews. It uses static analysis to flag known patterns and returns findings tied to the relevant lines, with guidance on how to fix them.
+
+Its first sets of checks cover SwiftUI, Swift Charts performance, and modern Swift. It’s an interesting way to give an agent focused feedback right when it needs it, rather than hoping it remembers every rule in its instructions.
+
+### [⏱️ Measure the build you ship](https://en.kou-works.jp/blog/debug-build-performance-trap/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_94)
+
+[Kou](https://en.kou-works.jp/about/) spent time investigating slow face detection in a camera app, only to find that the **release build on TestFlight ran smoothly** and the performance issues came from a Debug build launched from Xcode with the debugger attached, where Vision detection was several times slower.
+
+I have definitely have had this issue before, so make sure you read the article before you start optimizing your build!
