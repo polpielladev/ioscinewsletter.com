@@ -1,0 +1,13 @@
+diff --git a/dist/serverless/adapter.js b/dist/serverless/adapter.js
+index ae8cd14edeb2c46c6ef4b3563c4f32851f3f0477..432271ae6b6f0a285860d0e53fe17630de3e3809 100644
+--- a/dist/serverless/adapter.js
++++ b/dist/serverless/adapter.js
+@@ -34,6 +34,8 @@ const MIDDLEWARE_PATH = '_middleware';
+ const ISR_PATH = `/_isr?${ASTRO_PATH_PARAM}=$0`;
+ // https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/node-js#node.js-version
+ const SUPPORTED_NODE_VERSIONS = {
++    // Keep Astro 4's adapter compatible with Vercel's supported Node.js runtime.
++    24: { status: 'default' },
+     18: { status: 'retiring', removal: 'Early 2025', warnDate: new Date('October 1 2024') },
+     20: { status: 'default' },
+ };
