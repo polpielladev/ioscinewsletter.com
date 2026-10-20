@@ -1,0 +1,61 @@
+---
+number: 95
+date: 2026-10-18
+title: Get your app ready for iPhone Duo
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+import Providers from "../../components/providers/Providers.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Codemagic CI/CD for mobile teams"
+  url="https://codemagic.io/start/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95"
+  description="iOS teams are switching to Codemagic because iOS has been a second-class citizen in many CI providers. Painful to get started or change anything, slow to update to the latest software - macOS, Xcode. Slow build speeds. NO MORE with Codemagic."
+  image="/codemagic-star.png"
+/>
+
+Hey everyone! I hope you’ve all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+With **iPhone Duo** arriving soon, there is more to getting your app ready than testing its layout. Apple has introduced a badge for apps with Duo screenshots, and the latest App Store Connect API changes how we automate those assets. Meanwhile, GitHub has released its **Xcode 27 runner image**, and a couple of great new tools and articles make day-to-day development a little easier.
+
+Let’s dive in!
+
+### [📱 Show that your app is optimized for iPhone Duo](https://www.linkedin.com/posts/appledeveloper_iphoneduo-appstore-appledesign-activity-7516620099211145216--I7N?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95)
+
+Apple says that if you **build your app with Xcode 27.1** and submit **iPhone Duo screenshots** in App Store Connect, your App Store product page will show an **optimized for iPhone Duo badge**.
+
+If you have already adapted your app, don't forget the product page! This is a good reason to capture screenshots that show how it looks across the new device's orientations and poses. Apple also says that **iPhone Duo screenshots will be required for submissions starting in April 2027**.
+
+### [🚨 App Store Connect's screenshot and preview APIs are deprecated](https://developer.apple.com/documentation/appstoreconnectapi/app-store-connect-api-4-5-1-release-notes?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95)
+
+If your release workflow uploads screenshots or app previews through the **App Store Connect API**, take a look at the **4.5.1 release notes**. Apple has deprecated the App Screenshot Sets, App Screenshots, App Preview Sets, and App Previews resources, along with the equivalent media resources for in-app events.
+
+Apple's replacement is the **App Asset Library**, which changes how images and videos are uploaded and placed on product pages. If you would rather not maintain that API integration yourself, [Helm CLI](https://helm-app.com/features/helm-cli/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95) can upload **screenshots and app previews** from your terminal as part of your release workflow.
+
+### [🛠️ GitHub's Xcode 27 runner image is generally available](https://github.blog/changelog/2026-10-15-xcode-27-runner-image-generally-available/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95)
+
+You can now build and test with **Xcode 27** on GitHub-hosted Actions runners using `runs-on: xcode-27` or `xcode-27-xlarge`. The image runs **macOS 27** and is available on **Apple silicon runners only**.
+
+If you were already using those labels during the preview, you don't need to change your workflow. Otherwise, this is a handy way to try the latest toolchain without managing your own Mac runner.
+
+### [🤖 Work with Xcode projects from the command line](https://artemnovichkov.com/blog/xcode-projects-for-the-command-line-and-coding-agents?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95)
+
+Last issue, we looked at Xcode's new **JSON project format**. [Artem Novichkov](https://x.com/iosartem) has now written a detailed guide to the command-line tools in the **Xcode 27.2 betas**: `xcrun xcodeproj` for inspecting and editing projects, and `xcrun xcprojformatter` for checking the new format.
+
+The `xcodeproj` tool can also make small changes to existing `project.pbxproj` files, so you don't have to convert a project just to use it. I especially like Artem's advice on giving coding agents a few project-specific instructions so they can use these tools safely instead of editing project files by hand.
+
+### [🌍 Fail the build when a translation goes stale](https://appforce1.net/blog/fail-the-build-when-a-translation-goes-stale?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95)
+
+A missing translation, a string marked **stale** in an `.xcstrings` catalog, or a dropped format placeholder can be easy to miss until someone uses the app in another language.
+
+[Jeroen Leenarts](https://x.com/AppForce1) shares a Swift checker that catches these problems in a **Run Script build phase**, both locally and in Xcode Cloud. It reports errors in a format Xcode can show in the issue navigator, so the build fails with a useful pointer to the offending string. The post includes the scripts if you want to adapt the check to the languages your app ships.
+
+### [🎨 Give your Debug builds a blueprint app icon](https://github.com/MustafaNatur/blueprint?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_95)
+
+If you have ever opened the wrong build because its icon looks just like the App Store version, [Mustafa Natur](https://x.com/bettinaGevin)'s [blueprint](https://github.com/MustafaNatur/blueprint) is a fun little fix. This open source command-line tool turns an Icon Composer `.icon` file or a classic `.appiconset` into a **blueprint-style icon** for your Debug configuration.
+
+You can add a `DEV` or `BETA` badge and choose the colours, then point your Debug build's app icon setting at the generated asset. It is a small touch, but it makes it much easier to tell your builds apart on a device.
