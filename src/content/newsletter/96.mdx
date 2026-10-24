@@ -1,0 +1,50 @@
+---
+number: 96
+date: 2026-10-24
+title: How a solo indie developer ships award-winning apps
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Is your release train slowing your mobile team?"
+  url="http://www.runway.team/webinar/the-new-mobile-bottleneck-shipping-ai-written-code?utm_source=ios-ci-newsletter&utm_medium=newsletter&utm_campaign=bottleneck-webinar&utm_content=2026-10-25"
+  description="AI has your team merging more PRs than ever, but merged code still waits for the next branch cut, the same regression pass and the same person on release duty. Mobile engineering leaders from Thomson Reuters, Mercado Libre and Salesforce compare notes on keeping releases fast without letting quality slip. Live Nov 12, 1pm ET."
+  image="/runway-webinar-2026-10.webp"
+/>
+
+Hey everyone! I hope you've all had a great week. Welcome to another issue of the newsletter!
+
+This time, we're starting with a look at how my good friend [Klemens Strasser](https://x.com/klemensstrasser), the developer behind **Art of Fauna**, plans and ships updates as a team of one. There's also news from Apple on **App Review** and **multiseat subscriptions**, plus two practical articles on finding simulators for CI and automating App Store screenshots.
+
+Let's dive in!
+
+### [🧩 Shipped with Helm: Art of Fauna](https://helm-app.com/changelog/shipped-with-helm-art-of-fauna/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_96)
+
+For our latest **Shipped with Helm** interview, we spoke to [Klemens Strasser](https://x.com/klemensstrasser), the solo developer behind Art of Fauna and Art of Flora. He shares how he plans content updates around events such as Earth Day and Halloween, then submits **App Store feature nominations months ahead**, adding more detail as each release takes shape.
+
+I especially like how simple his release setup is: a checklist, Xcode, Xcode Cloud, and Helm. The interview also covers accessibility audits, getting native speakers to review localizations, and his advice to ship earlier instead of adding feature after feature.
+
+### [🚩 Feature flags don't bypass App Review](https://developer.apple.com/news/?id=vvzx6cul&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_96)
+
+If you use **feature flags** in your release workflow, Apple's latest App Review update is worth a read. **Guideline 2.5.19** clarifies the prohibition on hiding functionality during review and enabling it after approval. For features behind a flag, the practical takeaway is to **describe them in your review notes and make them accessible to reviewers**. Flipping a remote flag after approval doesn't make undisclosed functionality exempt from review.
+
+There are other updates too, including **user-generated content moderation** requirements that explicitly cover nonconsensual intimate imagery, including AI-generated content. Apps hosting this content must proactively prevent and remove it.
+
+### [🏫 Offer your subscriptions to businesses and schools](https://developer.apple.com/news/?id=yfo21auu&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_96)
+
+Organizations and schools can now buy **multiple seats for an auto-renewable subscription** through Apple Business or Apple School Manager. They make a single In-App Purchase, then assign and manage seats using their existing device management tools, adding or removing seats as needed.
+
+Apple says **multiseat purchasing is enabled by default** in App Store Connect unless you've previously changed the setting, so it's worth checking your subscription's availability options. With **Helm 2.3.91**, you can check this setting in the app and **update it across all your subscriptions in bulk**.
+
+Group purchases are coming too: sandbox testing starts in **November 2026**, with App Store availability planned for this winter.
+
+### [🤖 Automate App Store screenshots with Claude Code](https://roland.leth.ro/blog/tech/automating-app-store-screenshots-with-claude-code?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_96)
+
+[Roland Leth](https://x.com/rolandleth) shares how he uses Claude Code to build and run an App Store screenshot exporter for his apps. Each screenshot is composed from **real SwiftUI components and controlled sample data** inside the debug build, then rendered directly into a PNG at the required size.
+
+The article covers the details that make the workflow repeatable: fixed dates, separate fixtures, checks that stop invalid exports, and launch arguments that let an agent start the export. Really good read if you do this process manually today!
