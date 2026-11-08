@@ -1,0 +1,64 @@
+---
+number: 97
+date: 2026-11-08
+title: More control over your App Store pages
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="More PRs, same mobile release process?"
+  url="https://www.runway.team/webinar/the-new-mobile-bottleneck-shipping-ai-written-code?utm_source=ios-ci-newsletter&utm_medium=newsletter&utm_campaign=bottleneck-webinar&utm_content=2026-11-08"
+  description="Your mobile team merges more code every sprint than a year ago, and your release pilot absorbs the difference: longer ticket lists, more late-fix calls, more AI code to approve. Hear how mobile leaders at Thomson Reuters, Mercado Libre, and Salesforce are adapting. Live Nov 12, 1pm ET."
+  image="/runway-webinar-2026-10.webp"
+/>
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+We've just shipped **Helm 2.4**, and I'm excited to share a few of the things we've been working on, from testing different App Store pages to previewing your listing before you ship it. Apple has also opened up **Siri AI** integrations to all developers, and there's a new way to reach subscribers when they're thinking about cancelling. That last one is coming to Helm very soon too 🤩.
+
+We've also got GitHub's latest Slack and Teams integration, a practical guide to agent hooks, and another age rating update to keep on your radar.
+
+Let's dive in!
+
+### [🚀 Helm 2.4 is here!](https://helm-app.com/changelog/helm-2-4/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97)
+
+**Helm 2.4** brings **Product Page Optimization** tests and **Custom Product Pages** to the Mac app and CLI, so you can experiment with your listing and give each campaign a page of its own. There's also a new preview page to check how your text and media look together across languages, devices, and light and dark appearances before you submit.
+
+We've added **team roles** that adapt Helm's layout to the work each teammate does, faster switching between releases, and more pricing tools, including linked prices and reusable territory tiers. It's a big update, so have a look at the changelog for the full list, and let us know what you think!
+
+### [🗣️ Start testing your app with Siri AI](https://developer.apple.com/news/?id=6gpufove&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97)
+
+Apple has [opened the **Siri AI Developer Preview to all developers**](https://developer.apple.com/news/?id=gdk2umrf&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97). To test the new integrations with your own apps, **build your app with Xcode 27.3 beta**, then **run it on a test device with the iOS 27.3, iPadOS 27.3, macOS 27.3, or visionOS 27.3 beta installed**.
+
+You'll also need an **Apple Intelligence-enabled device** set to a supported language. Availability varies by platform and region, with Siri AI still unavailable in the EU on iOS, iPadOS, and watchOS.
+
+### [💬 Turn Slack and Teams conversations into pull requests](https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97)
+
+Everyone can now tag **@GitHub in Slack and Teams** to investigate bugs, create issues, implement changes, and open pull requests, all from the conversation where the work came up.
+
+Teams also gets **Canvas** for reviewing plans, code changes, and previews together.
+
+### [🔄 Set up subscription retention messages through the API](https://developer.apple.com/news/?id=fk9ps3gv&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97)
+
+Apple's **retention messages** let you remind subscribers what your app offers as they go through the cancellation flow. Each message includes text, with an optional image or eligible retention offer, and you can configure which subscriptions it applies to in App Store Connect.
+
+You can also [automate that setup with the **App Store Connect API**](https://developer.apple.com/help/app-store-connect/manage-subscriptions/configure-retention-messages/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97). If you want your server to choose a message for each subscriber in real time, Apple offers a separate **Retention Messaging API**, with access available by request.
+
+We're bringing **retention messaging to Helm very soon**! If you don't want to miss it, [subscribe to Helm's mailing list](https://helm-app.com/changelog?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97).
+
+### [🪝 Make recurring agent tasks automatic with hooks](https://www.avanderlee.com/ai-development/agent-hooks-claude-code-cursor-codex/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97)
+
+If you've ever added a rule to your agent's instructions and then watched it forget to follow it, [Antoine van der Lee](https://x.com/twannl)'s latest article will feel familiar. He explains how **hooks in Claude Code, Cursor, and Codex** run scripts at specific points in an agent's workflow, such as before a shell command or when a turn finishes.
+
+The article includes a practical example that makes Xcode build commands go through an output filter, keeping noisy logs out of the agent's context.
+
+### [🔞 More age rating questions are coming to App Store Connect](https://developer.apple.com/news/?id=yxkh08us&utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_97)
+
+Starting **November 16**, Apple is adding two content descriptors to the age rating questionnaire: **Shared Location** and **Dating and Relationships**. The latter also covers virtual companions that engage users in romantic or sexual content, so it isn't limited to dating apps.
+
+You'll need to answer the new questions when submitting an app update or changing your questionnaire, and **all apps must complete the declarations by January 12, 2027**.
