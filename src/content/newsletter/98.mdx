@@ -1,0 +1,53 @@
+---
+number: 98
+date: 2026-11-25
+title: Last call for CocoaPods trunk
+layout: /src/layouts/IssueLayout.astro
+---
+
+import Title from "../../components/issue/Title.astro";
+import NewsletterSponsorSlot from "../../components/issue/NewsletterSponsorSlot.astro";
+
+<Title title={`Issue ${frontmatter.number}`} date={frontmatter.date} />
+
+<NewsletterSponsorSlot
+  title="Run cloud agents with Xcode on real Apple Silicon"
+  url="https://xcloud.me/?utm_source=polpiella.dev&utm_medium=sponsorship&utm_campaign=xcloud-sponsoring-polpiella-dev&utm_content=sponsored-slot"
+  description="Xcloud gives your cloud agents their own macOS environment, complete with your Xcode version, SDKs, and dependencies. They can edit, build, and test iOS or macOS apps while Xcloud handles the infrastructure."
+  linkText="Learn more."
+  image="/xcloud-2026-11.png"
+/>
+
+Hey everyone! I hope you've all had a fantastic couple of weeks. Welcome to another issue of the newsletter!
+
+This week, we've got an important **CocoaPods deadline**, a tool for reclaiming disk space, and a look inside **Tuist's own rack of Mac minis**. There are two goodbyes to catch up on too: Lemon Squeezy is winding down, and Apple has closed its Support Community forums.
+
+Let's dive in!
+
+### [⏰ Reminder: CocoaPods trunk goes read-only on December 2](https://blog.cocoapods.org/CocoaPods-Specs-Repo/?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_98)
+
+A quick reminder: **next Wednesday, December 2**, CocoaPods trunk is scheduled to go **read-only**. Existing versions will remain available, but you won't be able to publish new pods or updates. If you've got a release lined up, check the team's timeline before the cutoff!
+
+### [🧹 Reclaim disk space with Plonge](https://github.com/mattt/plonge?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_98)
+
+Between **DerivedData**, Swift Package builds, and agent worktrees, where did all your disk space go? [Mattt](https://x.com/mattt)'s **Plonge** finds disposable development caches and lets you preview a cleanup before deleting anything. It also comes with an **MCP server and agent skill**, so your coding agent can help tidy up after itself 👀.
+
+### [🏗️ Tuist takes CI down to the metal](https://tuist.dev/blog/2026/11/04/runners?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_98)
+
+How close is your CI runner to its build cache? For **[Tuist](https://x.com/tuistdev) Runners**, they're in the same rack. The team shares why they started running their own **M5 Pro Mac minis in Berlin**, and what it took to get there, from networking to redundant power. A great peek behind the infrastructure, with details on how to **request an invite**.
+
+### [🍋 Lemon Squeezy is winding down](https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_98)
+
+If you sell through **Lemon Squeezy**, you'll need a new home for your payments before **March 31, 2027**. The team is focusing on **Stripe Managed Payments**, but it won't be a fit for every business. Their announcement explains the migration options, the feature gaps, and what to do if Managed Payments isn't available in your country.
+
+### [💬 Goodbye to Apple's Support Community forums](https://www.theverge.com/tech/1031507/apple-community-support-forum-shutting-down?utm_source=ioscinewsletter&utm_medium=web&utm_campaign=issue_98)
+
+After nearly three decades of users helping each other troubleshoot, **Apple's Support Community forums closed on November 20**. The Verge covers the goodbye, including the uncertainty around what would happen to all those old discussions. A sad loss of a long-running community.
+
+### [🤖 Learn the fundamentals of working with coding agents](https://courses.avanderlee.com/a/aff_xvx0k8kj/external?affcode=2082304_qvgl8xvo)
+
+I've always loved learning about **tooling and automation**, and AI has given me even more ways to make my day-to-day work more efficient.
+
+My good friend [Antoine van der Lee](https://x.com/twannl)'s new **AI Fundamentals** course covers the foundations of working with coding agents: giving them useful context, writing clear instructions, and checking their work. If you're keen to improve your own workflow, take a look!
+
+Antoine has very kindly given me an **affiliate link** to share with you. I've got access to the course myself, and it's great!

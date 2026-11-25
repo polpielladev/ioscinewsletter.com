@@ -1,5 +1,5 @@
 ---
-const { image, imageDark, title, url, description } = Astro.props;
+const { image, imageDark, title, url, description, linkText } = Astro.props;
 ---
 
 <div
@@ -41,6 +41,7 @@ const { image, imageDark, title, url, description } = Astro.props;
     </a>
     <p class={`m-0 text-sm leading-relaxed text-gray-600 dark:text-gray-300`}>
       {description}
+      {linkText && <a href={url} class="underline">{linkText}</a>}
     </p>
   </div>
 </div>
